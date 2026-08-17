@@ -168,15 +168,26 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
 }
 
-/* cursor-tracked spotlight */
+/* static ambient wash — no pointer tracking */
 .hero__spot {
   position: absolute; width: 780px; height: 780px; border-radius: 50%;
-  left: var(--mx, 60%); top: var(--my, 30%); transform: translate(-50%,-50%);
-  background: radial-gradient(circle, rgba(140,90,255,.20), transparent 62%);
-  filter: blur(46px); pointer-events: none;
-  transition: opacity .6s; opacity: .9;
+  left: 62%; top: 28%; transform: translate(-50%,-50%);
+  background: radial-gradient(circle, rgba(255,255,255,.07), transparent 62%);
+  filter: blur(46px); pointer-events: none; opacity: .9;
 }
-[data-theme="light"] .hero__spot { background: radial-gradient(circle, rgba(120,70,255,.13), transparent 62%); }
+[data-theme="light"] .hero__spot {
+  background: radial-gradient(circle, rgba(20,20,28,.05), transparent 62%);
+}
+
+/* glowing mouse trail (canvas injected by script.js) */
+.cursor-trail {
+  position: fixed; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; z-index: 9990;
+}
+@media (pointer: coarse) {
+  .cursor-trail { display: none; }
+}
 
 .hero__grid {
   position: absolute; inset: 0; pointer-events: none;

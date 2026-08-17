@@ -73,25 +73,93 @@
 
   if (reduced) return;
 
-  /* ---------- hero spotlight follows the pointer ---------- */
-  const hero = document.querySelector('.hero');
-  const spot = document.querySelector('.hero__spot');
-  let raf = 0, tx = 60, ty = 30, cx = 60, cy = 30;
+  /* ---------- glowing cursor trail ---------- */
+  if (matchMedia('(pointer: fine)').matches) {
+    const canvas = document.createElement('canvas');
+    canvas.className = 'cursor-trail';
+    canvas.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
 
-  hero.addEventListener('pointermove', (e) => {
-    const r = hero.getBoundingClientRect();
-    tx = ((e.clientX - r.left) / r.width) * 100;
-    ty = ((e.clientY - r.top) / r.height) * 100;
-    if (!raf) raf = requestAnimationFrame(tick);
-  });
-  hero.addEventListener('pointerleave', () => { tx = 60; ty = 30; if (!raf) raf = requestAnimationFrame(tick); });
+    const N = 16;
+    const dots = Array.from({ length: N }, () => ({ x: -100, y: -100 }));
+    let mx = -100, my = -100, visible = false, raf = 0;
 
-  function tick() {
-    cx += (tx - cx) * 0.08;
-    cy += (ty - cy) * 0.08;
-    spot.style.setProperty('--mx', cx + '%');
-    spot.style.setProperty('--my', cy + '%');
-    raf = (Math.abs(tx - cx) > 0.1 || Math.abs(ty - cy) > 0.1) ? requestAnimationFrame(tick) : 0;
+    const resize = () => {
+      const dpr = Math.min(devicePixelRatio || 1, 2);
+      canvas.width = Math.floor(innerWidth * dpr);
+      canvas.height = Math.floor(innerHeight * dpr);
+      canvas.style.width = innerWidth + 'px';
+      canvas.style.height = innerHeight + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    resize();
+    addEventListener('resize', resize, { passive: true });
+
+    const palette = () => {
+      const light = root.dataset.theme === 'light';
+      return light
+        ? { core: 'rgba(20,20,28,.55)', glow: 'rgba(40,40,48,.16)', soft: 'rgba(20,20,28,.12)' }
+        : { core: 'rgba(255,255,255,.9)', glow: 'rgba(255,255,255,.22)', soft: 'rgba(255,255,255,.08)' };
+    };
+
+    const draw = () => {
+      raf = 0;
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+      if (!visible) return;
+
+      // snappy head, soft chain behind
+      dots[0].x += (mx - dots[0].x) * 0.42;
+      dots[0].y += (my - dots[0].y) * 0.42;
+      for (let i = 1; i < N; i++) {
+        const ease = 0.32 - i * 0.008;
+        dots[i].x += (dots[i - 1].x - dots[i].x) * ease;
+        dots[i].y += (dots[i - 1].y - dots[i].y) * ease;
+      }
+
+      const c = palette();
+      for (let i = N - 1; i >= 0; i--) {
+        const t = 1 - i / N;
+        const r = 2.2 + t * 9;
+        const d = dots[i];
+
+        const g = ctx.createRadialGradient(d.x, d.y, 0, d.x, d.y, r * 3.2);
+        g.addColorStop(0, c.glow);
+        g.addColorStop(1, 'transparent');
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, r * 3.2, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = i === 0 ? c.core : c.soft;
+        ctx.globalAlpha = 0.25 + t * 0.75;
+        ctx.arc(d.x, d.y, r * (i === 0 ? 0.55 : 0.4), 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+
+      const stillMoving =
+        Math.hypot(mx - dots[0].x, my - dots[0].y) > 0.4 ||
+        Math.hypot(dots[0].x - dots[N - 1].x, dots[0].y - dots[N - 1].y) > 1.5;
+      if (stillMoving) raf = requestAnimationFrame(draw);
+    };
+
+    const kick = () => { if (!raf) raf = requestAnimationFrame(draw); };
+
+    addEventListener('pointermove', (e) => {
+      mx = e.clientX; my = e.clientY;
+      if (!visible) {
+        visible = true;
+        for (const d of dots) { d.x = mx; d.y = my; }
+      }
+      kick();
+    }, { passive: true });
+
+    document.documentElement.addEventListener('mouseleave', () => {
+      visible = false;
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+    });
   }
 
   /* ---------- magnetic buttons ---------- */
