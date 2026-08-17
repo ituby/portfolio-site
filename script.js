@@ -81,9 +81,12 @@
     document.body.appendChild(canvas);
     const ctx = canvas.getContext('2d');
 
-    const TRAIL_PX = 90;
-    const pts = [];
-    let w = 0, h = 0, raf = 0, lastMove = 0;
+    // a fixed-length window sliding along the path the pointer draws: the head sits on the
+    // cursor, the tail always advances, so a still pointer lets the trail drain into it
+    const TRAIL_PX = 120;
+    const DRAIN = 0.55; // px per ms
+    const path = [];    // { x, y, d } — d is cumulative distance from the path start
+    let w = 0, h = 0, raf = 0, head = 0, tail = 0, last = 0;
 
     const resize = () => {
       w = innerWidth; h = innerHeight;
@@ -97,32 +100,48 @@
     resize();
     addEventListener('resize', resize, { passive: true });
 
-    const trim = () => {
-      let len = 0;
-      for (let i = pts.length - 1; i > 0; i--) {
-        len += Math.hypot(pts[i].x - pts[i - 1].x, pts[i].y - pts[i - 1].y);
-        if (len > TRAIL_PX) {
-          pts.splice(0, i);
-          break;
+    const palette = () => root.dataset.theme === 'light'
+      ? { r: 112, g: 52, b: 214, core: '108,40,220' }
+      : { r: 150, g: 100, b: 255, core: '226,214,255' };
+
+    /** Point at a given distance along the recorded path. */
+    const pointAt = (d) => {
+      for (let i = 1; i < path.length; i++) {
+        if (d <= path[i].d) {
+          const a = path[i - 1], b = path[i];
+          const span = b.d - a.d || 1;
+          const u = (d - a.d) / span;
+          return { x: a.x + (b.x - a.x) * u, y: a.y + (b.y - a.y) * u };
         }
       }
+      const end = path[path.length - 1];
+      return { x: end.x, y: end.y };
     };
 
-    const palette = () => {
-      // monochrome portfolio; same glow recipe as onzero (soft neon + hot core)
-      if (root.dataset.theme === 'light') {
-        return { r: 20, g: 20, b: 28, coreA: 'rgba(20,20,28,0)', coreB: 'rgba(20,20,28,0.45)', coreC: 'rgba(20,20,28,0.9)' };
-      }
-      return { r: 244, g: 244, b: 245, coreA: 'rgba(255,255,255,0)', coreB: 'rgba(255,255,255,0.55)', coreC: 'rgba(255,255,255,0.95)' };
+    const reset = () => {
+      path.length = 0;
+      head = tail = 0;
+      ctx.clearRect(0, 0, w, h);
     };
 
-    const draw = () => {
+    const draw = (now) => {
       raf = 0;
       ctx.clearRect(0, 0, w, h);
-      if (pts.length < 2) return;
+      if (path.length < 2) return;
 
-      const tip = pts[pts.length - 1];
-      const tail = pts[0];
+      // the tail never waits: while the pointer moves it is pinned TRAIL_PX behind the head,
+      // and the moment it stops it keeps closing the gap until the trail has drained away
+      const dt = Math.min(now - last, 64);
+      last = now;
+      tail = Math.max(tail + DRAIN * dt, head - TRAIL_PX);
+      if (tail >= head) { reset(); return; }
+
+      // emit both ends plus every recorded corner in between, so a turn lands on its point
+      const pts = [pointAt(tail)];
+      for (const p of path) if (p.d > tail && p.d < head) pts.push(p);
+      pts.push(pointAt(head));
+
+      const from = pts[0], to = pts[pts.length - 1];
       const c = palette();
 
       const strokePath = () => {
@@ -134,53 +153,52 @@
 
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
+      ctx.globalAlpha = Math.min(1, (head - tail) / TRAIL_PX);
 
-      // soft neon glow — gradient fades along the length, tail → head
-      const gGlow = ctx.createLinearGradient(tail.x, tail.y, tip.x, tip.y);
+      // soft neon glow — gradient fades along the length, tail (transparent) → head
+      const gGlow = ctx.createLinearGradient(from.x, from.y, to.x, to.y);
       gGlow.addColorStop(0, `rgba(${c.r},${c.g},${c.b},0)`);
-      gGlow.addColorStop(0.55, `rgba(${c.r},${c.g},${c.b},0.22)`);
-      gGlow.addColorStop(1, `rgba(${c.r},${c.g},${c.b},0.65)`);
+      gGlow.addColorStop(0.55, `rgba(${c.r},${c.g},${c.b},0.28)`);
+      gGlow.addColorStop(1, `rgba(${c.r},${c.g},${c.b},0.7)`);
       ctx.strokeStyle = gGlow;
       ctx.shadowColor = `rgb(${c.r},${c.g},${c.b})`;
-      ctx.shadowBlur = 10;
-      ctx.lineWidth = 2.6;
+      ctx.shadowBlur = 12;
+      ctx.lineWidth = 3;
       strokePath();
 
       // bright hot core
-      const gCore = ctx.createLinearGradient(tail.x, tail.y, tip.x, tip.y);
-      gCore.addColorStop(0, c.coreA);
-      gCore.addColorStop(0.6, c.coreB);
-      gCore.addColorStop(1, c.coreC);
+      const gCore = ctx.createLinearGradient(from.x, from.y, to.x, to.y);
+      gCore.addColorStop(0, `rgba(${c.core},0)`);
+      gCore.addColorStop(0.6, `rgba(${c.core},0.5)`);
+      gCore.addColorStop(1, `rgba(${c.core},0.95)`);
       ctx.strokeStyle = gCore;
-      ctx.shadowBlur = 3;
-      ctx.lineWidth = 1.1;
+      ctx.shadowBlur = 4;
+      ctx.lineWidth = 1.2;
       strokePath();
 
+      ctx.globalAlpha = 1;
       ctx.shadowBlur = 0;
-
-      // fade out when idle
-      if (performance.now() - lastMove > 40) {
-        pts.shift();
-        if (pts.length > 1) raf = requestAnimationFrame(draw);
-        else ctx.clearRect(0, 0, w, h);
-      }
+      raf = requestAnimationFrame(draw);
     };
 
-    const kick = () => { if (!raf) raf = requestAnimationFrame(draw); };
+    const kick = () => {
+      if (raf) return;
+      last = performance.now();
+      raf = requestAnimationFrame(draw);
+    };
 
     addEventListener('pointermove', (e) => {
-      const last = pts[pts.length - 1];
-      if (last && Math.hypot(e.clientX - last.x, e.clientY - last.y) < 1.5) return;
-      pts.push({ x: e.clientX, y: e.clientY });
-      trim();
-      lastMove = performance.now();
+      const prev = path[path.length - 1];
+      const step = prev ? Math.hypot(e.clientX - prev.x, e.clientY - prev.y) : 0;
+      if (prev && step < 1.5) return;
+      head += step;
+      path.push({ x: e.clientX, y: e.clientY, d: head });
+      // drop everything the tail has already passed
+      while (path.length > 2 && path[1].d < tail) path.shift();
       kick();
     }, { passive: true });
 
-    document.documentElement.addEventListener('mouseleave', () => {
-      pts.length = 0;
-      ctx.clearRect(0, 0, w, h);
-    });
+    document.documentElement.addEventListener('mouseleave', reset);
   }
 
   /* ---------- magnetic buttons ---------- */
