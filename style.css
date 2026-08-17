@@ -724,3 +724,7 @@ body.is-locked { overflow: hidden; }
   /* the drawer never exists on larger screens */
   .drawer, .scrim { display: none !important; }
 }
+
+/* capability icons sit inline with the label, same weight as the type around them */
+.about__cols b { display: flex; align-items: center; gap: 8px; }
+.about__cols b svg { width: 15px; height: 15px; flex: none; }
