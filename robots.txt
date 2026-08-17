@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# reachable by direct link, deliberately not advertised or indexed
+Disallow: /Itamar_Tuby_Resume.pdf

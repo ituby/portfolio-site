@@ -200,8 +200,10 @@ a { color: inherit; text-decoration: none; }
   font-size: clamp(46px, 6vw, 78px);
   line-height: .95; font-weight: 800; letter-spacing: -.045em;
 }
-/* each line is authored to fit — never let it wrap into a fourth */
+/* each line is authored to fit - never let it wrap */
 .hero__title .line__i { white-space: nowrap; }
+/* weight contrast inside the line, same trick as the wordmark */
+.hero__title .lt { font-weight: 300; }
 .hero__title em {
   font-family: "Instrument Serif", Georgia, serif;
   font-style: italic; font-weight: 400; letter-spacing: -.02em;
@@ -447,7 +449,8 @@ a { color: inherit; text-decoration: none; }
   .hero__cta { justify-content: center; }
   .hero__stats { margin-left: auto; margin-right: auto; }
   .hero__stats > div { text-align: center; }
-  .hero__title { font-size: clamp(38px, 10.5vw, 54px); }
+  /* min lowered so the long first line keeps headroom at 320px */
+  .hero__title { font-size: clamp(30px, 9.6vw, 54px); }
   .hero__lede { font-size: 15.5px; }
   .eyebrow { font-size: 10.5px; letter-spacing: .12em; }
   .eyebrow__rule { width: 22px; }
