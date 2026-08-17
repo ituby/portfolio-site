@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RabbiList — Torah video platform — Itamar Tuby</title>
+<meta name="description" content="A kosher video platform for Torah content — classes, lectures, shorts and melodies — alongside a live schedule of in-person classes searchable by country › city › neighbourhood, with online registration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body style="--accent:#FF972A">
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="nav__mark" href="index.html" aria-label="Home"><span class="nm-i">im</span><span class="nm-n">tuby</span><span class="nm-t">.com</span></a>
+  <nav class="nav__links">
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <button class="themetoggle" id="themetoggle" aria-label="Toggle colour theme" title="Toggle theme">
+    <svg class="themetoggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+    <svg class="themetoggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+    </svg>
+  </button>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true" inert>
+  <nav class="drawer__links">
+    <a href="index.html#work"><span>01</span>Work</a>
+    <a href="index.html#about"><span>02</span>About</a>
+    <a href="index.html#contact"><span>03</span>Contact</a>
+  </nav>
+  <div class="drawer__foot">
+    <a href="mailto:ituby@icloud.com">ituby@icloud.com</a>
+    <a href="https://www.linkedin.com/in/tubyitamar/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</aside>
+
+<section class="phero pnav">
+  <a class="backlink reveal" href="index.html#work">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+    All work
+  </a>
+
+  <div class="phero__top reveal">
+    <h1 class="phero__name">RabbiList</h1>
+    <span class="phero__kind">Torah video platform</span>
+  </div>
+  <p class="phero__lede reveal">A kosher video platform for Torah content — classes, lectures, shorts and melodies — alongside a live schedule of in-person classes searchable by country › city › neighbourhood, with online registration.</p>
+
+  <dl class="phero__meta reveal">
+    <div><dt>Role</dt><dd>Product design · Product development</dd></div>
+    <div><dt>Type</dt><dd>Video · Community</dd></div>
+    <div><dt>Stack</dt><dd>Next.js · Prisma · SQLite</dd></div>
+    <div><dt>Languages</dt><dd>Hebrew RTL · English LTR</dd></div>
+  </dl>
+</section>
+
+<section class="psec reveal">
+  <h2 class="psec__h">What it is</h2>
+  <p class="psec__p">Torah content today is scattered between YouTube, WhatsApp groups and notices on a synagogue board. Someone looking for a class <b>can't find out what's happening this week in their own neighbourhood</b>, and a rabbi who wants to distribute a class depends on a platform that was never built for him.</p>
+  <p class="psec__p">RabbiList joins the two worlds: <b>a kosher video library</b> together with <b>a live schedule of in-person classes</b> — in one product.</p>
+  <div class="pcols">
+    <div class="pcard">
+      <h4>The problem</h4>
+      <ul>
+        <li><b>No map</b> — No way to know which classes run near home</li>
+        <li><b>Scattered content</b> — Across platforms never built for this community</li>
+        <li><b>No tools for a rabbi</b> — No page, no schedule, no registrations, no team</li>
+        <li><b>Content filtering</b> — A real need to match content to different audiences</li>
+      </ul>
+    </div>
+    <div class="pcard">
+      <h4>The solution</h4>
+      <ul>
+        <li><b>Hierarchical search</b> — Country › city › neighbourhood</li>
+        <li><b>Four content types</b> — Classes, lectures, shorts and melodies</li>
+        <li><b>A studio for the rabbi</b> — Upload, schedule, registrations and page design</li>
+        <li><b>Assistant permissions</b> — Access granted capability by capability</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="psec reveal">
+  <h2 class="psec__h">How it's built</h2>
+  <div class="pstack">
+    <div class="plyr"><div class="t">Framework</div><div class="n">Next.js</div><div class="d">App Router<br>Server Actions</div></div>
+    <div class="plyr"><div class="t">Data</div><div class="n">Prisma</div><div class="d">SQLite in development<br>ready for PostgreSQL</div></div>
+    <div class="plyr"><div class="t">Auth</div><div class="n">jose + bcrypt</div><div class="d">Sessions<br>channel-level permissions</div></div>
+    <div class="plyr"><div class="t">i18n</div><div class="n">Bilingual</div><div class="d">Hebrew RTL · English LTR<br>stable keys in the database</div></div>
+  </div>
+  <div class="pnums">
+    <div class="pnum"><b>3</b><span>user types with separate permissions</span></div>
+    <div class="pnum"><b>4</b><span>content types</span></div>
+    <div class="pnum"><b>2</b><span>complete languages, including layout mirroring</span></div>
+    <div class="pnum"><b>3</b><span>levels of location search</span></div>
+  </div>
+</section>
+
+<section class="psec">
+  <h2 class="psec__h reveal">The screens</h2>
+  <div class="pshot reveal">
+    <div class="pshot__note"><h4>Discovery</h4><p>The central decision: the home page isn't a video feed but <b>a local search form</b>. “Find a Torah class in your area” — because the real need is physical, not digital. Quick jumps to Jerusalem, Bnei Brak, Beit Shemesh and Ashdod save a returning user three selections.</p></div>
+    <figure><img loading="lazy" src="img/shots/rabbilist-home.jpg" alt="RabbiList — Discovery"></figure>
+  </div>
+  <div class="pshot pshot--pair reveal">
+    <div class="pshot__note"><h4>The schedule — the core idea</h4><p>The heart of the product and what separates it from a video platform. An in-person class is <b>an event with a place, a time, a target audience and a registration</b> — so it gets its own data model rather than being treated as a video. Each class carries its own accent colour, so the schedule can be scanned by rabbi or by topic.</p></div>
+    <figure><img loading="lazy" src="img/shots/rabbilist-lessons.jpg" alt="RabbiList — The schedule — the core idea"></figure>
+    <figure><img loading="lazy" src="img/shots/rabbilist-calendar.jpg" alt="RabbiList — The schedule — the core idea"></figure>
+  </div>
+  <div class="pshot pshot--pair reveal">
+    <div class="pshot__note"><h4>Content</h4><p>Every rabbi gets a page with the sections he chooses to show — videos, shorts, melodies, schedule and about. <b>The rabbi controls what appears</b>, so a rabbi who teaches only Daf Yomi doesn't get a page full of empty sections.</p></div>
+    <figure><img loading="lazy" src="img/shots/rabbilist-channel.jpg" alt="RabbiList — Content"></figure>
+    <figure><img loading="lazy" src="img/shots/rabbilist-watch.jpg" alt="RabbiList — Content"></figure>
+  </div>
+  <div class="pshot reveal">
+    <div class="pshot__note"><h4>The studio — the rabbi's side</h4><p>The second product inside the product. The overview shows six metrics in one row, and beside them <b>the two things a rabbi actually does every week</b> — recent videos and upcoming classes. The primary buttons — upload a video, new class, page design — stay fixed at the top of every studio screen.</p></div>
+    <figure><img loading="lazy" src="img/shots/rabbilist-studio-overview.jpg" alt="RabbiList — The studio — the rabbi's side"></figure>
+  </div>
+  <div class="pshot pshot--pair reveal">
+    <div class="pshot__note"><h4>Control</h4><p>The page editor shows <b>a live preview while editing</b> — the rabbi sees exactly what a visitor will see, without saving and checking. Registrations aren't a static list but a working tool: who registered, for which class, and when.</p></div>
+    <figure><img loading="lazy" src="img/shots/rabbilist-studio-appearance.jpg" alt="RabbiList — Control"></figure>
+    <figure><img loading="lazy" src="img/shots/rabbilist-studio-registrations.jpg" alt="RabbiList — Control"></figure>
+  </div>
+</section>
+
+<section class="psec reveal">
+  <h2 class="psec__h">Design decisions</h2>
+  <div class="pcols">
+    <div class="pcard"><h4>01</h4><ul><li><b>Location before content</b> — The home page asks “where are you?” rather than “what do you feel like watching?”. That's what turns the product from a video library into a community service.</li></ul></div>
+    <div class="pcard"><h4>02</h4><ul><li><b>An event is not a video</b> — An in-person class got its own data model with place, recurrence and registration. Forcing it into a video entity would have broken the product.</li></ul></div>
+    <div class="pcard"><h4>03</h4><ul><li><b>Stable keys, translated display</b> — Cities and categories are stored as fixed keys and translated in the interface — so a search by city returns identical results in Hebrew and English.</li></ul></div>
+    <div class="pcard"><h4>04</h4><ul><li><b>Permissions per capability</b> — An assistant isn't a “sub-admin”. The rabbi grants capability by capability: upload, edit, schedule, registrations, design. That's what lets a real rabbi delegate without worry.</li></ul></div>
+    <div class="pcard"><h4>05</h4><ul><li><b>A two-colour palette</b> — Brand orange and black only, no gradients or decorative colour. The restraint is what produces the sense of respect the content demands.</li></ul></div>
+    <div class="pcard"><h4>06</h4><ul><li><b>The logo as a single asset</b> — The logo loads from SVG as one path rather than an assembly of mark and text — so it's identical in Hebrew and English, down to the stroke weight.</li></ul></div>
+  </div>
+</section>
+
+<section class="pnext reveal">
+  <div class="pnext__inner">
+    <a href="onzero.html">
+      <div class="pnext__lbl">Next project</div>
+      <div class="pnext__name">OnZero →</div>
+    </a>
+    <a class="btn btn--ghost magnetic" href="index.html#contact"><span>Get in touch</span></a>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

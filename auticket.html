@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auticket — Municipal enforcement system — Itamar Tuby</title>
+<meta name="description" content="End-to-end municipal parking enforcement with an AI vision layer — five separate apps for the citizen, the officer, the authority and the administrator, from writing the ticket in the field to payment or appeal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body style="--accent:#2E3192">
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="nav__mark" href="index.html" aria-label="Home"><span class="nm-i">im</span><span class="nm-n">tuby</span><span class="nm-t">.com</span></a>
+  <nav class="nav__links">
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <button class="themetoggle" id="themetoggle" aria-label="Toggle colour theme" title="Toggle theme">
+    <svg class="themetoggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+    <svg class="themetoggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+    </svg>
+  </button>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true" inert>
+  <nav class="drawer__links">
+    <a href="index.html#work"><span>01</span>Work</a>
+    <a href="index.html#about"><span>02</span>About</a>
+    <a href="index.html#contact"><span>03</span>Contact</a>
+  </nav>
+  <div class="drawer__foot">
+    <a href="mailto:ituby@icloud.com">ituby@icloud.com</a>
+    <a href="https://www.linkedin.com/in/tubyitamar/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</aside>
+
+<section class="phero pnav">
+  <a class="backlink reveal" href="index.html#work">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+    All work
+  </a>
+
+  <div class="phero__top reveal">
+    <h1 class="phero__name">Auticket</h1>
+    <span class="phero__kind">Municipal enforcement system</span>
+  </div>
+  <p class="phero__lede reveal">End-to-end municipal parking enforcement with an AI vision layer — five separate apps for the citizen, the officer, the authority and the administrator, from writing the ticket in the field to payment or appeal.</p>
+
+  <dl class="phero__meta reveal">
+    <div><dt>Role</dt><dd>Product design · Product development</dd></div>
+    <div><dt>Type</dt><dd>GovTech · Municipal enforcement</dd></div>
+    <div><dt>Stack</dt><dd>Next.js · tRPC · FastAPI</dd></div>
+    <div><dt>Scope</dt><dd>5 apps · Hebrew RTL</dd></div>
+  </dl>
+</section>
+
+<section class="psec reveal">
+  <h2 class="psec__h">What it is</h2>
+  <p class="psec__p">Parking enforcement in Israel runs on a broken chain: the officer writes a ticket, the citizen receives paper, payment happens in another system, and appeals disappear into bureaucracy. Neither side ever sees the whole picture.</p>
+  <p class="psec__p">Auticket unifies the chain into <b>one system</b> — and adds a layer of <b>vehicle and licence-plate recognition</b> that turns cameras a city already owns into enforcement infrastructure.</p>
+  <div class="pcols">
+    <div class="pcard">
+      <h4>The problem</h4>
+      <ul>
+        <li><b>A broken chain</b> — Issuing, payment and appeals live in three systems</li>
+        <li><b>The citizen is blind</b> — No idea what they got, why, or what the options are</li>
+        <li><b>The officer is on paper</b> — No GPS, no photo, no digital signature</li>
+        <li><b>No BI for the authority</b> — No picture of revenue, zones or officer performance</li>
+      </ul>
+    </div>
+    <div class="pcard">
+      <h4>The solution</h4>
+      <ul>
+        <li><b>An app per role</b> — Citizen, officer, authority, administrator</li>
+        <li><b>A complete digital ticket</b> — Location, photo and signature in the field</li>
+        <li><b>Online payment and appeal</b> — From the same screen that shows the ticket</li>
+        <li><b>AI on existing cameras</b> — Vehicle and licence-plate recognition</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="psec reveal">
+  <h2 class="psec__h">How it's built</h2>
+  <div class="pstack">
+    <div class="plyr"><div class="t">Frontend</div><div class="n">Next.js</div><div class="d">TypeScript · Tailwind<br>shadcn/ui · full RTL</div></div>
+    <div class="plyr"><div class="t">API</div><div class="n">tRPC + Fastify</div><div class="d">JWT · Bcrypt<br>Audit trail · Rate limiting</div></div>
+    <div class="plyr"><div class="t">Data</div><div class="n">PostgreSQL</div><div class="d">Prisma<br>12 related models</div></div>
+    <div class="plyr"><div class="t">AI</div><div class="n">Python FastAPI</div><div class="d">YOLOv10 · vehicle detection<br>licence-plate reading</div></div>
+  </div>
+  <div class="pnums">
+    <div class="pnum"><b>5</b><span>apps in one monorepo</span></div>
+    <div class="pnum"><b>3</b><span>trained AI models</span></div>
+    <div class="pnum"><b>103ms</b><span>average AI service response</span></div>
+  </div>
+</section>
+
+<section class="psec">
+  <h2 class="psec__h reveal">The screens</h2>
+  <div class="pshot reveal">
+    <div class="pshot__note"><h4>Positioning</h4><p>The audience here is <b>decision-makers at a municipality</b>, not consumers — so the message leads by removing budget risk: pay only on success, no fixed costs. The brand blue <b>#2E3192</b> signals institution and authority; the yellow <b>#FFDE17</b> is reserved for points of action.</p></div>
+    <figure><img loading="lazy" src="img/shots/auticket-landing-home.jpg" alt="Auticket — Positioning"></figure>
+  </div>
+  <div class="pshot pshot--pair reveal">
+    <div class="pshot__note"><h4>The citizen app</h4><p>The citizen meets this system at an unpleasant moment — they've just been fined. So the dashboard doesn't open with a list of debts but with <b>a calm status view</b>: how many tickets, how much to pay, how many under appeal. The appeal is presented as an equal to payment rather than buried — a product decision that reduces frustration and calls to the municipality.</p></div>
+    <figure><img loading="lazy" src="img/shots/auticket-citizen-dashboard.jpg" alt="Auticket — The citizen app"></figure>
+    <figure><img loading="lazy" src="img/shots/auticket-citizen-calendar.jpg" alt="Auticket — The citizen app"></figure>
+  </div>
+  <div class="pshot pshot--pair reveal">
+    <div class="pshot__note"><h4>The officer app</h4><p>Built for someone working <b>standing, one-handed, in the sun</b>. Violation types are large cards with the amount printed on them, not a dropdown. The camera screen shows a rule-of-thirds grid, a live clock and an adjacent form, so evidence and documentation are created <b>in the same moment on the same screen</b>.</p></div>
+    <figure><img loading="lazy" src="img/shots/auticket-officer-home.jpg" alt="Auticket — The officer app"></figure>
+    <figure><img loading="lazy" src="img/shots/auticket-officer-camera.jpg" alt="Auticket — The officer app"></figure>
+  </div>
+  <div class="pshot reveal">
+    <div class="pshot__note"><h4>Authority · BI</h4><p>The screen that sells the system to a municipality. Four metrics across the top — <b>tickets, revenue, active officers and completion rate</b> — each with a delta against the previous period in green or red. Below, a breakdown by violation type with volume and amount side by side, so someone can decide <b>where to place officers tomorrow</b>.</p></div>
+    <figure><img loading="lazy" src="img/shots/auticket-authority-analytics.jpg" alt="Auticket — Authority · BI"></figure>
+  </div>
+  <div class="pshot pshot--pair reveal">
+    <div class="pshot__note"><h4>Operations</h4><p>Behind enforcement sits operations: who works, when, and in which zone. The forms carry <b>sensible defaults</b> — a morning shift opens at 07:00–15:00 on today's date — so a routine shift is one click and adjustment is only needed for exceptions. Parking zones are the same data model seen from the citizen side.</p></div>
+    <figure><img loading="lazy" src="img/shots/auticket-authority-shift.jpg" alt="Auticket — Operations"></figure>
+    <figure><img loading="lazy" src="img/shots/auticket-citizen-lots.jpg" alt="Auticket — Operations"></figure>
+  </div>
+</section>
+
+<section class="psec reveal">
+  <h2 class="psec__h">Design decisions</h2>
+  <div class="pcols">
+    <div class="pcard"><h4>01</h4><ul><li><b>One language, four roles</b> — The same design system runs across every app. An officer who moves into a management role doesn't learn a new product — they get more permissions.</li></ul></div>
+    <div class="pcard"><h4>02</h4><ul><li><b>The appeal isn't hidden</b> — In most enforcement systems the appeal is buried. Here it's an equal-status action to payment, which reduces frustration and call-centre volume.</li></ul></div>
+    <div class="pcard"><h4>03</h4><ul><li><b>Hebrew RTL by default</b> — Not a translated Latin interface. Layout, icons and reading direction were built right-to-left from the start, including numbers and currency.</li></ul></div>
+    <div class="pcard"><h4>04</h4><ul><li><b>Yellow only for action</b> — Blue carries institutional authority; yellow is reserved for the active tab and the primary button. Two colours produce an unambiguous hierarchy.</li></ul></div>
+    <div class="pcard"><h4>05</h4><ul><li><b>AI on existing infrastructure</b> — Rather than requiring new hardware, the vision layer connects to cameras already installed in the city — shortening the sale and lowering the budget barrier.</li></ul></div>
+    <div class="pcard"><h4>06</h4><ul><li><b>Audit trail built in</b> — Every ticket carries location, time, officer and signature. In a world where any ticket may reach a court, documentation isn't a feature — it's a precondition.</li></ul></div>
+  </div>
+</section>
+
+<section class="pnext reveal">
+  <div class="pnext__inner">
+    <a href="rabbilist.html">
+      <div class="pnext__lbl">Next project</div>
+      <div class="pnext__name">RabbiList →</div>
+    </a>
+    <a class="btn btn--ghost magnetic" href="index.html#contact"><span>Get in touch</span></a>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
