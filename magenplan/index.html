@@ -185,6 +185,9 @@ td .sm{display:block; font-size:12.5px; color:var(--t4)}
 
 html[dir=ltr] .mono, html[dir=ltr] .kicker .n{direction:ltr}
 
+.ic{width:1.05em; height:1.05em; stroke:currentColor; fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; vertical-align:-.12em}
+.vs .side.new li span:first-child{display:flex; align-items:center; height:1.5em}
+
 /* language switcher — shared */
 .langsw{position:fixed; top:12px; inset-inline-end:12px; z-index:900; display:flex; gap:2px; padding:3px;
   background:rgba(8,13,20,.82); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.13);
@@ -212,6 +215,7 @@ html[dir=ltr] .mono, html[dir=ltr] .kicker .n{direction:ltr}
 </style>
 
 
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol></svg>
 <nav class="rail" aria-label="ניווט שקופיות">
   <a href="#s1" aria-label="שקופית 1"></a><a href="#s2" aria-label="2"></a><a href="#s3" aria-label="3"></a><a href="#s4" aria-label="4"></a>
   <a href="#s5" aria-label="5"></a><a href="#s6" aria-label="6"></a><a href="#s7" aria-label="7"></a><a href="#s8" aria-label="8"></a>
@@ -454,12 +458,12 @@ html[dir=ltr] .mono, html[dir=ltr] .kicker .n{direction:ltr}
       <div class="side new">
         <h4>עם עורב</h4>
         <ul>
-          <li><span>✓</span><span>התרעה קריטית תוך שלוש שניות, מדורגת לפי זמן הגעה</span></li>
-          <li><span>✓</span><span>נ״צ בדיוק מטרים, תמונה מהזירה, ואפיון מובנה</span></li>
-          <li><span>✓</span><span>חמש שכבות זיהוי הדדי, כולל התרעת קרבה דו־כיוונית</span></li>
-          <li><span>✓</span><span>טריאז׳ מהשטח וציר כניסה מאושר בזמן אמת</span></li>
-          <li><span>✓</span><span>מקור אמת אחד, ארבעה מעגלי כוח, חלון ראייה לפי תפקיד</span></li>
-          <li><span>✓</span><span>ציר זמן אובייקטיבי ושרשרת ראיות מלאה</span></li>
+          <li><span><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span><span>התרעה קריטית תוך שלוש שניות, מדורגת לפי זמן הגעה</span></li>
+          <li><span><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span><span>נ״צ בדיוק מטרים, תמונה מהזירה, ואפיון מובנה</span></li>
+          <li><span><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span><span>חמש שכבות זיהוי הדדי, כולל התרעת קרבה דו־כיוונית</span></li>
+          <li><span><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span><span>טריאז׳ מהשטח וציר כניסה מאושר בזמן אמת</span></li>
+          <li><span><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span><span>מקור אמת אחד, ארבעה מעגלי כוח, חלון ראייה לפי תפקיד</span></li>
+          <li><span><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span><span>ציר זמן אובייקטיבי ושרשרת ראיות מלאה</span></li>
         </ul>
       </div>
     </div>
