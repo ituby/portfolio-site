@@ -1452,7 +1452,7 @@ footer{margin-top:96px; padding-top:28px; border-top:1px solid var(--line); colo
       var tries=0;
       (function poll(){
         m.triggerRepaint();
-        if(++tries < 26) setTimeout(poll, 160);
+        if(++tries < 60) setTimeout(poll, 160);
       })();
       requestAnimationFrame(settle);
       setTimeout(settle, 400);
