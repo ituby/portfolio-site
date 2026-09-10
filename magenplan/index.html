@@ -793,6 +793,7 @@ td .sm{display:block; font-size:12.5px; color:var(--t4)}
     style:styleFor(merge(dangerKit(P.threat,85), pathKit('route',P.route,BLUE), pathKit('cor',P.corridor,MINT))),
     center:P.threat, zoom:16, attributionControl:false,
     interactive:true, scrollZoom:false, dragRotate:false, touchZoomRotate:false, keyboard:false});
+  window.MAGEN_DECK_MAP=m;
   add(m,P.threat,halo(90,'rgba(255,77,63,.6)'));
   add(m,P.threat,pin({glyph:'✖',color:RED,big:true,cap:'איום · אחרון 14:33:11',capColor:'#FF9A90'}));
   add(m,P.you,pin({glyph:'א',color:BLUE,cap:'בר־נתן · 148 מ׳',capColor:'#8FB8FF'}));
