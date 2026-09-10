@@ -1,0 +1,1239 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#05080D">
+<meta name="description" content="מסכי דמו לרשת התרעה וחתירה למגע רב־ארגונית לאירועי פח״ע: מדווח, בעל רישיון, כוחות ביטחון ורפואה.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MAGEN — מסכי המוצר">
+<meta property="og:description" content="מסכי דמו לרשת התרעה וחתירה למגע רב־ארגונית לאירועי פח״ע: מדווח, בעל רישיון, כוחות ביטחון ורפואה.">
+<meta property="og:locale" content="he_IL">
+<meta name="twitter:card" content="summary_large_image">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>MAGEN — מסכי המוצר</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Heebo:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* ============ committed single-theme: a night-operations instrument ============ */
+:root{
+  --bg:#05080D;
+  --bg2:#080D14;
+  --surf:#0E1620;
+  --raise:#16202C;
+  --raise2:#1D2937;
+  --line:#22303F;
+  --line2:#2E3D4E;
+  --text:#E9F0F8;
+  --mute:#7E90A6;
+  --dim:#5A6A7E;
+  --blue:#2E7DFF;
+  --blue-d:#0F2952;
+  --red:#FF4438;
+  --red-d:#3A1210;
+  --amber:#FFB020;
+  --amber-d:#33240A;
+  --mint:#25D0A0;
+  --mint-d:#0B2C25;
+  --dev-w:330px;
+  --dev-h:714px;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:"Assistant",system-ui,-apple-system,"Segoe UI",sans-serif;
+  direction:rtl; text-align:right; font-size:16px; line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums}
+h1,h2,h3{font-family:"Heebo",system-ui,-apple-system,sans-serif; color:#fff; margin:0; text-wrap:balance}
+a{color:var(--blue)}
+:focus-visible{outline:2px solid var(--blue); outline-offset:3px}
+
+/* ============ page chrome ============ */
+.page{max-width:1500px; margin:0 auto; padding:0 28px 110px}
+header.top{
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(1100px 340px at 82% -30%, rgba(46,125,255,.20), transparent 62%),
+    radial-gradient(700px 280px at 8% -20%, rgba(255,68,56,.13), transparent 60%),
+    var(--bg2);
+}
+.top-in{max-width:1500px; margin:0 auto; padding:46px 28px 38px; display:flex; flex-wrap:wrap; gap:32px; justify-content:space-between; align-items:flex-end}
+.lockup{display:flex; align-items:center; gap:14px}
+.lockup svg{width:44px; height:44px; flex:none}
+.lockup h1{font-size:clamp(32px,5vw,46px); font-weight:800; letter-spacing:.06em; line-height:1}
+.lockup .tag{font-size:11px; letter-spacing:.22em; color:var(--blue); font-weight:700; margin-top:6px}
+header.top p{color:var(--mute); max-width:62ch; font-size:16.5px; margin:16px 0 0}
+.legend{display:flex; gap:18px; flex-wrap:wrap; align-items:flex-end}
+.lg{display:flex; align-items:center; gap:7px; font-size:13px; color:var(--mute); white-space:nowrap}
+.lg i{width:10px; height:10px; border-radius:50%; display:block; flex:none}
+
+/* ============ lanes ============ */
+.lane{padding-top:64px}
+.lane+.lane{margin-top:16px; border-top:1px solid var(--line); }
+.lane-head{display:flex; flex-wrap:wrap; gap:10px 20px; align-items:baseline; margin-bottom:6px}
+.lane-head .rail{font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.14em; font-weight:600}
+.lane-head h2{font-size:27px; font-weight:800}
+.lane p.sub{color:var(--mute); max-width:74ch; margin:8px 0 0; font-size:15.5px}
+.strip{
+  display:flex; gap:30px; overflow-x:auto; padding:34px 4px 20px;
+  scroll-snap-type:x proximity;
+}
+.strip::-webkit-scrollbar{height:9px}
+.strip::-webkit-scrollbar-track{background:var(--surf); border-radius:9px}
+.strip::-webkit-scrollbar-thumb{background:var(--line2); border-radius:9px}
+figure.frame{margin:0; flex:none; width:var(--dev-w); scroll-snap-align:start}
+figure.frame figcaption{margin-bottom:14px; min-height:74px}
+figcaption .idx{font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--dim); letter-spacing:.1em}
+figcaption b{display:block; color:#fff; font-size:16px; font-weight:700; line-height:1.35; margin-top:1px}
+figcaption span.d{display:block; color:var(--mute); font-size:13.5px; line-height:1.5; margin-top:3px}
+
+/* ============ device shell ============ */
+.dev{
+  width:var(--dev-w); height:var(--dev-h); border-radius:42px; padding:9px;
+  background:linear-gradient(160deg,#2A3644,#101820 42%,#232E3C);
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.95), 0 0 0 1px rgba(255,255,255,.05);
+  position:relative;
+}
+.dev-in{width:100%; height:100%; border-radius:34px; overflow:hidden; background:var(--bg2); position:relative; display:flex; flex-direction:column}
+.island{position:absolute; top:9px; left:50%; transform:translateX(-50%); width:88px; height:24px; border-radius:14px; background:#000; z-index:40}
+.sbar{height:44px; flex:none; display:flex; align-items:center; justify-content:space-between; padding:0 20px 0 18px; font-size:12.5px; font-weight:700; color:#fff; z-index:30; position:relative}
+.sbar .r{display:flex; gap:5px; align-items:center}
+.sbar .r svg{display:block}
+.scr{flex:1; min-height:0; overflow:hidden; position:relative; display:flex; flex-direction:column}
+.hbar{position:absolute; bottom:7px; left:50%; transform:translateX(-50%); width:118px; height:4px; border-radius:3px; background:rgba(255,255,255,.32); z-index:40}
+
+/* ============ in-app primitives ============ */
+.pad{padding:0 18px}
+.appbar{display:flex; align-items:center; justify-content:space-between; padding:6px 18px 12px; flex:none}
+.appbar .t{font-size:17px; font-weight:800; color:#fff}
+.appbar .s{font-size:12px; color:var(--mute)}
+.avatar{width:34px;height:34px;border-radius:50%;background:var(--raise2);border:1px solid var(--line2);display:grid;place-items:center;font-size:12px;font-weight:800;color:var(--mute)}
+.card{background:var(--surf); border:1px solid var(--line); border-radius:16px; padding:14px}
+.lbl{font-size:10.5px; letter-spacing:.11em; text-transform:uppercase; color:var(--dim); font-weight:700}
+.h1a{font-size:22px; font-weight:800; color:#fff; line-height:1.2}
+.muted{color:var(--mute); font-size:13.5px}
+.row{display:flex; align-items:center; gap:10px}
+.between{display:flex; align-items:center; justify-content:space-between; gap:10px}
+.stack8{display:flex; flex-direction:column; gap:8px}
+.stack12{display:flex; flex-direction:column; gap:12px}
+.pill{display:inline-flex; align-items:center; gap:5px; font-size:11.5px; font-weight:700; padding:3px 10px; border-radius:999px; line-height:1.6; white-space:nowrap}
+.p-blue{background:var(--blue-d); color:#8FBAFF}
+.p-red{background:var(--red-d); color:#FF8B80}
+.p-amber{background:var(--amber-d); color:#FFC96B}
+.p-mint{background:var(--mint-d); color:#5FE3C0}
+.p-grey{background:var(--raise2); color:var(--mute)}
+.btn{border:none; width:100%; border-radius:14px; padding:14px; font-family:inherit; font-size:16px; font-weight:800; color:#fff; background:var(--raise2); display:flex; align-items:center; justify-content:center; gap:8px; cursor:default}
+.btn.pri{background:var(--blue)}
+.btn.dan{background:var(--red)}
+.btn.ghost{background:transparent; border:1px solid var(--line2); color:var(--text); font-weight:700}
+.btn.mint{background:var(--mint); color:#04231C}
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block;flex:none}
+hr.sep{border:none; border-top:1px solid var(--line); margin:12px 0}
+
+/* map */
+.map{position:absolute; inset:0; direction:ltr; background:#080D14; overflow:hidden}
+.map svg.base{position:absolute; inset:0; width:100%; height:100%}
+.mk{position:absolute; transform:translate(-50%,-50%); z-index:5}
+.mk .bub{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;border:2px solid rgba(255,255,255,.9); box-shadow:0 3px 10px rgba(0,0,0,.6); font-size:11px; font-weight:800; color:#fff}
+.mk .cap{position:absolute; top:30px; left:50%; transform:translateX(-50%); font-size:9.5px; font-weight:700; white-space:nowrap; background:rgba(5,8,13,.82); padding:1px 6px; border-radius:5px; color:#DCE6F2; letter-spacing:.02em}
+.mk.big .bub{width:34px;height:34px;font-size:13px}
+.ring{position:absolute; transform:translate(-50%,-50%); border-radius:50%; z-index:2}
+.danger{position:absolute; transform:translate(-50%,-50%); border-radius:50%; z-index:1;
+  background:radial-gradient(circle, rgba(255,68,56,.36) 0%, rgba(255,68,56,.10) 60%, rgba(255,68,56,0) 100%);
+  border:1px solid rgba(255,68,56,.45)}
+.pulse{animation:pl 2.2s ease-out infinite}
+@keyframes pl{0%{transform:translate(-50%,-50%) scale(.72); opacity:.85}100%{transform:translate(-50%,-50%) scale(1.25); opacity:0}}
+.blink{animation:bk 1.1s steps(1,end) infinite}
+@keyframes bk{0%,50%{opacity:1}50.01%,100%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.pulse,.blink{animation:none}}
+.route{fill:none; stroke:var(--blue); stroke-width:3; stroke-linecap:round; stroke-dasharray:7 6; opacity:.9}
+
+/* overlays inside map screens */
+.ov-top{position:absolute; top:0; left:0; right:0; z-index:20; padding:8px 14px 22px;
+  background:linear-gradient(to bottom, rgba(5,8,13,.95) 40%, rgba(5,8,13,0))}
+.ov-bot{position:absolute; bottom:0; left:0; right:0; z-index:20; padding:20px 14px 26px;
+  background:linear-gradient(to top, rgba(5,8,13,.97) 55%, rgba(5,8,13,0))}
+.hud{display:flex; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:12px; overflow:hidden}
+.hud div{flex:1; background:rgba(14,22,32,.94); padding:7px 8px; text-align:center}
+.hud .v{font-family:"IBM Plex Mono",monospace; font-size:16px; font-weight:600; color:#fff; line-height:1.15}
+.hud .k{font-size:9.5px; color:var(--dim); letter-spacing:.04em}
+.chips{display:flex; gap:6px; overflow:hidden}
+.chip-btn{flex:1; background:var(--raise); border:1px solid var(--line2); border-radius:11px; padding:9px 4px; text-align:center; font-size:11.5px; font-weight:700; color:var(--text); line-height:1.25}
+.chip-btn.hot{background:var(--red-d); border-color:rgba(255,68,56,.55); color:#FF9C93}
+.chip-btn small{display:block; font-size:9px; color:var(--dim); font-weight:600}
+
+/* option grid */
+.opts{display:grid; grid-template-columns:1fr 1fr; gap:8px}
+.opt{background:var(--surf); border:1px solid var(--line); border-radius:13px; padding:12px 10px; text-align:center; font-size:14px; font-weight:700}
+.opt.sel{background:var(--blue-d); border-color:var(--blue); color:#fff}
+.opt .ic{font-size:19px; display:block; margin-bottom:2px}
+
+/* roster rows */
+.rost{display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden}
+.rw{background:var(--surf); padding:9px 12px; display:grid; grid-template-columns:34px 1fr auto; gap:10px; align-items:center}
+.rw .ph{width:34px;height:34px;border-radius:9px;background:var(--raise2); display:grid;place-items:center; font-size:12px; font-weight:800; color:var(--mute); border:1px solid var(--line2)}
+.rw .nm{font-size:13.5px; font-weight:700; color:#fff; line-height:1.3}
+.rw .mt{font-size:11px; color:var(--mute); line-height:1.35}
+.rw .rt{text-align:left}
+.rw .rt .d{font-family:"IBM Plex Mono",monospace; font-size:13px; font-weight:600; color:#fff}
+.rw .rt .e{font-size:10px; color:var(--dim)}
+
+/* lock screen */
+.lock{position:absolute; inset:0; background:linear-gradient(170deg,#0A1119,#06090E 60%,#120A0A); display:flex; flex-direction:column; align-items:center; padding:0 14px}
+.lock .clk{font-size:64px; font-weight:300; color:#fff; letter-spacing:-.02em; margin-top:34px; line-height:1; font-family:"IBM Plex Mono",monospace}
+.lock .dt{color:var(--mute); font-size:14px; margin-top:2px}
+.alertcard{width:100%; margin-top:30px; border-radius:20px; overflow:hidden; border:1px solid rgba(255,68,56,.5); background:rgba(20,10,10,.96); box-shadow:0 0 0 4px rgba(255,68,56,.10), 0 20px 50px -20px #000}
+.alertcard .hd{background:var(--red); padding:9px 14px; display:flex; justify-content:space-between; align-items:center; font-size:12.5px; font-weight:800; color:#fff; letter-spacing:.03em}
+.alertcard .bd{padding:14px}
+
+/* desktop console */
+.console{border:1px solid var(--line2); border-radius:14px; overflow:hidden; background:var(--surf); box-shadow:0 30px 60px -35px #000; margin-top:34px}
+.con-bar{background:var(--raise); border-bottom:1px solid var(--line); padding:9px 14px; display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+.con-bar .dots{display:flex; gap:6px}
+.con-bar .dots i{width:10px;height:10px;border-radius:50%;display:block}
+.con-grid{display:grid; grid-template-columns:250px minmax(0,1fr) 268px; min-height:520px}
+@media(max-width:900px){.con-grid{grid-template-columns:1fr}}
+.con-col{border-inline-start:1px solid var(--line); padding:12px; min-width:0; display:flex; flex-direction:column; gap:10px}
+.con-col:first-child{border-inline-start:none}
+.con-map{position:relative; min-height:420px; background:#080D14; direction:ltr}
+.qrow{background:var(--raise); border:1px solid var(--line); border-radius:11px; padding:9px 11px}
+.qrow.act{border-color:var(--red); background:var(--red-d)}
+.qrow .qt{font-size:13px; font-weight:700; color:#fff}
+.qrow .qm{font-size:11px; color:var(--mute)}
+
+/* photo + marking tool */
+.shot{position:relative; border-radius:14px; overflow:hidden; border:1px solid var(--line); background:#0A0F16}
+.shot canvas.shotc{display:block; width:100%; height:100%; touch-action:none; cursor:crosshair}
+.shot canvas.shotc[data-static]{cursor:default}
+.shot-tag{position:absolute; top:8px; right:9px; z-index:3; font-size:9.5px; font-weight:700; letter-spacing:.03em;
+  color:#C3D0DF; background:rgba(5,8,13,.78); border:1px solid rgba(255,255,255,.13); padding:2px 7px; border-radius:6px}
+.toolbar{display:flex; gap:6px}
+.tool{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;
+  background:var(--raise); border:1px solid var(--line2); border-radius:11px; padding:8px 2px;
+  font-family:inherit; font-size:11px; font-weight:700; color:var(--text); cursor:pointer; line-height:1.2}
+.tool:hover{border-color:var(--blue)}
+.tool.sel{background:var(--blue-d); border-color:var(--blue); color:#fff}
+.tool .sw{width:15px; height:15px; border-radius:50%; display:block; border:2px solid rgba(255,255,255,.75)}
+
+.swipe{display:none; align-items:center; gap:7px; margin-top:12px; font-size:12.5px; color:var(--dim)}
+.swipe svg{flex:none}
+
+/* ---------- portrait phones ---------- */
+@media (max-width:520px){
+  .page{padding:0 14px 84px}
+  .top-in{padding:34px 14px 30px}
+  header.top p{font-size:15.5px}
+  .lane{padding-top:44px}
+  .lane-head h2{font-size:23px}
+  .strip{gap:18px; padding:26px 2px 16px; scroll-snap-type:x mandatory}
+  figure.frame figcaption{min-height:0}
+  .swipe{display:flex}
+  .con-grid{grid-template-columns:1fr}
+  .con-col{border-inline-start:none; border-top:1px solid var(--line)}
+  .con-col:first-child{border-top:none}
+  .con-map{min-height:330px; order:-1}
+}
+@media (max-width:400px){
+  figure.frame{width:auto}
+  .dev{zoom:.86}
+}
+
+footer{margin-top:88px; padding-top:26px; border-top:1px solid var(--line); color:var(--dim); font-size:13.5px}
+</style>
+</head>
+<body>
+<nav class="xnav" aria-label="ניווט MAGEN">
+  <a href="/magen" aria-current="page">הדמו</a><a href="/magenplan">המצגת</a><a href="/magenplan/spec">האפיון</a>
+</nav>
+<style>
+.xnav{position:fixed; top:12px; left:12px; z-index:900; display:flex; gap:2px; padding:3px;
+  background:rgba(8,13,20,.82); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.13);
+  border-radius:999px; box-shadow:0 6px 20px -10px rgba(0,0,0,.7)}
+.xnav a{font-family:"Assistant",system-ui,sans-serif; font-size:12.5px; font-weight:700; text-decoration:none;
+  color:#9FB0C4; padding:4px 12px; border-radius:999px; line-height:1.6}
+.xnav a:hover{color:#fff; background:rgba(255,255,255,.09)}
+.xnav a[aria-current]{background:#2E7DFF; color:#fff}
+@media(max-width:520px){.xnav{top:8px; left:8px} .xnav a{font-size:11.5px; padding:3px 9px}}
+</style>
+
+
+<header class="top">
+  <div class="top-in">
+    <div>
+      <div class="lockup">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M20 3 34 8v13c0 8.3-5.6 14.4-14 18-8.4-3.6-14-9.7-14-18V8z" fill="none" stroke="#2E7DFF" stroke-width="2.4" stroke-linejoin="round"/>
+          <circle cx="20" cy="20" r="3.6" fill="#FF4438"/>
+          <path d="M20 10.5v4M20 25.5v4M10.5 20h4M25.5 20h4" stroke="#2E7DFF" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <h1>MAGEN</h1>
+          <div class="tag">מסכי המוצר · דמו</div>
+        </div>
+      </div>
+      <p>ארבעה נתיבי משתמש, אירוע אחד. המסכים מציגים אירוע לדוגמה — דקירה ברחוב הרצל, כפר סבא, ב־14:32 — כפי שהוא נראה לאזרח שמדווח, לבעל רישיון שיוצא, לשוטר שמגיע ולצוות מד״א שנכנס.</p>
+    </div>
+    <div class="legend">
+      <span class="lg"><i style="background:#FF4438"></i>איום ואזור סכנה</span>
+      <span class="lg"><i style="background:#2E7DFF"></i>מגיב אזרחי מורשה</span>
+      <span class="lg"><i style="background:#FFB020"></i>משטרה וכוחות ביטחון</span>
+      <span class="lg"><i style="background:#25D0A0"></i>רפואה והצלה</span>
+    </div>
+  </div>
+</header>
+
+<div class="page">
+
+<!-- ================= LANE A ================= -->
+<section class="lane">
+  <div class="lane-head">
+    <span class="rail" style="color:var(--red)">נתיב א׳ · המדווח</span>
+    <h2>אזרח מדווח</h2>
+  </div>
+  <p class="sub">שישה מסכים, שמונה שניות. שום שדה טקסט חופשי לא נמצא במסלול הקריטי — הכול הקשות, כי היד רועדת ולפעמים גם רצה.</p>
+  <div class="swipe" aria-hidden="true"><svg width="15" height="10" viewBox="0 0 15 10" fill="none"><path d="M14 5H1M1 5l3.5-3.5M1 5l3.5 3.5" stroke="#5A6A7E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>החליקו הצידה בין המסכים</div>
+
+  <div class="strip">
+
+    <!-- A1 -->
+    <figure class="frame">
+      <figcaption><span class="idx">A · 01</span><b>מסך הבית</b><span class="d">שקט כברירת מחדל. כפתור אחד גדול, נגיש גם ממסך נעול ומווידג׳ט.</span></figcaption>
+      <div class="dev"><div class="dev-in"><div class="island"></div>
+        <div class="sbar"><span class="mono">14:31</span><span class="r">
+          <svg width="17" height="11" viewBox="0 0 17 11"><rect x="0" y="7" width="3" height="4" rx="1" fill="#fff"/><rect x="4.5" y="5" width="3" height="6" rx="1" fill="#fff"/><rect x="9" y="2.5" width="3" height="8.5" rx="1" fill="#fff"/><rect x="13.5" y="0" width="3" height="11" rx="1" fill="#fff" opacity=".4"/></svg>
+          <svg width="22" height="11" viewBox="0 0 22 11"><rect x="0.5" y="0.5" width="18" height="10" rx="3" fill="none" stroke="#fff" opacity=".5"/><rect x="2" y="2" width="13" height="7" rx="1.6" fill="#fff"/><path d="M20.5 4v3" stroke="#fff" stroke-width="1.6" opacity=".5" stroke-linecap="round"/></svg>
+        </span></div>
+        <div class="scr">
+          <div class="appbar"><div><div class="t">שלום, נועה</div><div class="s">כפר סבא · אין אירועים פעילים</div></div><div class="avatar">נ</div></div>
+          <div class="pad stack12" style="flex:1">
+            <div class="card" style="display:flex; gap:11px; align-items:center; border-color:var(--mint-d); background:linear-gradient(180deg,rgba(37,208,160,.07),transparent)">
+              <span class="dot" style="background:var(--mint)"></span>
+              <div><div style="font-size:14px;font-weight:700;color:#fff">האזור שקט</div><div class="muted" style="font-size:12px">14 מגיבים מורשים בכוננות ברדיוס 3 ק״מ</div></div>
+            </div>
+
+            <div style="flex:1; display:grid; place-items:center; padding:6px 0">
+              <div style="text-align:center">
+                <div style="position:relative; width:196px; height:196px; display:grid; place-items:center">
+                  <span class="ring pulse" style="left:50%; top:50%; width:196px; height:196px; border:2px solid rgba(255,68,56,.5)"></span>
+                  <div style="width:158px;height:158px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FF6055,#D0261B); display:grid; place-items:center; box-shadow:0 16px 40px -12px rgba(255,68,56,.6), inset 0 -4px 12px rgba(0,0,0,.35)">
+                    <div>
+                      <div style="font-size:29px;font-weight:800;color:#fff;line-height:1.05">דיווח<br>אירוע</div>
+                      <div style="font-size:11.5px;color:rgba(255,255,255,.82);font-weight:700;margin-top:5px">לחיצה ארוכה</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="padding:11px 13px">
+              <div class="between"><div class="row" style="gap:8px"><span style="font-size:15px">📞</span><span style="font-size:14px;font-weight:700;color:#fff">חיוג ל־100</span></div><span class="muted" style="font-size:12px">במקביל תמיד</span></div>
+            </div>
+            <div class="muted" style="font-size:11.5px; text-align:center; padding-bottom:14px">דיווח כוזב הוא עבירה פלילית. הזהות שלך מתועדת.</div>
+          </div>
+        </div>
+      <div class="hbar"></div></div></div>
+    </figure>
+
+    <!-- A2 -->
+    <figure class="frame">
+      <figcaption><span class="idx">A · 02</span><b>לחיצה ארוכה, 1.5 שניות</b><span class="d">טבעת מילוי סביב האצבע. מיקום, זמן ומזהה מכשיר כבר נתפסו — עוד לפני שנבחר סוג האירוע.</span></figcaption>
+      <div class="dev"><div class="dev-in"><div class="island"></div>
+        <div class="sbar"><span class="mono">14:32</span><span class="r"><span class="pill p-red" style="font-size:10px;padding:1px 7px">לוכד מיקום</span></span></div>
+        <div class="scr" style="background:radial-gradient(circle at 50% 44%, rgba(255,68,56,.20), transparent 62%)">
+          <div class="pad" style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:26px">
+            <div style="position:relative; width:214px; height:214px; display:grid; place-items:center">
+              <svg viewBox="0 0 100 100" style="position:absolute; inset:0; width:100%; height:100%; transform:rotate(-90deg)">
+                <circle cx="50" cy="50" r="46" fill="none" stroke="#22303F" stroke-width="4"/>
+                <circle cx="50" cy="50" r="46" fill="none" stroke="#FF4438" stroke-width="5" stroke-linecap="round" stroke-dasharray="289" stroke-dashoffset="92"/>
+              </svg>
+              <div style="width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FF6055,#B71E14); display:grid; place-items:center">
+                <div style="text-align:center">
+                  <div class="mono" style="font-size:44px;font-weight:600;color:#fff;line-height:1">0.9</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,.85);font-weight:700">אל תרפה</div>
+                </div>
+              </div>
+            </div>
+            <div style="text-align:center">
+              <div class="h1a">מדווח על אירוע</div>
+              <div class="muted" style="margin-top:4px">הרפיה עכשיו תבטל את הדיווח</div>
+            </div>
+            <div class="card" style="width:100%; padding:11px 13px">
+              <div class="between"><span class="lbl">נקודת ציון שנתפסה</span><span class="pill p-mint">דיוק 4 מ׳</span></div>
+              <div class="mono" style="font-size:13px; color:#fff; margin-top:5px; direction:ltr; text-align:right">32.17492, 34.90731 · +38 m</div>
+              <div class="muted" style="font-size:12px">רח׳ הרצל 41, כפר סבא</div>
+            </div>
+          </div>
+        </div>
+      <div class="hbar"></div></div></div>
+    </figure>
+
+    <!-- A3 -->
+    <figure class="frame">
+      <figcaption><span class="idx">A · 03</span><b>אפיון בשלוש הקשות</b><span class="d">סוג, כמות, אמצעי. כל בחירה משנה מיד את רדיוס ההתרעה ואת מודל אזור הסכנה.</span></figcaption>
+      <div class="dev"><div class="dev-in"><div class="island"></div>
+        <div class="sbar"><span class="mono">14:32</span><span class="r"><span class="pill p-red blink" style="font-size:10px;padding:1px 7px">● שידור פעיל</span></span></div>
+        <div class="scr">
+          <div class="pad" style="padding-top:8px">
+            <div class="between"><span class="lbl">שלב 1 מתוך 2</span><span class="mono" style="font-size:12px;color:var(--red)">חלפו 00:04</span></div>
+            <div style="height:3px;background:var(--line);border-radius:3px;margin-top:7px"><div style="width:52%;height:100%;background:var(--red);border-radius:3px"></div></div>
+          </div>
+          <div class="pad stack12" style="flex:1; overflow:hidden; padding-top:14px">
+            <div>
+              <div class="lbl" style="margin-bottom:7px">מה קורה?</div>
+              <div class="opts">
+                <div class="opt"><span class="ic">🔫</span>ירי</div>
+                <div class="opt sel"><span class="ic">🔪</span>דקירה</div>
+                <div class="opt"><span class="ic">🚗</span>דריסה</div>
+                <div class="opt"><span class="ic">⚠️</span>חשוד</div>
+              </div>
+            </div>
+            <div>
+              <div class="lbl" style="margin-bottom:7px">כמה מחבלים?</div>
+              <div class="opts" style="grid-template-columns:repeat(4,1fr)">
+                <div class="opt sel" style="padding:10px 4px">1</div>
+                <div class="opt" style="padding:10px 4px">2</div>
+                <div class="opt" style="padding:10px 4px">3+</div>
+                <div class="opt" style="padding:10px 4px;font-size:12px">לא ידוע</div>
+              </div>
+            </div>
+            <div>
+              <div class="lbl" style="margin-bottom:7px">נפגעים בשטח?</div>
+              <div class="opts" style="grid-template-columns:repeat(4,1fr)">
+                <div class="opt" style="padding:10px 4px">0</div>
+                <div class="opt sel" style="padding:10px 4px">1–2</div>
+                <div class="opt" style="padding:10px 4px">3+</div>
+                <div class="opt" style="padding:10px 4px;font-size:12px">לא ידוע</div>
+              </div>
+            </div>
+          </div>
+          <div class="pad" style="padding-bottom:24px"><button class="btn dan">המשך · צירוף תמונה ‹</button></div>
+        </div>
+      <div class="hbar"></div></div></div>
+    </figure>
+
+    <!-- A4 -->
+    <figure class="frame">
+      <figcaption><span class="idx">A · 04</span><b>תמונה והסכמת חשיפה</b><span class="d">התמונה עולה ברקע גם אם המדווח בורח. ההסכמה מפורשת, מוגבלת לאירוע הזה, ופגה עם סגירתו.</span></figcaption>
+      <div class="dev"><div class="dev-in"><div class="island"></div>
+        <div class="sbar"><span class="mono">14:32</span><span class="r"><span class="pill p-red blink" style="font-size:10px;padding:1px 7px">● שידור פעיל</span></span></div>
+        <div class="scr">
+          <div class="pad" style="padding-top:8px">
+            <div class="between"><span class="lbl">שלב 2 מתוך 2</span><span class="mono" style="font-size:12px;color:var(--red)">חלפו 00:11</span></div>
+            <div style="height:3px;background:var(--line);border-radius:3px;margin-top:7px"><div style="width:100%;height:100%;background:var(--red);border-radius:3px"></div></div>
+          </div>
+          <div class="pad stack12" style="flex:1; padding-top:14px; overflow:hidden">
+            <div class="shot" style="height:172px">
+              <canvas class="shotc" data-seed="1" data-static="1" width="294" height="172"></canvas>
+              <span class="shot-tag">תמונת המחשה מארכיון</span>
+              <div style="position:absolute; bottom:9px; right:10px; left:10px; display:flex; justify-content:space-between; align-items:flex-end; z-index:3">
+                <span class="pill p-red">● הועלה · 1.2MB</span>
+                <span class="mono" style="font-size:9.5px;color:#B9C7D6;background:rgba(5,8,13,.75);padding:2px 6px;border-radius:5px">14:32:18 · חתום</span>
+              </div>
+            </div>
+
+            <button class="btn" style="background:var(--raise2); border:1px solid var(--line2); padding:12px; font-size:14.5px">🖍 סמן את המחבל בתמונה</button>
+
+            <div class="card" style="padding:12px 13px">
+              <div class="row" style="align-items:flex-start; gap:10px">
+                <div style="width:22px;height:22px;border-radius:7px;background:var(--blue);display:grid;place-items:center;flex:none;font-size:13px;color:#fff;font-weight:800">✓</div>
+                <div>
+                  <div style="font-size:13.5px;font-weight:700;color:#fff;line-height:1.4">אני מאשרת חשיפת פרטי הקשר שלי</div>
+                  <div class="muted" style="font-size:12px;line-height:1.45;margin-top:2px">השם ומספר הטלפון יוצגו למוקד 100 ולמגיבים המאושרים לאירוע זה, לצורך בירור. החשיפה מסתיימת עם סגירת האירוע.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="gap:8px">
+              <button class="btn ghost" style="padding:11px;font-size:13.5px">🔇 דיווח שקט</button>
+              <button class="btn ghost" style="padding:11px;font-size:13.5px">🎙 הוספת קול</button>
+            </div>
+          </div>
+          <div class="pad" style="padding-bottom:24px"><button class="btn dan">שליחת דיווח</button></div>
+        </div>
+      <div class="hbar"></div></div></div>
+    </figure>
+
+    <!-- A5 marking tool -->
+    <figure class="frame">
+      <figcaption><span class="idx">A · 05</span><b>כלי סימון המחבל</b><span class="d">טוש עבה על התמונה. הסימון נשלח כשכבה נפרדת — הכוחות רואים גם את המקור וגם את מה שהמדווחת הצביעה עליו. <b style="display:inline;color:#8FBAFF;font-weight:700">אפשר לצייר כאן.</b></span></figcaption>
+      <div class="dev"><div class="dev-in"><div class="island"></div>
+        <div class="sbar"><span class="mono">14:32</span><span class="r"><span class="pill p-red blink" style="font-size:10px;padding:1px 7px">● שידור פעיל</span></span></div>
+        <div class="scr" data-marker>
+          <div class="appbar" style="padding-top:6px"><div><div class="t">סימון המחבל</div><div class="s">הקף את מי שתקף — זה מה שהכוחות יחפשו</div></div>
+            <span class="pill p-grey" style="cursor:default">דלג</span></div>
+
+          <div class="pad" style="flex:1; display:flex; flex-direction:column; gap:12px; overflow:hidden">
+            <div class="shot" style="flex:1; min-height:0">
+              <canvas class="shotc" data-seed="1" width="294" height="300"></canvas>
+              <span class="shot-tag">תמונת המחשה מארכיון</span>
+            </div>
+
+            <div class="toolbar">
+              <button class="tool sel" data-tool="marker" data-color="#FF4438" data-w="11" title="טוש עבה אדום"><span class="sw" style="background:#FF4438"></span>טוש</button>
+              <button class="tool" data-tool="marker" data-color="#FFB020" data-w="7" title="עט ענבר"><span class="sw" style="background:#FFB020"></span>עט</button>
+              <button class="tool" data-tool="arrow" data-color="#FF4438" data-w="7" title="חץ"><span class="sw" style="background:transparent;border:none;font-size:13px;line-height:1">➜</span>חץ</button>
+              <button class="tool" data-act="undo" title="ביטול הסימון האחרון">↺ ביטול</button>
+              <button class="tool" data-act="clear" title="ניקוי הכול">✕ נקה</button>
+            </div>
+
+            <div class="card" style="padding:10px 12px">
+              <div class="between"><span class="lbl">מה נשלח</span><span class="pill p-mint" data-count>2 סימונים</span></div>
+              <div class="muted" style="font-size:11.5px;line-height:1.45;margin-top:3px">התמונה המקורית נשמרת ללא שינוי. הסימון נשלח כשכבה נפרדת וניתן לכבות אותה — כדי שראיה לא תיפגם.</div>
+            </div>
+          </div>
+          <div class="pad" style="padding-bottom:24px"><button class="btn dan">צרף לדיווח ושלח</button></div>
+        </div>
+      <div class="hbar"></div></div></div>
+    </figure>
+
+    <!-- A5 -->
+    <figure class="frame">
+      <figcaption><span class="idx">A · 06</span><b>אחרי השליחה</b><span class="d">המדווחת מקבלת ודאות שהקריאה נקלטה — אבל לא רואה מיקום של אף מגיב. אף פעם.</span></figcaption>
+      <div class="dev"><div class="dev-in"><div class="island"></div>
+        <div class="sbar"><span class="mono">14:33</span><span class="r"><span class="pill p-red" style="font-size:10px;padding:1px 7px">אירוע 4471</span></span></div>
+        <div class="scr">
+          <div class="pad" style="padding-top:14px; flex:1; display:flex; flex-direction:column; gap:13px">
+            <div style="text-align:center; padding:10px 0 2px">
+              <div style="width:62px;height:62px;border-radius:50%;background:var(--mint-d);border:2px solid var(--mint);display:grid;place-items:center;margin:0 auto 12px;font-size:27px">✓</div>
+              <div class="h1a">הדיווח התקבל</div>
+              <div class="muted" style="margin-top:3px">מוקד 100 ומד״א קיבלו במקביל</div>
+            </div>
+
+            <div class="hud">
+              <div><div class="v">3</div><div class="k">מגיבים בדרך</div></div>
+              <div><div class="v">2</div><div class="k">ניידות</div></div>
+              <div><div class="v">0:41</div><div class="k">מאז הדיווח</div></div>
+            </div>
+
+            <div class="card" style="border-color:var(--amber-d); background:linear-gradient(180deg,rgba(255,176,32,.08),transparent)">
+              <div class="row" style="gap:11px">
+                <div class="avatar" style="background:var(--amber-d);border-color:rgba(255,176,32,.4);color:#FFC96B">100</div>
+                <div style="flex:1">
+                  <div style="font-size:14px;font-weight:700;color:#fff">מוקדן מנסה להתקשר</div>
+                  <div class="muted" style="font-size:12px">רפ״ק ד. אביטן · מוקד שרון</div>
+                </div>
+                <div style="width:34px;height:34px;border-radius:50%;background:var(--mint);display:grid;place-items:center;font-size:15px">📞</div>
+              </div>
+            </div>
+
+            <div class="card" style="flex:1">
+              <div class="lbl" style="margin-bottom:9px">הוראות בטיחות</div>
+              <div class="stack8">
+                <div class="row" style="gap:8px;align-items:flex-start"><span class="dot" style="background:var(--red);margin-top:7px"></span><span style="font-size:13.5px;line-height:1.45">התרחקי מהאזור ואל תתעדי מקרוב</span></div>
+                <div class="row" style="gap:8px;align-items:flex-start"><span class="dot" style="background:var(--red);margin-top:7px"></span><span style="font-size:13.5px;line-height:1.45">היכנסי למבנה סגור אם אפשר</span></div>
+                <div class="row" style="gap:8px;align-items:flex-start"><span class="dot" style="background:var(--blue);margin-top:7px"></span><span style="font-size:13.5px;line-height:1.45">השאירי את הטלפון פתוח — יתקשרו אלייך</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="pad" style="padding-bottom:24px"><button class="btn ghost">עדכון מידע נוסף</button></div>
+        </div>
+      <div class="hbar"></div></div></div>
+    </figure>
+
+  </div>
+</section>
+
+<!-- ================= LANE B ================= -->
+<section class="lane">
+  <div class="lane-head">
+    <span class="rail" style="color:var(--blue)">נתיב ב׳ · המגיב</span>
+    <h2>בעל רישיון נשק</h2>
+  </div>
+  <p class="sub">מסך ההתרעה נקרא בריצה, ביד אחת ובשמש. שישה מסכים מרגע הצלצול ועד ההזדהות מול הכוח שמגיע — כולל שכבות מניעת הזיהוי השגוי.</p>
+  <div class="swipe" aria-hidden="true"><svg width="15" height="10" viewBox="0 0 15 10" fill="none"><path d="M14 5H1M1 5l3.5-3.5M1 5l3.5 3.5" stroke="#5A6A7E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>החליקו הצידה בין המסכים</div>
+
+  <div class="strip">
+
+    <!-- B1 lock -->
+    <figure class="frame">
+      <figcaption><span class="idx">B · 01</span><b>התרעה קריטית</b><span class="d">עוקפת מצב שקט ונעילה. מרחק, כיוון וזמן הליכה — לפני כל דבר אחר.</span></figcaption>
+      <div class="dev"><div class="dev-in"><div class="island"></div>
+        <div class="sbar"><span class="mono">14:32</span><span class="r"><span style="font-size:11px;color:#FF8B80;font-weight:700">התרעת חירום</span></span></div>
+        <div class="scr">
+          <div class="lock">
+            <div class="clk">14:32</div>
+            <div class="dt">יום חמישי, 10 בספטמבר</div>
+            <div class="alertcard">
+              <div class="hd"><span>MAGEN · פח״ע</span><span class="mono blink">● עכשיו</span></div>
+              <div class="bd">
+                <div class="h1a" style="font-size:25px">דקירה · הרצל 41</div>
+                <div class="muted" style="margin-top:2px">מחבל אחד · 1–2 נפגעים · דיווח מאומת</div>
+                <div class="hud" style="margin-top:12px">
+                  <div><div class="v">180<span style="font-size:11px">מ׳</span></div><div class="k">מרחק</div></div>
+                  <div><div class="v">1:10</div><div class="k">ריצה</div></div>
+                  <div><div class="v">↗ 2</div><div class="k">כיוון</div></div>
+                </div>
+                <div class="stack8" style="margin-top:12px">
+                  <button class="btn dan">אני יוצא</button>
+                  <div class="row" style="gap:8px">
+                    <button class="btn ghost" style="padding:11px;font-size:13.5px">לא זמין</button>
+                    <button class="btn ghost" style="padding:11px;font-size:13.5px">אני בזירה</button>
+                  </div>
+                </div>
+                <div class="muted" style="font-size:11px;text-align:center;margin-top:9px">אי־מענה תוך <span class="mono">20</span> שניות ירחיב את הקריאה</div>
+              </div>
+            </div>
+            <div style="margin-top:auto; padding-bottom:26px; display:flex; gap:44px; opacity:.5">
+              <div style="width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center">🔦</div>
+              <div style="width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center">📷</div>
+            </div>
+          </div>
+        </div>
+      <div class="hbar"></div></div></div>
+    </figure>
+
+    <!-- B2 identify declaration -->
+    <figure class="frame">
+      <figcaption><span class="idx">B · 02</span><b>הצהרת היכר · שכבה 1</b><span class="d">שתי הקשות לפני היציאה. הצבע והאמצעי נכנסים מיד לכרטיס שרואה כל שוטר שמגיע.</span></figcaption>
+      <div class="dev"><div class="dev-in"><div class="island"></div>
+        <div class="sbar"><span class="mono">14:32</span><span class="r"><span class="pill p-blue" style="font-size:10px;padding:1px 7px">אושר · יוצא</span></span></div>
+        <div class="scr">
+          <div class="pad" style="padding-top:12px; flex:1; display:flex; flex-direction:column; gap:14px">
+            <div>
+              <div class="h1a">איך יזהו אותך?</div>
+              <div class="muted" style="margin-top:2px">כדי שהכוח שמגיע ידע שאתה לא האיום</div>
+            </div>
+
+            <div>
+              <div class="lbl" style="margin-bottom:8px">צבע חולצה</div>
+              <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px">
+                <div class="opt" style="padding:0;height:52px;background:#111820;border-color:var(--line)"></div>
+                <div class="opt sel" style="padding:0;height:52px;background:#3B6FD4;border-color:#8FBAFF;position:relative"><span style="position:absolute;inset:0;display:grid;place-items:center;font-size:19px">✓</span></div>
+                <div class="opt" style="padding:0;height:52px;background:#E4E7EB;border-color:var(--line)"></div>
+                <div class="opt" style="padding:0;height:52px;background:#3E6B3C;border-color:var(--line)"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="lbl" style="margin-bottom:8px">אמצעי שברשותך</div>
+              <div class="opts">
+                <div class="opt sel">אקדח קצר</div>
+                <div class="opt">נשק ארוך</div>
+              </div>
+            </div>
+
+            <div class="card" style="border-color:var(--blue-d);background:linear-gradient(180deg,rgba(46,125,255,.09),transparent)">
+              <div class="row" style="gap:11px;align-items:flex-start">
+                <div class="rw" style="padding:0;background:none"><div class="ph" style="width:44px;height:44px;border-radius:11px">אב</div></div>
+                <div style="flex:1">
+                  <div style="font-size:14px;font-weight:700;color:#fff">אלון בר־נתן</div>
+                  <div class="muted" style="font-size:11.5px">רישיון <span class="mono">••••4182</span> · תקף · הכשרה 08/2026</div>
+                  <div class="row" style="gap:5px;margin-top:6px"><span class="pill p-blue">חולצה כחולה</span><span class="pill p-grey">אקדח קצר</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="muted" style="font-size:11.5px;line-height:1.5">הכרטיס הזה גלוי לשוטרים ולמפקד האירוע בלבד, ורק בזמן האירוע.</div>
+          </div>
+          <div class="pad" style="padding-bottom:24px"><button class="btn pri">יוצא לדרך ‹</button></div>
+        </div>
+      <div class="hbar"></div></div></div>
+    </figure>
+
+    <!-- B3 tactical map — hero -->
+    <figure class="frame">
+      <figcaption><span class="idx">B · 03</span><b>מפת חתירה למגע</b><span class="d">מסך הדגל. איום, אזור סכנה, ציר בטוח וכל מי שבדרך — בצבע הכוח שלו, מתעדכן פעם בשנייה.</span></figcaption>
+      <div class="dev"><div class="dev-in"><div class="island"></div>
+        <div class="sbar"><span class="mono">14:33</span><span class="r"><span class="pill p-red blink" style="font-size:10px;padding:1px 7px">● משדר מיקום</span></span></div>
+        <div class="scr">
+          <div class="map">
+            <svg class="base" viewBox="0 0 330 620" preserveAspectRatio="xMidYMid slice">
+              <rect width="330" height="620" fill="#080D14"/>
+              <g fill="#101923">
+                <rect x="8" y="30" width="104" height="118" rx="3"/><rect x="132" y="16" width="88" height="132" rx="3"/><rect x="240" y="34" width="96" height="114" rx="3"/>
+                <rect x="4" y="180" width="118" height="104" rx="3"/><rect x="142" y="180" width="78" height="104" rx="3"/><rect x="240" y="180" width="96" height="104" rx="3"/>
+                <rect x="8" y="316" width="104" height="128" rx="3"/><rect x="132" y="316" width="88" height="128" rx="3"/><rect x="240" y="316" width="96" height="128" rx="3"/>
+                <rect x="4" y="476" width="118" height="120" rx="3"/><rect x="142" y="476" width="78" height="120" rx="3"/><rect x="240" y="476" width="96" height="120" rx="3"/>
+              </g>
+              <g stroke="#18222E" stroke-width="14" stroke-linecap="square">
+                <path d="M126 0V620"/><path d="M230 0V620"/><path d="M0 164H330"/><path d="M0 300H330"/><path d="M0 460H330"/>
+              </g>
+              <g stroke="#232F3C" stroke-width="1" stroke-dasharray="3 5">
+                <path d="M126 0V620"/><path d="M230 0V620"/><path d="M0 164H330"/><path d="M0 300H330"/><path d="M0 460H330"/>
+              </g>
+              <path class="route" d="M176 496 L176 400 L126 400 L126 318"/>
+            </svg>
+
+            <span class="danger" style="left:126px; top:300px; width:200px; height:200px"></span>
+            <span class="ring pulse" style="left:126px; top:300px; width:170px; height:170px; border:2px solid rgba(255,68,56,.6)"></span>
+            <span class="ring" style="left:126px; top:300px; width:280px; height:280px; border:1px dashed rgba(46,125,255,.35)"></span>
+
+            <span class="mk big" style="left:126px; top:300px"><span class="bub" style="background:var(--red)">✖</span><span class="cap" style="color:#FF9C93">איום · לפני 6 שנ׳</span></span>
+            <span class="mk" style="left:176px; top:496px"><span class="bub" style="background:var(--blue)">א</span><span class="cap" style="color:#8FBAFF">אתה · 180 מ׳</span></span>
+            <span class="mk" style="left:64px; top:214px"><span class="bub" style="background:var(--blue)">מ</span><span class="cap" style="color:#8FBAFF">מ. כהן · 90 מ׳</span></span>
+            <span class="mk" style="left:264px; top:236px"><span class="bub" style="background:var(--blue)">ר</span><span class="cap" style="color:#8FBAFF">ר. אלמליח</span></span>
+            <span class="mk" style="left:286px; top:470px"><span class="bub" style="background:var(--amber)">▲</span><span class="cap" style="color:#FFC96B">ניידת · 40 שנ׳</span></span>
+            <span class="mk" style="left:44px; top:552px"><span class="bub" style="background:var(--mint)">✚</span><span class="cap" style="color:#5FE3C0">נט״ן · 2:10</span></span>
+            <span class="mk" style="left:186px; top:344px"><span class="bub" style="background:#C8D4E2;color:#0B1119;border-color:#FF4438">1</span><span class="cap" style="color:#E4EAF2">נפגע · אדום</span></span>
+
+            <div class="ov-top">
+              <div class="between" style="align-items:flex-start">
+                <div>
+                  <div class="row" style="gap:7px"><span class="pill p-red">פח״ע · דקירה</span><span class="pill p-grey mono">4471</span></div>
+                  <div style="font-size:17px;font-weight:800;color:#fff;margin-top:5px">הרצל 41, כפר סבא</div>
+                </div>
+                <div style="text-align:left">
+                  <div class="mono" style="font-size:22px;font-weight:600;color:#fff;line-height:1">01:12</div>
+                  <div style="font-size:10px;color:var(--dim)">מאז הדיווח</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ov-bot">
+              <div class="hud" style="margin-bottom:9px">
+                <div><div class="v">180<span style="font-size:10px">מ׳</span></div><div class="k">לאיום</div></div>
+                <div><div class="v">3</div><div class="k">מגיבים</div></div>
+                <div><div class="v">0:40</div><div class="k">ניידת ראשונה</div></div>
+                <div><div class="v">1</div><div class="k">נפגע אדום</div></div>
+              </div>
+              <div class="chips" style="margin-bottom:9px">
+                <div class="chip-btn hot">קשר עין<small>עדכון מיקום</small></div>
+                <div class="chip-btn">חילופי אש<small>סטטוס</small></div>
+                <div class="chip-btn">מנוטרל<small>דורש 2 מקורות</small></div>
+                <div class="chip-btn">נפגע<small>סימון טריאז׳</small></div>
+              </div>
+              <div class="row" style="gap:8px">
+                <button class="btn" style="background:var(--raise2);padding:12px;font-size:14px;flex:1">🎙 לחץ לדבר</button>
+                <button class="btn ghost" style="padding:12px;font-size:14px;width:auto;flex:none;padding-inline:16px">🧭</button>
+                <button class="btn ghost" style="padding:12px;font-size:14px;width:auto;flex:none;padding-inline:16px">🪪</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="hbar"></div></div></div>
+    </figure>
+
+    <!-- B4 proximity -->
+    <figure class="frame">
+      <figcaption><span class="idx">B · 04</span><b>התרעת קרבה · שכבה 4</b><span class="d">שני כוחות מזוהים מתחת ל־40 מטר בלי קשר עין. שני המכשירים רוטטים בתבנית ייחודית — הרגע נמנע, לא מתועד.</span></figcaption>
+      <div class="dev"><div class="dev-in"><div class="island"></div>
+        <div class="sbar"><span class="mono">14:34</span><span class="r"><span class="pill p-amber" style="font-size:10px;padding:1px 7px">קרבת כוחות</span></span></div>
+        <div class="scr">
+          <div class="map">
+            <svg class="base" viewBox="0 0 330 620" preserveAspectRatio="xMidYMid slice">
+              <rect width="330" height="620" fill="#080D14"/>
+              <g fill="#101923"><rect x="8" y="40" width="120" height="180" rx="3"/><rect x="210" y="40" width="112" height="180" rx="3"/><rect x="8" y="400" width="120" height="180" rx="3"/><rect x="210" y="400" width="112" height="180" rx="3"/></g>
+              <g stroke="#18222E" stroke-width="16"><path d="M168 0V620"/><path d="M0 310H330"/></g>
+            </svg>
+            <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(255,176,32,.16), rgba(5,8,13,.5) 55%)"></div>
+            <span class="ring pulse" style="left:168px; top:250px; width:150px; height:150px; border:3px solid rgba(255,176,32,.75)"></span>
+            <span class="mk big" style="left:168px; top:382px"><span class="bub" style="background:var(--blue)">א</span><span class="cap" style="color:#8FBAFF">אתה</span></span>
+            <span class="mk big" style="left:168px; top:250px"><span class="bub" style="background:var(--amber);color:#241800">▲</span><span class="cap" style="color:#FFC96B">שוטר · 30 מ׳</span></span>
+
+            <div style="position:absolute; inset:0; z-index:25; display:flex; flex-direction:column; justify-content:center; padding:0 16px">
+              <div style="border-radius:20px; border:1px solid rgba(255,176,32,.6); background:rgba(26,19,6,.96); padding:18px; box-shadow:0 0 0 5px rgba(255,176,32,.10), 0 24px 60px -20px #000">
+                <div class="row" style="gap:11px">
+                  <div style="width:42px;height:42px;border-radius:12px;background:var(--amber);display:grid;place-items:center;font-size:21px;flex:none">⚠</div>
+                  <div>
+                    <div style="font-size:20px;font-weight:800;color:#fff;line-height:1.2">כוח מזוהה לפניך</div>
+                    <div class="muted" style="font-size:13px">שוטר · <span class="mono">30 מ׳</span> · כיוון שעה 12</div>
+                  </div>
+                </div>
+                <hr class="sep" style="border-color:rgba(255,176,32,.25)">
+                <div class="rost" style="border:none;background:none;gap:0">
+                  <div class="rw" style="background:rgba(255,255,255,.04);border-radius:11px">
+                    <div class="ph" style="background:var(--amber-d);border-color:rgba(255,176,32,.4);color:#FFC96B">רס</div>
+                    <div><div class="nm">רס״ר י. מזרחי</div><div class="mt">סיור כפר סבא · מדים · אפוד צהוב</div></div>
+                    <div class="rt"><div class="d">30</div><div class="e">מטר</div></div>
+                  </div>
+                </div>
+                <div style="background:rgba(255,68,56,.13); border:1px solid rgba(255,68,56,.4); border-radius:12px; padding:11px 13px; margin-top:11px">
+                  <div style="font-size:14px;font-weight:800;color:#FF9C93">הכנס נשק · הזדהה בקול</div>
+                  <div class="muted" style="font-size:12px;line-height:1.45;margin-top:2px">"אזרח חמוש, מגן!" — ידיים גלויות, המתן לאישור השוטר.</div>
+                </div>
+                <button class="btn pri" style="margin-top:12px">יש לי קשר עין · הבנתי</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="hbar"></div></div></div>
+    </figure>
+
+    <!-- B5 ID card -->
+    <figure class="frame">
+      <figcaption><span class="idx">B · 05</span><b>כרטיס הזדהות · שכבה 3</b><span class="d">המסך עצמו הופך לסימן היכר: הבזק בדופק שנקבע לאירוע, ופרטי הרישיון מוצגים לכוח. עובד גם בלי רשת.</span></figcaption>
+      <div class="dev"><div class="dev-in"><div class="island"></div>
+        <div class="sbar"><span class="mono">14:34</span><span class="r"><span class="pill p-blue" style="font-size:10px;padding:1px 7px">מצב הזדהות</span></span></div>
+        <div class="scr" style="background:linear-gradient(175deg,#0D2A5E,#071324 60%,#05080D)">
+          <div class="pad" style="flex:1; display:flex; flex-direction:column; gap:16px; padding-top:16px">
+            <div style="text-align:center">
+              <div class="lbl" style="color:#8FBAFF">אזרח חמוש מורשה</div>
+              <div class="h1a" style="font-size:27px;margin-top:2px">MAGEN</div>
+            </div>
+
+            <div style="height:74px; border-radius:16px; background:var(--blue); display:grid; place-items:center; box-shadow:0 0 44px rgba(46,125,255,.55)" class="blink">
+              <span style="font-size:15px;font-weight:800;color:#fff;letter-spacing:.14em">אל תירה</span>
+            </div>
+
+            <div class="card" style="background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.14)">
+              <div class="row" style="gap:13px">
+                <div class="ph" style="width:66px;height:66px;border-radius:14px;background:var(--raise2);display:grid;place-items:center;font-size:20px;font-weight:800;color:var(--mute);border:1px solid var(--line2);flex:none">אב</div>
+                <div style="flex:1">
+                  <div style="font-size:19px;font-weight:800;color:#fff;line-height:1.2">אלון בר־נתן</div>
+                  <div class="mono muted" style="font-size:12.5px">ת״ז ••••7734</div>
+                  <div class="row" style="gap:5px;margin-top:7px"><span class="pill p-blue">חולצה כחולה</span><span class="pill p-grey">אקדח קצר</span></div>
+                </div>
+              </div>
+              <hr class="sep" style="border-color:rgba(255,255,255,.12)">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                <div><div class="lbl">רישיון</div><div class="mono" style="font-size:14px;color:#fff">••••4182</div></div>
+                <div><div class="lbl">תוקף</div><div class="mono" style="font-size:14px;color:var(--mint)">02/2028 ✓</div></div>
+                <div><div class="lbl">הכשרת מגן</div><div class="mono" style="font-size:14px;color:#fff">08/2026</div></div>
+                <div><div class="lbl">אירוע</div><div class="mono" style="font-size:14px;color:#fff">4471</div></div>
+              </div>
+            </div>
+
+            <div class="card" style="background:rgba(0,0,0,.3); border-color:rgba(255,255,255,.12)">
+              <div class="between"><span class="lbl">קוד היכר לאירוע</span><span class="pill p-mint">מאומת אופליין</span></div>
+              <div class="row" style="gap:6px; margin-top:9px; justify-content:center">
+                <span style="width:30px;height:9px;border-radius:3px;background:var(--blue)"></span>
+                <span style="width:12px;height:9px;border-radius:3px;background:var(--line2)"></span>
+                <span style="width:30px;height:9px;border-radius:3px;background:var(--blue)"></span>
+                <span style="width:12px;height:9px;border-radius:3px;background:var(--line2)"></span>
+                <span style="width:12px;height:9px;border-radius:3px;background:var(--line2)"></span>
+                <span style="width:30px;height:9px;border-radius:3px;background:var(--blue)"></span>
+              </div>
+              <div class="muted" style="font-size:11.5px;text-align:center;margin-top:8px">דופק ההבזק זהה לכל המגיבים באירוע 4471</div>
+            </div>
+          </div>
+          <div class="pad" style="padding-bottom:24px"><button class="btn ghost" style="border-color:rgba(255,255,255,.25)">חזרה למפה</button></div>
+        </div>
+      <div class="hbar"></div></div></div>
+    </figure>
+
+    <!-- B6 onboarding license -->
+    <figure class="frame">
+      <figcaption><span class="idx">B · 06</span><b>אימות רישיון בהרשמה</b><span class="d">הצלבה מול מרשם רשות כלי ירייה, אימות חיות, הכשרה וכתב התחייבות. בלי כל אלה — אין הרשאת מגיב.</span></figcaption>
+      <div class="dev"><div class="dev-in"><div class="island"></div>
+        <div class="sbar"><span class="mono">09:14</span><span class="r"><span class="pill p-grey" style="font-size:10px;padding:1px 7px">הרשמה</span></span></div>
+        <div class="scr">
+          <div class="appbar"><div><div class="t">הרשאת מגיב</div><div class="s">שלב 4 מתוך 5 · נותרו ~6 דקות</div></div><div class="avatar">4/5</div></div>
+          <div class="pad stack12" style="flex:1; overflow:hidden">
+            <div class="rost">
+              <div class="rw" style="grid-template-columns:26px 1fr auto">
+                <span style="width:26px;height:26px;border-radius:50%;background:var(--mint);display:grid;place-items:center;font-size:13px;color:#04231C;font-weight:800">✓</span>
+                <div><div class="nm">זהות ואימות חיות</div><div class="mt">ת״ז ••••7734 · הצלבת תווי פנים</div></div>
+                <span class="pill p-mint">הושלם</span>
+              </div>
+              <div class="rw" style="grid-template-columns:26px 1fr auto">
+                <span style="width:26px;height:26px;border-radius:50%;background:var(--mint);display:grid;place-items:center;font-size:13px;color:#04231C;font-weight:800">✓</span>
+                <div><div class="nm">רישיון כלי ירייה</div><div class="mt">אומת מול רשות כלי ירייה · תקף עד 02/2028</div></div>
+                <span class="pill p-mint">הושלם</span>
+              </div>
+              <div class="rw" style="grid-template-columns:26px 1fr auto">
+                <span style="width:26px;height:26px;border-radius:50%;background:var(--mint);display:grid;place-items:center;font-size:13px;color:#04231C;font-weight:800">✓</span>
+                <div><div class="nm">כתב התחייבות</div><div class="mt">נחתם דיגיטלית · 10.09.2026</div></div>
+                <span class="pill p-mint">הושלם</span>
+              </div>
+              <div class="rw" style="grid-template-columns:26px 1fr auto; background:var(--raise)">
+                <span style="width:26px;height:26px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-size:12px;color:#fff;font-weight:800">4</span>
+                <div><div class="nm">הכשרת חובה · 12 דקות</div><div class="mt">כללי פתיחה באש · נוהל זיהוי · עצירת דימום</div></div>
+                <span class="pill p-blue">3 מתוך 4</span>
+              </div>
+              <div class="rw" style="grid-template-columns:26px 1fr auto; opacity:.55">
+                <span style="width:26px;height:26px;border-radius:50%;background:var(--raise2);display:grid;place-items:center;font-size:12px;color:var(--mute);font-weight:800">5</span>
+                <div><div class="nm">נעיצה על המפה</div><div class="mt">בסיס בית ובסיס עבודה</div></div>
+                <span class="pill p-grey">ממתין</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="between" style="margin-bottom:9px"><span class="lbl">יחידה 4 · נוהל זיהוי הדדי</span><span class="mono" style="font-size:12px;color:var(--mute)">03:40</span></div>
+              <div style="height:100px;border-radius:12px;background:linear-gradient(140deg,#152233,#0A1119);display:grid;place-items:center;border:1px solid var(--line)">
+                <div style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center;font-size:17px">▶</div>
+              </div>
+              <div style="font-size:13.5px;color:#fff;font-weight:700;margin-top:10px;line-height:1.4">מה עושים כשניידת נכנסת לזירה בזמן שאתה חמוש</div>
+            </div>
+
+            <div class="card" style="border-color:var(--amber-d);background:linear-gradient(180deg,rgba(255,176,32,.07),transparent)">
+              <div class="muted" style="font-size:12px;line-height:1.5"><b style="color:#FFC96B">שים לב:</b> תוקף הרישיון נבדק אוטומטית כל 24 שעות. פקיעה או שלילה סוגרות את הרשאת המגיב מיידית.</div>
+            </div>
+          </div>
+          <div class="pad" style="padding-bottom:24px"><button class="btn pri">המשך הכשרה</button></div>
+        </div>
+      <div class="hbar"></div></div></div>
+    </figure>
+
+  </div>
+</section>
+
+<!-- ================= LANE C ================= -->
+<section class="lane">
+  <div class="lane-head">
+    <span class="rail" style="color:var(--amber)">נתיב ג׳ · כוחות הביטחון</span>
+    <h2>שוטר בזירה ומוקד 100</h2>
+  </div>
+  <p class="sub">השוטר מקבל את מצבת האזרחים החמושים עם תמונה ומרחק — לפני שהוא יוצא מהניידת. המוקד מקבל את אותו אירוע במקביל, עם סמכות הכרזה, מיזוג ותקרת גיוס.</p>
+  <div class="swipe" aria-hidden="true"><svg width="15" height="10" viewBox="0 0 15 10" fill="none"><path d="M14 5H1M1 5l3.5-3.5M1 5l3.5 3.5" stroke="#5A6A7E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>החליקו הצידה בין המסכים</div>
+
+  <div class="strip">
+
+    <!-- C1 -->
+    <figure class="frame">
+      <figcaption><span class="idx">C · 01</span><b>מצבת מגיבים אזרחיים · שכבה 2</b><span class="d">ממוינת לפי מרחק מהשוטר, עם תמונה, לבוש ואמצעי. זיהוי לפני מגע, לא אחריו.</span></figcaption>
+      <div class="dev"><div class="dev-in"><div class="island"></div>
+        <div class="sbar"><span class="mono">14:34</span><span class="r"><span class="pill p-amber" style="font-size:10px;padding:1px 7px">משטרת ישראל</span></span></div>
+        <div class="scr">
+          <div class="pad" style="padding-top:8px; padding-bottom:10px; border-bottom:1px solid var(--line)">
+            <div class="between">
+              <div><div class="row" style="gap:6px"><span class="pill p-red">פח״ע · דקירה</span><span class="pill p-grey mono">4471</span></div>
+              <div style="font-size:16px;font-weight:800;color:#fff;margin-top:5px">אזרחים חמושים בזירה</div></div>
+              <div style="text-align:left"><div class="mono" style="font-size:19px;font-weight:600;color:#fff;line-height:1">3</div><div style="font-size:10px;color:var(--dim)">מזוהים</div></div>
+            </div>
+          </div>
+          <div class="pad" style="flex:1; overflow:hidden; padding-top:12px">
+            <div class="rost">
+              <div class="rw" style="grid-template-columns:44px 1fr auto; background:var(--raise)">
+                <div class="ph" style="width:44px;height:44px">אב</div>
+                <div><div class="nm">אלון בר־נתן</div><div class="mt">רישיון ••••4182 · תקף</div>
+                  <div class="row" style="gap:4px;margin-top:5px"><span class="pill p-blue" style="font-size:10px">חולצה כחולה</span><span class="pill p-grey" style="font-size:10px">אקדח קצר</span></div></div>
+                <div class="rt"><div class="d">30</div><div class="e">מ׳ · שעה 12</div></div>
+              </div>
+              <div class="rw" style="grid-template-columns:44px 1fr auto">
+                <div class="ph" style="width:44px;height:44px">מכ</div>
+                <div><div class="nm">מירב כהן</div><div class="mt">רישיון ••••9067 · תקף</div>
+                  <div class="row" style="gap:4px;margin-top:5px"><span class="pill p-grey" style="font-size:10px">חולצה שחורה</span><span class="pill p-grey" style="font-size:10px">אקדח קצר</span></div></div>
+                <div class="rt"><div class="d">85</div><div class="e">מ׳ · שעה 10</div></div>
+              </div>
+              <div class="rw" style="grid-template-columns:44px 1fr auto">
+                <div class="ph" style="width:44px;height:44px">רא</div>
+                <div><div class="nm">רועי אלמליח</div><div class="mt">רישיון ••••2318 · תקף · כיתת כוננות</div>
+                  <div class="row" style="gap:4px;margin-top:5px"><span class="pill p-grey" style="font-size:10px">חולצה לבנה</span><span class="pill p-amber" style="font-size:10px">נשק ארוך</span></div></div>
+                <div class="rt"><div class="d">140</div><div class="e">מ׳ · שעה 2</div></div>
+              </div>
+            </div>
+
+            <div class="card" style="margin-top:12px; border-color:var(--red-d); background:linear-gradient(180deg,rgba(255,68,56,.08),transparent)">
+              <div class="lbl" style="color:#FF9C93; margin-bottom:7px">תיאור האיום מהמדווחת</div>
+              <div style="font-size:13.5px;color:#fff;line-height:1.5">גבר, ~25, קפוצ׳ון אפור, סכין. נע צפונה לכיוון ויצמן.</div>
+              <div class="row" style="gap:8px; margin-top:10px">
+                <div class="shot" style="width:66px;height:50px;flex:none;border-radius:9px"><canvas class="shotc" data-seed="1" data-static="1" width="66" height="50"></canvas></div>
+                <div style="flex:1"><div class="muted" style="font-size:11.5px">תמונה מהזירה · 14:32:18</div>
+                <div class="mono" style="font-size:11px;color:var(--dim)">מדווחת: נועה ל. · 054-•••-4471</div></div>
+                <div style="width:34px;height:34px;border-radius:50%;background:var(--mint);display:grid;place-items:center;font-size:15px">📞</div>
+              </div>
+            </div>
+          </div>
+          <div class="pad" style="padding-bottom:24px"><div class="row" style="gap:8px">
+            <button class="btn" style="background:var(--amber);color:#241800">קיבלתי · בזירה</button>
+            <button class="btn ghost" style="width:auto;flex:none;padding-inline:16px">🗺</button>
+          </div></div>
+        </div>
+      <div class="hbar"></div></div></div>
+    </figure>
+
+    <!-- C2 medic -->
+    <figure class="frame">
+      <figcaption><span class="idx">D · 01</span><b>מד״א · טריאז׳ וציר בטוח</b><span class="d">הקריאה מגיעה במקביל, לא אחרי. הכניסה נפתחת בחיווי חד־משמעי של מפקד האירוע, עם ציר מאושר.</span></figcaption>
+      <div class="dev"><div class="dev-in"><div class="island"></div>
+        <div class="sbar"><span class="mono">14:35</span><span class="r"><span class="pill p-mint" style="font-size:10px;padding:1px 7px">מד״א · נט״ן 71</span></span></div>
+        <div class="scr">
+          <div class="map">
+            <svg class="base" viewBox="0 0 330 620" preserveAspectRatio="xMidYMid slice">
+              <rect width="330" height="620" fill="#080D14"/>
+              <g fill="#101923"><rect x="8" y="36" width="112" height="150" rx="3"/><rect x="216" y="36" width="106" height="150" rx="3"/><rect x="8" y="250" width="112" height="150" rx="3"/><rect x="216" y="250" width="106" height="150" rx="3"/><rect x="8" y="464" width="112" height="130" rx="3"/><rect x="216" y="464" width="106" height="130" rx="3"/></g>
+              <g stroke="#18222E" stroke-width="16"><path d="M168 0V620"/><path d="M0 218H330"/><path d="M0 432H330"/></g>
+              <path d="M60 560 L60 460 L168 460 L168 300" fill="none" stroke="#25D0A0" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 7"/>
+            </svg>
+            <span class="danger" style="left:168px; top:190px; width:170px; height:170px"></span>
+            <span class="mk" style="left:168px; top:190px"><span class="bub" style="background:var(--red)">✖</span><span class="cap" style="color:#FF9C93">איום</span></span>
+            <span class="mk big" style="left:168px; top:300px"><span class="bub" style="background:var(--mint);color:#04231C">✚</span><span class="cap" style="color:#5FE3C0">נק׳ ריכוז נפגעים</span></span>
+            <span class="mk" style="left:60px; top:560px"><span class="bub" style="background:var(--mint);color:#04231C">71</span><span class="cap" style="color:#5FE3C0">נט״ן שלך</span></span>
+            <span class="mk" style="left:210px; top:250px"><span class="bub" style="background:#C8D4E2;color:#0B1119;border-color:#FF4438">1</span></span>
+            <span class="mk" style="left:132px; top:262px"><span class="bub" style="background:#C8D4E2;color:#0B1119;border-color:#FFB020">2</span></span>
+
+            <div class="ov-top">
+              <div class="between" style="align-items:flex-start">
+                <div><span class="pill p-mint">זירה מסודרת · אושר 14:34</span>
+                <div style="font-size:16px;font-weight:800;color:#fff;margin-top:5px">הרצל 41 · ציר כניסה מאושר</div></div>
+                <div style="text-align:left"><div class="mono" style="font-size:20px;font-weight:600;color:#fff;line-height:1">2:10</div><div style="font-size:10px;color:var(--dim)">ETA</div></div>
+              </div>
+            </div>
+
+            <div class="ov-bot">
+              <div class="hud" style="margin-bottom:9px">
+                <div><div class="v" style="color:#FF8B80">1</div><div class="k">אדום</div></div>
+                <div><div class="v" style="color:#FFC96B">2</div><div class="k">צהוב</div></div>
+                <div><div class="v" style="color:#5FE3C0">3</div><div class="k">ירוק</div></div>
+                <div><div class="v">0</div><div class="k">שחור</div></div>
+              </div>
+              <div class="card" style="padding:11px 12px; margin-bottom:9px; background:rgba(14,22,32,.95)">
+                <div class="between"><span style="font-size:13px;font-weight:700;color:#fff">נפגע 1 · אדום</span><span class="pill p-red">דימום מסיבי</span></div>
+                <div class="muted" style="font-size:11.5px;margin-top:2px">סומן ע״י מגיב א. בר־נתן ב־14:33 · חסם עורקים הונח</div>
+              </div>
+              <div class="row" style="gap:8px">
+                <button class="btn mint" style="padding:12px">ניווט בציר הבטוח</button>
+                <button class="btn ghost" style="width:auto;flex:none;padding-inline:16px">🎙</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="hbar"></div></div></div>
+    </figure>
+
+    <!-- C3 debrief -->
+    <figure class="frame">
+      <figcaption><span class="idx">C · 02</span><b>סגירה ותחקיר</b><span class="d">ציר זמן אובייקטיבי אחד, שרשרת ראיות למדיה, וטופס שימוש בנשק שנוצר מאליו למי שירה.</span></figcaption>
+      <div class="dev"><div class="dev-in"><div class="island"></div>
+        <div class="sbar"><span class="mono">15:04</span><span class="r"><span class="pill p-grey" style="font-size:10px;padding:1px 7px">אירוע סגור</span></span></div>
+        <div class="scr">
+          <div class="appbar"><div><div class="t">אירוע 4471 · סיכום</div><div class="s">הרצל 41, כפר סבא · 10.09.2026</div></div><div class="avatar">✓</div></div>
+          <div class="pad stack12" style="flex:1; overflow:hidden">
+            <div class="hud">
+              <div><div class="v">0:41</div><div class="k">להתרעה</div></div>
+              <div><div class="v">1:24</div><div class="k">מגיב ראשון</div></div>
+              <div><div class="v">2:38</div><div class="k">לניטרול</div></div>
+              <div><div class="v">3:12</div><div class="k">לרפואה</div></div>
+            </div>
+
+            <div class="card" style="flex:1; overflow:hidden">
+              <div class="lbl" style="margin-bottom:10px">ציר זמן מאומת</div>
+              <div class="stack8" style="font-size:12.5px">
+                <div class="row" style="gap:9px;align-items:flex-start"><span class="mono" style="color:var(--dim);font-size:11px;width:44px;flex:none">14:32:07</span><span style="line-height:1.4">דיווח נקלט · נועה ל. · דיוק 4 מ׳</span></div>
+                <div class="row" style="gap:9px;align-items:flex-start"><span class="mono" style="color:var(--dim);font-size:11px;width:44px;flex:none">14:32:48</span><span style="line-height:1.4">התרעה נשלחה · 14 מגיבים · 2 ניידות</span></div>
+                <div class="row" style="gap:9px;align-items:flex-start"><span class="mono" style="color:var(--dim);font-size:11px;width:44px;flex:none">14:33:31</span><span style="line-height:1.4">מגיב א. בר־נתן — קשר עין</span></div>
+                <div class="row" style="gap:9px;align-items:flex-start"><span class="mono" style="color:var(--dim);font-size:11px;width:44px;flex:none">14:34:12</span><span style="line-height:1.4;color:#FFC96B">התרעת קרבה · שוטר ומגיב · זיהוי הדדי הושלם</span></div>
+                <div class="row" style="gap:9px;align-items:flex-start"><span class="mono" style="color:var(--dim);font-size:11px;width:44px;flex:none">14:34:45</span><span style="line-height:1.4;color:#FF9C93">מנוטרל · אומת ב־2 מקורות</span></div>
+                <div class="row" style="gap:9px;align-items:flex-start"><span class="mono" style="color:var(--dim);font-size:11px;width:44px;flex:none">14:35:19</span><span style="line-height:1.4;color:#5FE3C0">נט״ן 71 בזירה · טיפול בנפגע אדום</span></div>
+              </div>
+            </div>
+
+            <div class="rost">
+              <div class="rw" style="grid-template-columns:26px 1fr auto">
+                <span style="font-size:15px">📄</span>
+                <div><div class="nm">טופס שימוש בנשק</div><div class="mt">נוצר אוטומטית · ממתין לחתימת המגיב</div></div>
+                <span class="pill p-amber">לפעולה</span>
+              </div>
+              <div class="rw" style="grid-template-columns:26px 1fr auto">
+                <span style="font-size:15px">🔒</span>
+                <div><div class="nm">תיק ראיות</div><div class="mt">3 קבצי מדיה · חתומים · 11 צפיות מתועדות</div></div>
+                <span class="pill p-mint">נעול</span>
+              </div>
+            </div>
+          </div>
+          <div class="pad" style="padding-bottom:24px"><button class="btn ghost">ייצוא תיק אירוע לחקירה</button></div>
+        </div>
+      <div class="hbar"></div></div></div>
+    </figure>
+
+  </div>
+
+  <!-- console -->
+  <div class="console">
+    <div class="con-bar">
+      <span class="dots"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></span>
+      <span style="font-size:13px;font-weight:800;color:#fff">MAGEN · עמדת מוקד</span>
+      <span class="pill p-red blink">● אירוע פעיל 4471</span>
+      <span class="pill p-grey">מוקד שרון · רפ״ק ד. אביטן</span>
+      <span class="mono" style="margin-inline-start:auto;font-size:13px;color:var(--mute)">14:33:19</span>
+    </div>
+    <div class="con-grid">
+
+      <div class="con-col">
+        <div class="between"><span class="lbl">תור אירועים</span><span class="pill p-grey">4 פתוחים</span></div>
+        <div class="qrow act">
+          <div class="between"><span class="qt">פח״ע · דקירה</span><span class="pill p-red">R1+R2</span></div>
+          <div class="qm">הרצל 41 · 2 דיווחים ממוזגים · אמון 94%</div>
+          <div class="row" style="gap:5px;margin-top:7px"><span class="pill p-blue">3 מגיבים</span><span class="pill p-amber">2 ניידות</span><span class="pill p-mint">נט״ן</span></div>
+        </div>
+        <div class="qrow">
+          <div class="between"><span class="qt">חפץ חשוד</span><span class="pill p-amber">ממתין</span></div>
+          <div class="qm">ויצמן 12 · דיווח יחיד · אמון 41%</div>
+        </div>
+        <div class="qrow">
+          <div class="between"><span class="qt">קטטה</span><span class="pill p-grey">לא פח״ע</span></div>
+          <div class="qm">רוטשילד 88 · הועבר לסיור</div>
+        </div>
+        <div class="qrow">
+          <div class="between"><span class="qt">אזעקת שווא</span><span class="pill p-grey">נסגר</span></div>
+          <div class="qm">גלר 3 · בוטל ע״י המדווח תוך 12 שנ׳</div>
+        </div>
+      </div>
+
+      <div class="con-map">
+        <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 700 520" preserveAspectRatio="xMidYMid slice">
+          <rect width="700" height="520" fill="#080D14"/>
+          <g fill="#101923">
+            <rect x="20" y="30" width="180" height="130" rx="4"/><rect x="230" y="20" width="150" height="140" rx="4"/><rect x="410" y="34" width="170" height="126" rx="4"/><rect x="610" y="30" width="120" height="130" rx="4"/>
+            <rect x="20" y="200" width="180" height="140" rx="4"/><rect x="230" y="200" width="150" height="140" rx="4"/><rect x="410" y="200" width="170" height="140" rx="4"/><rect x="610" y="200" width="120" height="140" rx="4"/>
+            <rect x="20" y="384" width="180" height="120" rx="4"/><rect x="230" y="384" width="150" height="120" rx="4"/><rect x="410" y="384" width="170" height="120" rx="4"/><rect x="610" y="384" width="120" height="120" rx="4"/>
+          </g>
+          <g stroke="#18222E" stroke-width="18"><path d="M215 0V520"/><path d="M395 0V520"/><path d="M595 0V520"/><path d="M0 180H700"/><path d="M0 362H700"/></g>
+          <g stroke="#26313E" stroke-width="1" stroke-dasharray="4 6"><path d="M215 0V520"/><path d="M395 0V520"/><path d="M0 180H700"/><path d="M0 362H700"/></g>
+          <circle cx="395" cy="180" r="230" fill="none" stroke="#2E7DFF" stroke-width="1" stroke-dasharray="6 7" opacity=".45"/>
+          <circle cx="395" cy="180" r="140" fill="none" stroke="#2E7DFF" stroke-width="1" stroke-dasharray="6 7" opacity=".6"/>
+          <path d="M470 430 L470 300 L395 300 L395 230" fill="none" stroke="#2E7DFF" stroke-width="3" stroke-dasharray="7 6" stroke-linecap="round"/>
+          <path d="M120 470 L200 470 L200 300 L340 300" fill="none" stroke="#FFB020" stroke-width="3" stroke-dasharray="7 6" stroke-linecap="round"/>
+        </svg>
+        <span class="danger" style="left:56.4%; top:34.6%; width:190px; height:190px"></span>
+        <span class="ring pulse" style="left:56.4%; top:34.6%; width:150px; height:150px; border:2px solid rgba(255,68,56,.6)"></span>
+        <span class="mk big" style="left:56.4%; top:34.6%"><span class="bub" style="background:var(--red)">✖</span><span class="cap" style="color:#FF9C93">איום · אחרון 14:33:11</span></span>
+        <span class="mk" style="left:67%; top:83%"><span class="bub" style="background:var(--blue)">א</span><span class="cap" style="color:#8FBAFF">בר־נתן · 180 מ׳</span></span>
+        <span class="mk" style="left:30%; top:44%"><span class="bub" style="background:var(--blue)">מ</span><span class="cap" style="color:#8FBAFF">כהן · 90 מ׳</span></span>
+        <span class="mk" style="left:78%; top:40%"><span class="bub" style="background:var(--blue)">ר</span><span class="cap" style="color:#8FBAFF">אלמליח · 140 מ׳</span></span>
+        <span class="mk" style="left:17%; top:90%"><span class="bub" style="background:var(--amber)">▲</span><span class="cap" style="color:#FFC96B">ניידת 2214</span></span>
+        <span class="mk" style="left:88%; top:66%"><span class="bub" style="background:var(--amber)">▲</span><span class="cap" style="color:#FFC96B">ניידת 2207</span></span>
+        <span class="mk" style="left:8%; top:26%"><span class="bub" style="background:var(--mint)">✚</span><span class="cap" style="color:#5FE3C0">נט״ן 71</span></span>
+        <span class="mk" style="left:62%; top:47%"><span class="bub" style="background:#C8D4E2;color:#0B1119;border-color:#FF4438">1</span><span class="cap" style="color:#E4EAF2">נפגע אדום</span></span>
+        <div style="position:absolute; top:12px; left:12px; display:flex; gap:6px; z-index:10">
+          <span class="pill p-grey">שכבות: מצלמות · מוסדות חינוך · מקלטים</span>
+          <span class="pill p-blue">R1 300מ׳</span><span class="pill p-blue">R2 1ק״מ</span>
+        </div>
+      </div>
+
+      <div class="con-col">
+        <div class="between"><span class="lbl">כוחות באירוע</span><span class="pill p-blue">תקרה 8</span></div>
+        <div class="rost">
+          <div class="rw" style="grid-template-columns:30px 1fr auto"><div class="ph" style="width:30px;height:30px;font-size:10px">אב</div>
+            <div><div class="nm" style="font-size:12.5px">א. בר־נתן</div><div class="mt">קשר עין · 14:33:31</div></div>
+            <div class="rt"><div class="d" style="font-size:12px">180מ׳</div><div class="e">0:22</div></div></div>
+          <div class="rw" style="grid-template-columns:30px 1fr auto"><div class="ph" style="width:30px;height:30px;font-size:10px">מכ</div>
+            <div><div class="nm" style="font-size:12.5px">מ. כהן</div><div class="mt">בתנועה</div></div>
+            <div class="rt"><div class="d" style="font-size:12px">90מ׳</div><div class="e">0:14</div></div></div>
+          <div class="rw" style="grid-template-columns:30px 1fr auto"><div class="ph" style="width:30px;height:30px;font-size:10px">רא</div>
+            <div><div class="nm" style="font-size:12.5px">ר. אלמליח</div><div class="mt">כיתת כוננות · בתנועה</div></div>
+            <div class="rt"><div class="d" style="font-size:12px">140מ׳</div><div class="e">0:31</div></div></div>
+          <div class="rw" style="grid-template-columns:30px 1fr auto"><div class="ph" style="width:30px;height:30px;font-size:10px;background:var(--amber-d);border-color:rgba(255,176,32,.4);color:#FFC96B">▲</div>
+            <div><div class="nm" style="font-size:12.5px">ניידת 2214</div><div class="mt">מפקד אירוע · מונה 14:33</div></div>
+            <div class="rt"><div class="d" style="font-size:12px">0:40</div><div class="e">ETA</div></div></div>
+          <div class="rw" style="grid-template-columns:30px 1fr auto"><div class="ph" style="width:30px;height:30px;font-size:10px;background:var(--mint-d);border-color:rgba(37,208,160,.4);color:#5FE3C0">✚</div>
+            <div><div class="nm" style="font-size:12.5px">נט״ן 71</div><div class="mt">ממתין לזירה מסודרת</div></div>
+            <div class="rt"><div class="d" style="font-size:12px">2:10</div><div class="e">ETA</div></div></div>
+        </div>
+
+        <div class="card" style="padding:11px 12px">
+          <div class="lbl" style="margin-bottom:8px">פעולות מוקדן</div>
+          <div class="stack8">
+            <button class="btn dan" style="padding:9px;font-size:13px">הרחבת קריאה ל־R3 · 3 ק״מ</button>
+            <button class="btn ghost" style="padding:9px;font-size:13px">מיזוג דיווח נוסף</button>
+            <button class="btn ghost" style="padding:9px;font-size:13px">הכרזת זירה מסודרת</button>
+          </div>
+        </div>
+
+        <div class="card" style="padding:11px 12px; border-color:var(--red-d)">
+          <div class="between"><span class="lbl" style="color:#FF9C93">מדווחת</span><span class="pill p-mint">אומתה</span></div>
+          <div style="font-size:13px;font-weight:700;color:#fff;margin-top:4px">נועה לוי</div>
+          <div class="mono muted" style="font-size:11.5px">054-•••-4471 · ניקוד אמון 94</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <p class="sub" style="margin-top:14px">עמדת המוקד — מסך רחב. אותו אירוע, אותו מקור אמת, סמכות ההכרזה נשארת אצל המוקדן.</p>
+</section>
+
+<footer>
+  MAGEN · מסכי מוצר לדמו · הנתונים באירוע לדוגמה בדויים לחלוטין. ספטמבר 2026.
+</footer>
+
+</div>
+
+<img id="scene-src" alt="" style="display:none" src="data:image/jpeg;base64,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">
+<script>
+(function(){
+  var IMG=document.getElementById('scene-src');
+  var FX=0.62, FY=0.5;                     /* cover focus: keep the crosswalk in frame */
+  var SEED=[
+    {tool:'marker', color:'#FF4438', w:11, pts:ellipse(0.690,0.515,0.052,0.119)},
+    {tool:'arrow',  color:'#FF4438', w:7,  pts:[{u:0.880,v:0.900},{u:0.745,v:0.640}]}
+  ];
+  function ellipse(cu,cv,ru,rv){
+    var out=[],n=44;
+    for(var i=0;i<=n;i++){var a=i/n*Math.PI*2;out.push({u:cu+ru*Math.cos(a),v:cv+rv*Math.sin(a)});}
+    return out;
+  }
+  function fit(cv){
+    var r=cv.getBoundingClientRect(), dpr=Math.min(window.devicePixelRatio||1,2);
+    cv.width=Math.max(1,Math.round(r.width*dpr)); cv.height=Math.max(1,Math.round(r.height*dpr));
+    return dpr;
+  }
+  function box(cv){
+    var iw=IMG.naturalWidth||720, ih=IMG.naturalHeight||315;
+    var s=Math.max(cv.width/iw, cv.height/ih), dw=iw*s, dh=ih*s;
+    return {dx:(cv.width-dw)*FX, dy:(cv.height-dh)*FY, dw:dw, dh:dh, s:s};
+  }
+  function draw(st){
+    var cv=st.cv, g=cv.getContext('2d'), b=box(cv);
+    g.clearRect(0,0,cv.width,cv.height);
+    g.drawImage(IMG,b.dx,b.dy,b.dw,b.dh);
+    g.lineCap='round'; g.lineJoin='round';
+    st.strokes.forEach(function(k){
+      var w=k.w*st.dpr;
+      g.strokeStyle=k.color; g.lineWidth=w;
+      g.shadowColor='rgba(0,0,0,.55)'; g.shadowBlur=6*st.dpr;
+      var P=k.pts.map(function(q){return {x:b.dx+q.u*b.dw, y:b.dy+q.v*b.dh};});
+      if(!P.length) return;
+      if(k.tool==='arrow'&&P.length>1){
+        var a=P[0], z=P[P.length-1];
+        g.beginPath(); g.moveTo(a.x,a.y); g.lineTo(z.x,z.y); g.stroke();
+        var ang=Math.atan2(z.y-a.y,z.x-a.x), hl=w*3.2;
+        g.beginPath();
+        g.moveTo(z.x,z.y);
+        g.lineTo(z.x-hl*Math.cos(ang-0.42), z.y-hl*Math.sin(ang-0.42));
+        g.lineTo(z.x-hl*Math.cos(ang+0.42), z.y-hl*Math.sin(ang+0.42));
+        g.closePath(); g.fillStyle=k.color; g.fill();
+      } else {
+        g.beginPath(); g.moveTo(P[0].x,P[0].y);
+        for(var i=1;i<P.length;i++) g.lineTo(P[i].x,P[i].y);
+        if(P.length===1) g.lineTo(P[0].x+0.1,P[0].y+0.1);
+        g.stroke();
+      }
+      g.shadowBlur=0;
+    });
+    var c=st.scr&&st.scr.querySelector('[data-count]');
+    if(c) c.textContent=st.strokes.length+' סימונים';
+  }
+  function init(cv){
+    var st={cv:cv, strokes:cv.hasAttribute('data-seed')?JSON.parse(JSON.stringify(SEED)):[],
+            tool:'marker', color:'#FF4438', w:11, dpr:1,
+            scr:cv.closest('[data-marker]')};
+    st.dpr=fit(cv); draw(st);
+    if(window.ResizeObserver){
+      var ro=new ResizeObserver(function(){st.dpr=fit(cv); draw(st);});
+      ro.observe(cv);
+    }
+    if(cv.hasAttribute('data-static')) return;
+    var live=null;
+    function pt(e){
+      var r=cv.getBoundingClientRect(), b=box(cv);
+      var x=(e.clientX-r.left)*(cv.width/r.width), y=(e.clientY-r.top)*(cv.height/r.height);
+      return {u:(x-b.dx)/b.dw, v:(y-b.dy)/b.dh};
+    }
+    cv.addEventListener('pointerdown',function(e){
+      cv.setPointerCapture(e.pointerId);
+      live={tool:st.tool,color:st.color,w:st.w,pts:[pt(e)]};
+      st.strokes.push(live); draw(st);
+    });
+    cv.addEventListener('pointermove',function(e){
+      if(!live) return;
+      if(live.tool==='arrow'){ live.pts[1]=pt(e); } else { live.pts.push(pt(e)); }
+      draw(st);
+    });
+    ['pointerup','pointercancel','pointerleave'].forEach(function(t){
+      cv.addEventListener(t,function(){ live=null; });
+    });
+    if(st.scr){
+      st.scr.querySelectorAll('.tool').forEach(function(btn){
+        btn.addEventListener('click',function(){
+          if(btn.dataset.act==='undo'){ st.strokes.pop(); draw(st); return; }
+          if(btn.dataset.act==='clear'){ st.strokes=[]; draw(st); return; }
+          st.tool=btn.dataset.tool; st.color=btn.dataset.color; st.w=+btn.dataset.w;
+          st.scr.querySelectorAll('.tool').forEach(function(o){
+            if(!o.dataset.act) o.classList.remove('sel');
+          });
+          btn.classList.add('sel');
+        });
+      });
+    }
+  }
+  function go(){ document.querySelectorAll('canvas.shotc').forEach(init); }
+  if(IMG.complete && IMG.naturalWidth) go(); else IMG.addEventListener('load',go);
+})();
+</script>
+
+</body>
+</html>

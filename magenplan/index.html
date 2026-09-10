@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#05080D">
+<meta name="description" content="מצגת מוצר: הבעיה, היכולות, מניעת ירי לכוחותינו, תשתיות, מפת דרכים, עלויות הקמה ואחזקה.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MAGEN — מצגת מוצר">
+<meta property="og:description" content="מצגת מוצר: הבעיה, היכולות, מניעת ירי לכוחותינו, תשתיות, מפת דרכים, עלויות הקמה ואחזקה.">
+<meta property="og:locale" content="he_IL">
+<meta name="twitter:card" content="summary_large_image">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>MAGEN — מצגת מוצר</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Heebo:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#05080D; --bg2:#080D14; --surf:#0E1620; --raise:#16202C; --raise2:#1D2937;
+  --line:#22303F; --line2:#2E3D4E;
+  --text:#E9F0F8; --mute:#8497AC; --dim:#5A6A7E;
+  --blue:#2E7DFF; --blue-d:#0F2952;
+  --red:#FF4438; --red-d:#3A1210;
+  --amber:#FFB020; --amber-d:#33240A;
+  --mint:#25D0A0; --mint-d:#0B2C25;
+}
+*{box-sizing:border-box}
+html{background:var(--bg); scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--text); direction:rtl; text-align:right;
+  font-family:"Assistant",system-ui,-apple-system,sans-serif; font-size:16px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:"Heebo",system-ui,-apple-system,sans-serif; color:#fff; margin:0; text-wrap:balance}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--blue); outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ---------- deck ---------- */
+.deck{height:100svh; overflow-y:auto; scroll-snap-type:y mandatory; scroll-padding:0}
+.slide{
+  min-height:100svh; scroll-snap-align:start; scroll-snap-stop:always;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:76px 84px 84px; position:relative; border-bottom:1px solid var(--line);
+}
+@media(max-width:820px){.slide{padding:60px 20px 72px}}
+@media(max-width:520px){.slide{padding:52px 16px 64px}.slide h2{font-size:26px}.tile{padding:16px 18px}.box{padding:17px 18px}.step{padding:16px}}
+.slide-in{width:100%; max-width:1180px; margin:0 auto}
+.kicker{font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.16em; font-weight:600; color:var(--blue); margin-bottom:14px}
+.slide h2{font-size:clamp(28px,4.2vw,48px); font-weight:800; line-height:1.14; letter-spacing:-.01em}
+.slide h3{font-size:clamp(19px,2.2vw,23px); font-weight:700}
+.sub{color:var(--mute); font-size:clamp(15.5px,1.6vw,18.5px); max-width:70ch; margin:16px 0 0}
+p{margin:12px 0}
+strong{color:#fff; font-weight:700}
+
+/* progress rail */
+.rail{position:fixed; top:0; bottom:0; left:0; width:52px; z-index:60; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:7px; pointer-events:none}
+@media(max-width:820px){.rail{display:none}}
+.rail a{width:5px; height:16px; border-radius:3px; background:var(--line2); pointer-events:auto; transition:background .2s, height .2s}
+.rail a:hover{background:var(--blue); height:26px}
+.counter{position:fixed; bottom:20px; right:26px; z-index:60; font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--dim); letter-spacing:.1em}
+.hint{position:fixed; bottom:20px; left:26px; z-index:60; font-size:12px; color:var(--dim)}
+@media(max-width:820px){.hint{display:none}}
+
+/* pieces */
+.tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden; margin-top:30px}
+.tile{background:var(--surf); padding:20px 22px}
+.tile .n{font-family:"IBM Plex Mono",monospace; font-size:clamp(28px,3.4vw,40px); font-weight:600; color:#fff; line-height:1.06; letter-spacing:-.02em}
+.tile .n small{font-size:.44em; color:var(--mute); font-weight:400; margin-inline-start:3px}
+.tile .k{font-size:13.5px; color:var(--mute); margin-top:6px; line-height:1.4}
+.tile.hot .n{color:#FF8B80}
+.tile.good .n{color:#5FE3C0}
+
+.cols{display:grid; gap:22px; margin-top:30px}
+.c2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.c3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.c4{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.box{background:var(--surf); border:1px solid var(--line); border-radius:14px; padding:20px 22px}
+.box .bt{font-size:17px; font-weight:800; color:#fff; line-height:1.3}
+.box .bd{font-size:14.5px; color:var(--mute); margin-top:7px; line-height:1.55}
+.box.blue{border-color:rgba(46,125,255,.4); background:linear-gradient(180deg,rgba(46,125,255,.09),var(--surf))}
+.box.red{border-color:rgba(255,68,56,.4); background:linear-gradient(180deg,rgba(255,68,56,.09),var(--surf))}
+.box.mint{border-color:rgba(37,208,160,.4); background:linear-gradient(180deg,rgba(37,208,160,.09),var(--surf))}
+.box.amber{border-color:rgba(255,176,32,.4); background:linear-gradient(180deg,rgba(255,176,32,.09),var(--surf))}
+.box .no{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--dim); letter-spacing:.1em; display:block; margin-bottom:8px}
+
+.steps{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:0; margin-top:34px; border:1px solid var(--line); border-radius:14px; overflow:hidden}
+.step{background:var(--surf); padding:20px; border-inline-start:1px solid var(--line); position:relative}
+.step:first-child{border-inline-start:none}
+.step .t{font-family:"IBM Plex Mono",monospace; font-size:13px; color:var(--blue); font-weight:600}
+.step .h{font-size:16px; font-weight:800; color:#fff; margin-top:6px; line-height:1.3}
+.step .d{font-size:13.5px; color:var(--mute); margin-top:5px; line-height:1.5}
+
+ul.clean{list-style:none; padding:0; margin:18px 0 0; display:flex; flex-direction:column; gap:11px}
+ul.clean li{display:grid; grid-template-columns:20px 1fr; gap:11px; align-items:start; font-size:16px; line-height:1.55}
+ul.clean li i{width:8px; height:8px; border-radius:50%; background:var(--blue); display:block; margin-top:9px; justify-self:center}
+ul.clean li.r i{background:var(--red)} ul.clean li.a i{background:var(--amber)} ul.clean li.m i{background:var(--mint)}
+
+.scroller{overflow-x:auto; margin-top:26px; border:1px solid var(--line); border-radius:14px}
+table{border-collapse:collapse; width:100%; font-size:15px; min-width:560px; background:var(--surf)}
+th,td{text-align:right; padding:12px 16px; border-bottom:1px solid var(--line)}
+thead th{background:var(--raise); font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--mute); font-weight:700; white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.num{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; white-space:nowrap; color:#fff}
+tfoot td{background:var(--raise); font-weight:800; color:#fff; border-top:1px solid var(--line2)}
+td .sm{display:block; font-size:12.5px; color:var(--dim)}
+
+.pill{display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:700; padding:2px 10px; border-radius:999px; line-height:1.7; white-space:nowrap}
+.p-blue{background:var(--blue-d); color:#8FBAFF}
+.p-red{background:var(--red-d); color:#FF8B80}
+.p-amber{background:var(--amber-d); color:#FFC96B}
+.p-mint{background:var(--mint-d); color:#5FE3C0}
+.p-grey{background:var(--raise2); color:var(--mute)}
+
+.vs{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden; margin-top:28px}
+@media(max-width:700px){.vs{grid-template-columns:1fr}}
+.vs .side{background:var(--surf); padding:22px}
+.vs .side.now{background:#0B1017}
+.vs .side h4{margin:0 0 14px; font-size:14px; letter-spacing:.1em; text-transform:uppercase; color:var(--dim); font-family:"IBM Plex Mono",monospace; font-weight:600}
+.vs .side.new h4{color:var(--blue)}
+.vs .side ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px}
+.vs .side li{font-size:15.5px; line-height:1.5; display:grid; grid-template-columns:18px 1fr; gap:10px}
+.vs .side.now li span:first-child{color:var(--dim)}
+.vs .side.new li span:first-child{color:var(--mint)}
+
+/* cover */
+.cover{background:
+  radial-gradient(1200px 520px at 80% -10%, rgba(46,125,255,.24), transparent 60%),
+  radial-gradient(760px 420px at 6% 10%, rgba(255,68,56,.15), transparent 62%),
+  var(--bg2);}
+.cover .lock{display:flex; align-items:center; gap:18px}
+.cover .lock svg{width:74px;height:74px;flex:none}
+.cover h1{font-family:"Heebo",system-ui,sans-serif; font-size:clamp(50px,9vw,112px); font-weight:800; color:#fff; line-height:.96; letter-spacing:.05em}
+.cover .tagline{font-size:clamp(19px,2.6vw,28px); color:var(--text); max-width:26ch; margin-top:30px; font-weight:600; line-height:1.4}
+.cover .meta{display:flex; gap:34px; flex-wrap:wrap; margin-top:44px; padding-top:24px; border-top:1px solid var(--line)}
+.cover .meta div dt{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); font-weight:700}
+.cover .meta div dd{margin:3px 0 0; font-size:15px; color:#fff; font-weight:600}
+
+/* layer stack */
+.stack{display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden; margin-top:26px}
+.layer{background:var(--surf); padding:14px 20px; display:grid; grid-template-columns:158px 1fr; gap:18px; align-items:center}
+@media(max-width:700px){.layer{grid-template-columns:1fr; gap:6px}}
+.layer .nm{font-size:14px; font-weight:800; color:#fff}
+.layer .nm span{display:block; font-family:"IBM Plex Mono",monospace; font-weight:400; font-size:10.5px; color:var(--dim); letter-spacing:.08em}
+.bits{display:flex; flex-wrap:wrap; gap:7px}
+.bit{font-size:13px; background:var(--raise); border:1px solid var(--line2); color:var(--text); padding:3px 11px; border-radius:7px}
+
+.big-quote{font-family:"Heebo",system-ui,sans-serif; font-size:clamp(26px,4vw,44px); color:#fff; font-weight:700; line-height:1.3; max-width:22ch}
+.end{background:radial-gradient(900px 480px at 50% 40%, rgba(46,125,255,.18), transparent 65%), var(--bg2)}
+</style>
+</head>
+<body>
+<nav class="xnav" aria-label="ניווט MAGEN">
+  <a href="/magen">הדמו</a><a href="/magenplan" aria-current="page">המצגת</a><a href="/magenplan/spec">האפיון</a>
+</nav>
+<style>
+.xnav{position:fixed; top:12px; left:12px; z-index:900; display:flex; gap:2px; padding:3px;
+  background:rgba(8,13,20,.82); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.13);
+  border-radius:999px; box-shadow:0 6px 20px -10px rgba(0,0,0,.7)}
+.xnav a{font-family:"Assistant",system-ui,sans-serif; font-size:12.5px; font-weight:700; text-decoration:none;
+  color:#9FB0C4; padding:4px 12px; border-radius:999px; line-height:1.6}
+.xnav a:hover{color:#fff; background:rgba(255,255,255,.09)}
+.xnav a[aria-current]{background:#2E7DFF; color:#fff}
+@media(max-width:520px){.xnav{top:8px; left:8px} .xnav a{font-size:11.5px; padding:3px 9px}}
+</style>
+
+
+<nav class="rail" aria-label="ניווט שקופיות">
+  <a href="#s1" aria-label="שקופית 1"></a><a href="#s2" aria-label="2"></a><a href="#s3" aria-label="3"></a><a href="#s4" aria-label="4"></a>
+  <a href="#s5" aria-label="5"></a><a href="#s6" aria-label="6"></a><a href="#s7" aria-label="7"></a><a href="#s8" aria-label="8"></a>
+  <a href="#s9" aria-label="9"></a><a href="#s10" aria-label="10"></a><a href="#s11" aria-label="11"></a><a href="#s12" aria-label="12"></a>
+  <a href="#s13" aria-label="13"></a><a href="#s14" aria-label="14"></a><a href="#s15" aria-label="15"></a><a href="#s16" aria-label="16"></a>
+  <a href="#s17" aria-label="17"></a><a href="#s18" aria-label="18"></a><a href="#s19" aria-label="19"></a>
+</nav>
+<div class="counter" id="counter">01 / 19</div>
+<div class="hint">↑ ↓ למעבר בין שקופיות</div>
+
+<div class="deck" id="deck">
+
+<!-- 01 -->
+<section class="slide cover" id="s1">
+  <div class="slide-in">
+    <div class="lock">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M20 3 34 8v13c0 8.3-5.6 14.4-14 18-8.4-3.6-14-9.7-14-18V8z" fill="none" stroke="#2E7DFF" stroke-width="2.2" stroke-linejoin="round"/>
+        <circle cx="20" cy="20" r="3.6" fill="#FF4438"/>
+        <path d="M20 10.5v4M20 25.5v4M10.5 20h4M25.5 20h4" stroke="#2E7DFF" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <h1>MAGEN</h1>
+        <div class="mono" style="font-size:12px;letter-spacing:.28em;color:var(--blue);font-weight:600;margin-top:8px">רשת התרעה וחתירה למגע</div>
+      </div>
+    </div>
+    <div class="tagline">בפיגוע, מי שכבר שם הוא מי שמכריע. מגן הופכת את המקריות הזאת למערכת.</div>
+    <dl class="meta">
+      <div><dt>מצגת מוצר</dt><dd>גרסה 1.0</dd></div>
+      <div><dt>תאריך</dt><dd class="mono">ספטמבר 2026</dd></div>
+      <div><dt>קהל</dt><dd>רשויות מקומיות · משטרה · מד״א</dd></div>
+      <div><dt>סיווג</dt><dd>לא מסווג · לדיון</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="slide" id="s2">
+  <div class="slide-in">
+    <div class="kicker">01 · הבעיה</div>
+    <h2>ההכרעה נופלת בדקה הראשונה.<br>הכוחות מגיעים בדקה הרביעית.</h2>
+    <p class="sub">רוב הפיגועים בישראל בעשור האחרון הוכרעו על ידי מי שכבר היה בזירה — אזרח חמוש, שוטר מחוץ למשמרת, לוחם בחופשה. הם לא הגיעו כי מישהו קרא להם. הם הגיעו כי שמעו יריות.</p>
+    <div class="tiles">
+      <div class="tile hot"><div class="n">30–120<small>שנ׳</small></div><div class="k">מרגע האירוע ועד שהמוקד מבין מה קורה ואיפה</div></div>
+      <div class="tile hot"><div class="n">3–6<small>דק׳</small></div><div class="k">זמן הגעה ממוצע של ניידת לזירה עירונית</div></div>
+      <div class="tile"><div class="n">0</div><div class="k">התרעות שמקבל היום אזרח חמוש שנמצא 80 מטר משם</div></div>
+      <div class="tile good"><div class="n">~40<small>שנ׳</small></div><div class="k">כמה זמן באמת דרוש לו כדי להגיע — אם רק היה יודע</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="slide" id="s3">
+  <div class="slide-in">
+    <div class="kicker">02 · הפער</div>
+    <h2>שרשרת טורית, ובכל חוליה נופלות שניות</h2>
+    <div class="scroller">
+      <table>
+        <thead><tr><th>חוליה</th><th>מה קורה היום</th><th>מה נופל</th></tr></thead>
+        <tbody>
+          <tr><td>אזרח ← מוקד 100</td><td>שיחת טלפון, תור, תיאור מילולי של המיקום</td><td class="num" style="color:#FF8B80">30–120 שנ׳</td></tr>
+          <tr><td>מוקד ← כוחות</td><td>שידור בקשר, ניווט לפי כתובת</td><td>אין חיווי מי הכי קרוב בפועל</td></tr>
+          <tr><td>אזרח חמוש בזירה</td><td>לא מקבל דיווח כלל</td><td>המשאב הקרוב ביותר לא מגויס</td></tr>
+          <tr><td>כוח מגיע ↔ אזרח חמוש</td><td>זיהוי ויזואלי בלבד, בלחץ, לעיתים בלילה</td><td style="color:#FF8B80">סיכון ממשי לירי לכוחותינו</td></tr>
+          <tr><td>מד״א ↔ זירה</td><td>ממתינים להכרזת "זירה מסודרת"</td><td>דקות זהב, בלי נ״צ לנפגעים</td></tr>
+          <tr><td>אחרי האירוע</td><td>תחקיר משחזור זיכרון ושיחות מוקד</td><td>אין ציר זמן אובייקטיבי אחד</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="slide" id="s4">
+  <div class="slide-in">
+    <div class="kicker">03 · הפתרון</div>
+    <div class="big-quote">אותו דיווח, באותה שנייה, לכל מי שיכול לעשות משהו.</div>
+    <p class="sub" style="margin-top:26px">מגן מחליפה את השרשרת הטורית בפעולה מקבילה. דיווח אחד מאזרח מגיע בו־זמנית לבעלי הרישיון בסביבה, למוקד 100, למד״א ולאיחוד הצלה — כל אחד בשפה ובכלים שלו, מעל אותו מקור אמת אחד.</p>
+    <div class="cols c4">
+      <div class="box blue"><span class="no">01</span><div class="bt">מאמתים מראש</div><div class="bd">שכבת מגיבים בעלי רישיון, מאומתת מול מרשם רשות כלי ירייה, עם הכשרה וכתב התחייבות.</div></div>
+      <div class="box red"><span class="no">02</span><div class="bt">מדווחים בשניות</div><div class="bd">לחיצה ארוכה, שלוש הקשות, תמונה. בלי הקלדה, בלי שיחה, בלי תיאור כתובת.</div></div>
+      <div class="box amber"><span class="no">03</span><div class="bt">מתריעים בטבעות</div><div class="bd">התרעה קריטית שעוקפת מצב שקט, לפי זמן הגעה אמיתי — לא לפי מרחק אווירי.</div></div>
+      <div class="box mint"><span class="no">04</span><div class="bt">רואים את כולם</div><div class="bd">מיקום חי של כל מגיב, אזור סכנה מחושב, וזיהוי הדדי שמונע ירי לכוחותינו.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="slide" id="s5">
+  <div class="slide-in">
+    <div class="kicker">04 · איך זה עובד</div>
+    <h2>שתי דקות, מדיווח עד רפואה בזירה</h2>
+    <div class="steps">
+      <div class="step"><div class="t">T+0</div><div class="h">דיווח</div><div class="d">לחיצה ארוכה 1.5 שניות. מיקום, זמן ומכשיר נתפסים לפני הכול.</div></div>
+      <div class="step"><div class="t">T+6</div><div class="h">שידור מקבילי</div><div class="d">מגיבים, מוקד 100, מד״א ואיחוד הצלה — באותה שנייה.</div></div>
+      <div class="step"><div class="t">T+14</div><div class="h">אישור ויציאה</div><div class="d">המגיב מצהיר צבע לבוש ואמצעי, ומתחיל לשדר מיקום.</div></div>
+      <div class="step"><div class="t">T+1:20</div><div class="h">מגע</div><div class="d">קשר עין בכפתור אחד. אזור הסכנה מתעדכן לכל מי שבדרך.</div></div>
+      <div class="step"><div class="t">T+2:25</div><div class="h">רפואה</div><div class="d">ציר בטוח נפתח, טריאז׳ שסומן בשטח מגיע לנט״ן.</div></div>
+    </div>
+    <p class="sub" style="margin-top:24px">כל שלב כאן הוא יעד ביצועים מדיד, לא תיאור שיווקי. <span class="mono" style="color:#8FBAFF">p95 &lt; 3 שניות</span> מדיווח ועד התרעה על המסך — תנאי לשחרור כל גרסה.</p>
+  </div>
+</section>
+
+<!-- 06 -->
+<section class="slide" id="s6">
+  <div class="slide-in">
+    <div class="kicker">05 · מי במערכת</div>
+    <h2>ארבעה מעגלי כוח, תמונת מצב אחת</h2>
+    <div class="cols c4">
+      <div class="box red"><div class="bt">אזרח מדווח</div><div class="bd">כל אחד. מדווח, מצרף תמונה, מסכים לחשיפת פרטי קשר למוקד ולמגיבים — לאירוע הזה בלבד.</div><div style="margin-top:12px"><span class="pill p-red">ציבורי · חינם</span></div></div>
+      <div class="box blue"><div class="bt">מגיב מורשה</div><div class="bd">בעל רישיון כלי ירייה מאומת. רואה אירועים ברדיוס שלו בלבד, רק בזמן אירוע פעיל.</div><div style="margin-top:12px"><span class="pill p-blue">רישיון + הכשרה</span></div></div>
+      <div class="box amber"><div class="bt">כוחות ביטחון</div><div class="bd">משטרה, מג״ב, כיתות כוננות, רבש״צים. תמונה מלאה, כולל מצבת האזרחים החמושים בזירה.</div><div style="margin-top:12px"><span class="pill p-amber">SSO ארגוני</span></div></div>
+      <div class="box mint"><div class="bt">רפואה והצלה</div><div class="bd">מד״א, איחוד הצלה, כב״ה. קריאה מקבילה, שכבת נפגעים, ציר כניסה מאושר.</div><div style="margin-top:12px"><span class="pill p-mint">קריאה במקביל</span></div></div>
+    </div>
+    <p class="sub">המוקד לא נעקף — הוא מוקדם. סמכות ההכרזה, ההרחבה והפיקוד נשארת בידיו לאורך כל האירוע.</p>
+  </div>
+</section>
+
+<!-- 07 -->
+<section class="slide" id="s7">
+  <div class="slide-in">
+    <div class="kicker">06 · יכולת מרכזית</div>
+    <h2>התרעה בטבעות, לפי זמן הגעה אמיתי</h2>
+    <div class="cols c2">
+      <div>
+        <ul class="clean">
+          <li class="r"><i></i><span><strong>R1 · עד 300 מטר</strong> — יוצא תמיד, מיידית, בלי שער אישור. עדיף להוציא שמונה לחינם מלא להוציא אף אחד.</span></li>
+          <li class="a"><i></i><span><strong>R2 · עד קילומטר</strong> — נפתח אוטומטית אם לא נאספו מספיק מאשרים תוך 20 שניות, או בהצלבת שני דיווחים.</span></li>
+          <li><i></i><span><strong>R3 · עד 3 ק״מ</strong> — בשליטת המוקדן, לאירוע מתמשך או רב־זירתי.</span></li>
+          <li class="m"><i></i><span><strong>כוחות מאורגנים</strong> — מקבלים ללא תלות ברדיוס. כל יחידה בכוננות בגזרה.</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="box">
+          <div class="bt">למה לא מרחק אווירי</div>
+          <div class="bd">מי שנמצא 200 מטר מעבר לכביש מהיר רחוק יותר ממי שנמצא 400 מטר באותו רחוב. הדירוג מחושב לפי זמן הגעה בפועל — הליכה או רכב, טופוגרפיה, חסמים.</div>
+        </div>
+        <div class="box" style="margin-top:16px">
+          <div class="bt">ההתרעה חייבת לצלצל</div>
+          <div class="bd">Critical Alerts ב־iOS ו־full-screen intent באנדרואיד עוקפים מצב שקט ונעילה. שרשרת גיבוי: Push ← WebSocket ← SMS ← שיחה קולית אוטומטית.</div>
+        </div>
+        <div class="box" style="margin-top:16px">
+          <div class="bt">תקרת גיוס</div>
+          <div class="bd">ברירת מחדל — 8 מגיבים אזרחיים פעילים לאירוע. זירה מוצפת היא זירה מסוכנת.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 -->
+<section class="slide" id="s8">
+  <div class="slide-in">
+    <div class="kicker">07 · יכולת מרכזית</div>
+    <h2>חתירה למגע, בשידור חי</h2>
+    <p class="sub">מרגע האישור, המכשיר משדר מיקום, כיוון ומהירות ב־<span class="mono">1 Hz</span> — ומכפיל ל־<span class="mono">2 Hz</span> ברדיוס 200 מטר מהאיום. כולם רואים את כולם, בצבע הכוח שלהם.</p>
+    <div class="cols c3">
+      <div class="box"><div class="bt">אזור סכנה חי</div><div class="bd">בועה אסימטרית שנגזרת מנקודת האיום, מהאמצעי, מהזמן שחלף ומקווי ראייה במודל תלת־ממד עירוני. סכין 25 מ׳, אקדח 80 מ׳, נשק ארוך 300 מ׳ — ומתרחבת 2.5 מ׳ בכל שנייה בלי עדכון.</div></div>
+      <div class="box"><div class="bt">ציר בטוח, לא קצר</div><div class="bd">הניווט מתחשב בכיוון הירי ובאזור הסכנה. המסלול המומלץ הוא זה שלא חוצה את הבועה, גם אם הוא ארוך ב־40 מטר.</div></div>
+      <div class="box"><div class="bt">סטטוס בכפתור אחד</div><div class="bd">קשר עין · חילופי אש · מנוטרל · נפגעים · דרוש תגבור · יוצא מהזירה. ערוץ קול Push-to-Talk לאירוע, מתומלל אוטומטית לציר הזמן.</div></div>
+    </div>
+    <p class="sub" style="margin-top:24px">כשמידע האיום מתיישן מעל 45 שניות, הבועה מוצגת בקו מקווקו — סימן מוסכם ל"אל תסמוך על זה".</p>
+  </div>
+</section>
+
+<!-- 09 -->
+<section class="slide" id="s9">
+  <div class="slide-in">
+    <div class="kicker">08 · הסיכון המרכזי</div>
+    <h2>מניעת ירי לכיוון כוחותינו —<br>חמש שכבות בלתי תלויות</h2>
+    <p class="sub">אזרח חמוש שרץ עם נשק שלוף לעבר זירת פיגוע נראה, לשוטר שמגיע, בדיוק כמו מחבל. זהו הסיכון שמערכת כזאת מייצרת, ולכן זהו המודול שנבנה ראשון.</p>
+    <div class="cols c3" style="margin-top:26px">
+      <div class="box blue"><span class="no">שכבה 1</span><div class="bt">הצהרת היכר</div><div class="bd">בעת האישור: צבע חולצה ואמצעי, בשתי הקשות.</div></div>
+      <div class="box blue"><span class="no">שכבה 2</span><div class="bt">כרטיס אצל הכוח</div><div class="bd">לשוטר יש תמונה, שם, ספרות רישיון, לבוש ומרחק — לפני שהוא יוצא מהניידת.</div></div>
+      <div class="box blue"><span class="no">שכבה 3</span><div class="bt">סימן ויזואלי</div><div class="bd">המסך הופך לסימן היכר: הבזק בדופק ייחודי לאירוע. עובד גם בלי רשת.</div></div>
+      <div class="box blue"><span class="no">שכבה 4</span><div class="bt">התרעת קרבה</div><div class="bd">שני כוחות מזוהים מתחת ל־40 מ׳ בלי קשר עין — שניהם רוטטים ומקבלים כיוון.</div></div>
+      <div class="box blue"><span class="no">שכבה 5</span><div class="bt">נוהל והכשרה</div><div class="bd">"הכנס נשק, הזדהה בקול" נדחף למסך אוטומטית ברגע שניידת נכנסת ל־100 מטר.</div></div>
+      <div class="box red"><span class="no">המדד</span><div class="bt">אפס. לא "נמוך".</div><div class="bd">כל אירוע קרוב שמתגלה בתחקיר מפעיל בדיקת שורש ומעכב גרסה עד לסגירתו.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="slide" id="s10">
+  <div class="slide-in">
+    <div class="kicker">09 · יכולת מרכזית</div>
+    <h2>רפואה שנכנסת מוקדם, לא אחרונה</h2>
+    <div class="cols c2">
+      <div>
+        <ul class="clean">
+          <li class="m"><i></i><span><strong>קריאה מקבילה</strong> למד״א, איחוד הצלה, כב״ה ומתנדבים מוסמכים בסביבה — לא אחרי המשטרה.</span></li>
+          <li class="m"><i></i><span><strong>טריאז׳ מהשטח</strong> — מגיב מסמן נפגע על המפה ובוחר דרגה. הספירה מגיעה ישירות לנט״ן ומהווה בסיס לדרישת אמצעים.</span></li>
+          <li class="m"><i></i><span><strong>חיווי "זירה מסודרת"</strong> חד־משמעי מטעם מפקד האירוע, עם ציר כניסה מאושר — במקום שיחות קשר.</span></li>
+          <li class="m"><i></i><span><strong>נקודת ריכוז נפגעים ומנחת</strong> מסומנות ע״י הפיקוד וגלויות לכל גורמי הרפואה בו־זמנית.</span></li>
+        </ul>
+      </div>
+      <div class="tiles" style="margin-top:0">
+        <div class="tile good"><div class="n">&lt;4<small>דק׳</small></div><div class="k">יעד חציוני מדיווח ועד טיפול ראשון בנפגע</div></div>
+        <div class="tile"><div class="n">4</div><div class="k">דרגות טריאז׳ מסונכרנות בין שטח למוקד רפואי</div></div>
+      </div>
+    </div>
+    <p class="sub" style="margin-top:26px">האזרח החמוש שמגיע ראשון הוא גם החובש הראשון. ההכשרה כוללת עצירת דימום, והאפליקציה דוחפת לו את הפעולה הנכונה ברגע שהוא מדווח "מנוטרל".</p>
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="slide" id="s11">
+  <div class="slide-in">
+    <div class="kicker">10 · יכולת מרכזית</div>
+    <h2>הכול מתועד — לתחקיר, לחקירה ולבית המשפט</h2>
+    <div class="cols c3">
+      <div class="box"><div class="bt">יומן בלתי ניתן לשינוי</div><div class="bd">כל פעולה במערכת נכתבת ל־append-only חתום קריפטוגרפית. מי ראה מה, מתי, ומה עשה.</div></div>
+      <div class="box"><div class="bt">שרשרת ראיות</div><div class="bd">מדיה נחתמת בזמן הצילום, עם hash ומטא־נתונים. כל צפייה מתועדת בנפרד.</div></div>
+      <div class="box"><div class="bt">טופס שימוש בנשק</div><div class="bd">נוצר אוטומטית לכל מגיב שדיווח חילופי אש, עם ציר הזמן והמיקומים שלו כנספח.</div></div>
+    </div>
+    <p class="sub" style="margin-top:26px">זהו גם המענה לחשש המשפטי של המגיב עצמו: לראשונה, יש לו תיעוד אובייקטיבי של איפה היה, מתי, ומה ראה — במקום עדות מזיכרון תחת לחץ.</p>
+  </div>
+</section>
+
+<!-- 12 -->
+<section class="slide" id="s12">
+  <div class="slide-in">
+    <div class="kicker">11 · היתרון</div>
+    <h2>מה משתנה בפועל</h2>
+    <div class="vs">
+      <div class="side now">
+        <h4>היום</h4>
+        <ul>
+          <li><span>—</span><span>המשאב הקרוב ביותר לזירה כלל לא יודע שיש אירוע</span></li>
+          <li><span>—</span><span>המוקד מקבל תיאור מילולי של מיקום, בלי תמונה</span></li>
+          <li><span>—</span><span>אין דרך לזהות אזרח חמוש מלבד מבט</span></li>
+          <li><span>—</span><span>הרפואה ממתינה בחוץ בלי לדעת כמה נפגעים ואיפה</span></li>
+          <li><span>—</span><span>כל ארגון מנהל תמונת מצב נפרדת</span></li>
+          <li><span>—</span><span>התחקיר נבנה משחזור זיכרון</span></li>
+        </ul>
+      </div>
+      <div class="side new">
+        <h4>עם מגן</h4>
+        <ul>
+          <li><span>✓</span><span>התרעה קריטית תוך שלוש שניות, מדורגת לפי זמן הגעה</span></li>
+          <li><span>✓</span><span>נ״צ בדיוק מטרים, תמונה מהזירה, ואפיון מובנה</span></li>
+          <li><span>✓</span><span>חמש שכבות זיהוי הדדי, כולל התרעת קרבה דו־כיוונית</span></li>
+          <li><span>✓</span><span>טריאז׳ מהשטח וציר כניסה מאושר בזמן אמת</span></li>
+          <li><span>✓</span><span>מקור אמת אחד, ארבעה מעגלי כוח, חלון ראייה לפי תפקיד</span></li>
+          <li><span>✓</span><span>ציר זמן אובייקטיבי ושרשרת ראיות מלאה</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section class="slide" id="s13">
+  <div class="slide-in">
+    <div class="kicker">12 · אבטחה ופרטיות</div>
+    <h2>מערכת שיודעת מי חמוש היא בעצמה יעד</h2>
+    <p class="sub">זו לא הערת שוליים — זה ההיפוך שמכתיב את כל תכן האבטחה. מאגר בעלי רישיון עם כתובות בית הוא נכס מודיעיני לאויב.</p>
+    <div class="cols c2">
+      <div>
+        <ul class="clean">
+          <li class="r"><i></i><span><strong>אין נקודת קצה</strong> שמחזירה רשימת מגיבים לפי אזור. לא למשתמש, לא למנהל, לא לפיתוח.</span></li>
+          <li class="r"><i></i><span><strong>בסיסי נעיצה מוצפנים</strong> כ־geohash גס. ההתאמה רצה בסביבה מבודדת ומחזירה מזהים בלבד.</span></li>
+          <li class="r"><i></i><span><strong>חשיפה מוגבלת בזמן</strong> — זהות מגיב נפתחת לכוח רק בהקשר אירוע פעיל, ונסגרת עם סגירתו.</span></li>
+          <li class="r"><i></i><span><strong>גישה מנהלית</strong> למאגר ההרשאות דורשת אישור שני אנשים ומתועדת בנפרד.</span></li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="bt">עמידה רגולטורית</div>
+        <ul class="clean" style="margin-top:14px">
+          <li><i></i><span>חוק הגנת הפרטיות ותיקון 13 — מאגר ברמת אבטחה גבוהה, ממונה פרטיות, תסקיר השפעה</span></li>
+          <li><i></i><span>חוק כלי ירייה — הסתמכות על המרשם, סגירת הרשאה עם פקיעה או שלילה</span></li>
+          <li><i></i><span>הנחיות מערך הסייבר — סיווג תשתית חיונית, מבדקי חוסן, דיווח אירועים</span></li>
+          <li><i></i><span>ISO 27001 · 27701 לפני השקה ארצית</span></li>
+          <li><i></i><span>ריבונות נתונים — הכול באזורי ענן בישראל, כולל גיבויים</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section class="slide" id="s14">
+  <div class="slide-in">
+    <div class="kicker">13 · תשתיות</div>
+    <h2>ארכיטקטורה</h2>
+    <div class="stack">
+      <div class="layer"><div class="nm">קצה<span>CLIENTS</span></div><div class="bits">
+        <span class="bit">iOS נייטיב · Swift</span><span class="bit">Android נייטיב · Kotlin</span><span class="bit">קונסולות ווב · React</span><span class="bit">מפות אופליין</span><span class="bit">Critical Alerts</span></div></div>
+      <div class="layer"><div class="nm">שער<span>EDGE</span></div><div class="bits">
+        <span class="bit">API Gateway</span><span class="bit">mTLS</span><span class="bit">הגנת DDoS</span><span class="bit">WAF</span></div></div>
+      <div class="layer"><div class="nm">זמן אמת<span>REALTIME</span></div><div class="bits">
+        <span class="bit">MQTT / WebSocket</span><span class="bit">LiveKit SFU · PTT</span><span class="bit">Redis Geo</span></div></div>
+      <div class="layer"><div class="nm">שירותים<span>SERVICES</span></div><div class="bits">
+        <span class="bit">זהות ורישוי</span><span class="bit">אירוע</span><span class="bit">מנוע התאמה</span><span class="bit">התרעות</span><span class="bit">גיאו ואזור סכנה</span><span class="bit">מדיה</span><span class="bit">ביקורת</span><span class="bit">אינטגרציות</span></div></div>
+      <div class="layer"><div class="nm">אירועים<span>BUS</span></div><div class="bits">
+        <span class="bit">Kafka</span><span class="bit">Event sourcing</span><span class="bit">Replay מלא</span></div></div>
+      <div class="layer"><div class="nm">נתונים<span>DATA</span></div><div class="bits">
+        <span class="bit">PostgreSQL + PostGIS</span><span class="bit">Redis</span><span class="bit">S3 מוצפן</span><span class="bit">WORM ליומן</span><span class="bit">ClickHouse</span></div></div>
+      <div class="layer"><div class="nm">תשתית<span>PLATFORM</span></div><div class="bits">
+        <span class="bit">ענן בישראל</span><span class="bit">Kubernetes רב־אזורי</span><span class="bit">Terraform</span><span class="bit">אתר גיבוי On-Prem</span><span class="bit">HSM</span></div></div>
+    </div>
+    <p class="sub" style="margin-top:22px"><strong>נייטיב ולא חוצה־פלטפורמות</strong> — התרעה קריטית, מיקום ברקע ואודיו בלחץ הם בדיוק המקומות שבהם שכבת ביניים נשברת. יעד זמינות <span class="mono">99.99%</span> למסלול ההתרעה, עם תרגילי כשל יזומים כל רבעון.</p>
+  </div>
+</section>
+
+<!-- 15 -->
+<section class="slide" id="s15">
+  <div class="slide-in">
+    <div class="kicker">14 · עמידות</div>
+    <h2>המערכת עובדת גם כשהיא לא עובדת</h2>
+    <div class="scroller">
+      <table>
+        <thead><tr><th>תרחיש כשל</th><th>מסלול נסיגה</th></tr></thead>
+        <tbody>
+          <tr><td>אין רשת נתונים</td><td>SMS, ואז שיחה קולית אוטומטית עם הקראת המיקום</td></tr>
+          <tr><td>עומס סלולרי בזירה</td><td>מנות טלמטריה מזעריות בעדיפות; מדיה נדחית לתור</td></tr>
+          <tr><td>GPS משובש</td><td>שיוך לפי תא סלולרי ו־Wi-Fi, עם חיווי דיוק מפורש</td></tr>
+          <tr><td>אין קליטה בין מגיבים</td><td>רשת BLE מקומית להעברת זהות וסטטוס בין מכשירים סמוכים</td></tr>
+          <tr><td>נפילת ספק Push</td><td>מסלול WebSocket עצמאי שפועל תמיד במקביל</td></tr>
+          <tr><td>נפילת אזור ענן</td><td>מעבר לאזור שני; מצב קריטי מצומצם מאתר On-Prem</td></tr>
+          <tr><td>סוללה נמוכה</td><td>הורדת קצב שידור, מסך חירום מינימלי</td></tr>
+          <tr><td>אירוע רב־זירתי</td><td>קיבוץ תחת פיקוד אחד, תעדוף לפי חומרה, תקרות גיוס דינמיות</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 16 -->
+<section class="slide" id="s16">
+  <div class="slide-in">
+    <div class="kicker">15 · מפת דרכים</div>
+    <h2>18 חודשים, ארבעה שלבים</h2>
+    <div class="scroller">
+      <table>
+        <thead><tr><th>שלב</th><th>חודשים</th><th>תוצר</th><th>אבן דרך</th></tr></thead>
+        <tbody>
+          <tr><td><strong>0 · אפיון והיתכנות</strong></td><td class="num">1–2</td><td>אפיון מפורט, תסקיר פרטיות, אב־טיפוס עיצובי</td><td>הסכמה עקרונית מרשות כלי ירייה</td></tr>
+          <tr><td><strong>1 · MVP ליישוב</strong></td><td class="num">3–8</td><td>אימות רישיון, דיווח, התרעה, חתירה למגע, מודול זיהוי, מוקד יישובי</td><td>פיילוט חי ברשות מקומית אחת</td></tr>
+          <tr><td><strong>2 · רב־ארגוני</strong></td><td class="num">9–13</td><td>אינטגרציית 100 ו־101, רפואה, PTT, פיקוד אירוע, תחקיר</td><td>תרגיל אמת משותף עם משטרה ומד״א</td></tr>
+          <tr><td><strong>3 · ארצי</strong></td><td class="num">14–18</td><td>עומס ארצי, מצלמות, Cell Broadcast, אתר גיבוי, ISO 27001</td><td>אישור השקה ארצית</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sub" style="margin-top:22px">שלב 1 הוא מוצר עצמאי ומלא לרשות מקומית — בלי תלות באינטגרציה ארצית. זו נקודת הכניסה המומלצת: ערך אמיתי מיד, וראיות שפותחות את הדלת לשלב 2.</p>
+  </div>
+</section>
+
+<!-- 17 -->
+<section class="slide" id="s17">
+  <div class="slide-in">
+    <div class="kicker">16 · עלויות הקמה</div>
+    <h2>תקציב הקמה מלא</h2>
+    <div class="scroller">
+      <table>
+        <thead><tr><th>סעיף</th><th>פירוט</th><th>סכום ₪</th></tr></thead>
+        <tbody>
+          <tr><td>כוח אדם</td><td>12 תקנים ממוצעים לאורך 18 חודשים <span class="sm">מוצר, 3 מובייל, 3 שרת, גיאו, ווב, עיצוב, אבטחה, DevOps, QA, רגולציה</span></td><td class="num">9,916,000</td></tr>
+          <tr><td>תשתית ענן והקשחה</td><td>שני אזורים, IaC, HSM, ניטור</td><td class="num">280,000</td></tr>
+          <tr><td>אבטחה והסמכות</td><td>שלושה מבדקי חדירה, ISO 27001 ו־27701</td><td class="num">420,000</td></tr>
+          <tr><td>רגולציה ומשפט</td><td>תסקיר השפעה על הפרטיות, הסכמים, כתבי התחייבות</td><td class="num">180,000</td></tr>
+          <tr><td>אינטגרציות</td><td>משטרה, מד״א, רשות כלי ירייה — פיתוח ותיאום ארגוני</td><td class="num">650,000</td></tr>
+          <tr><td>נתוני מפה</td><td>רישוי, מודל תלת־ממד עירוני, אריחי אופליין</td><td class="num">220,000</td></tr>
+          <tr><td>הכשרה והטמעה</td><td>מודולי לימוד, וידאו, תרגילי יישוב</td><td class="num">240,000</td></tr>
+          <tr><td>ציוד ומעבדת שדה</td><td>מגוון מכשירים לבדיקות התרעה קריטית</td><td class="num">160,000</td></tr>
+          <tr><td>בלת״ם</td><td>12% על כלל התקציב</td><td class="num">1,450,000</td></tr>
+        </tbody>
+        <tfoot><tr><td colspan="2">סה״כ הקמה · טווח מעשי 11–15 מיליון ₪</td><td class="num">13,516,000</td></tr></tfoot>
+      </table>
+    </div>
+    <div class="box mint" style="margin-top:22px">
+      <div class="bt">מסלול פיילוט: 3.2–4.1 מיליון ₪</div>
+      <div class="bd">שלבים 0+1 בלבד — רשות מקומית אחת, בלי אינטגרציה ארצית ובלי ISO — לאורך 8 חודשים, עם אחזקה שנתית של כ־900 אלף ₪. זו הדרך להוכיח את המודל לפני התחייבות לתקציב המלא.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 18 -->
+<section class="slide" id="s18">
+  <div class="slide-in">
+    <div class="kicker">17 · אחזקה</div>
+    <h2>עלות תפעול שנתית</h2>
+    <div class="scroller">
+      <table>
+        <thead><tr><th>סעיף</th><th>פירוט</th><th>שנתי ₪</th></tr></thead>
+        <tbody>
+          <tr><td>צוות אחזקה ופיתוח שוטף</td><td>5 תקנים <span class="sm">2 שרת · 1.5 מובייל · 0.5 ווב · 1 מוצר ו־QA</span></td><td class="num">2,760,000</td></tr>
+          <tr><td>SRE וכוננות 24/7</td><td>1.5 תקן ותשלומי כוננות</td><td class="num">960,000</td></tr>
+          <tr><td>ענן ותשתית</td><td>בסיס ~24 אלף לחודש ומרווח לפרצי עומס</td><td class="num">380,000</td></tr>
+          <tr><td>Push, SMS ושיחות גיבוי</td><td>מונע לפי נפח; SMS הוא הסעיף היקר</td><td class="num">210,000</td></tr>
+          <tr><td>מפות ונתוני צד ג׳</td><td>MapLibre עצמי ושכבות בתשלום</td><td class="num">140,000</td></tr>
+          <tr><td>אבטחה שוטפת</td><td>שני מבדקים בשנה, SOC מנוהל, Bug Bounty</td><td class="num">390,000</td></tr>
+          <tr><td>ביקורות והסמכות</td><td>חידוש ISO, דיווחי רגולציה</td><td class="num">120,000</td></tr>
+          <tr><td>תמיכה, הדרכה ותרגילים</td><td>מוקד תמיכה לגופים ותרגילי רשויות</td><td class="num">420,000</td></tr>
+        </tbody>
+        <tfoot><tr><td colspan="2">סה״כ אחזקה שנתית · טווח מעשי 4.5–6 מיליון ₪</td><td class="num">5,380,000</td></tr></tfoot>
+      </table>
+    </div>
+    <p class="sub" style="margin-top:20px">האחזקה אינה "תחזוקה" במובן הרגיל: מערכת חירום דורשת כוננות אנושית, תרגול תקופתי וחידוש הסמכות. זהו סעיף מבצעי, לא סעיף IT.</p>
+  </div>
+</section>
+
+<!-- 19 -->
+<section class="slide" id="s19">
+  <div class="slide-in">
+    <div class="kicker">18 · מודל עסקי ומדדים</div>
+    <h2>האזרח לעולם לא משלם</h2>
+    <p class="sub">תשלום אזרחי היה מקטין את צפיפות הרשת, ובמערכת כזאת צפיפות היא בטיחות. המימון מגיע מהגופים שמקבלים את הערך המבצעי.</p>
+    <div class="cols c2">
+      <div class="scroller" style="margin-top:22px">
+        <table style="min-width:340px">
+          <thead><tr><th>לקוח</th><th>מודל</th></tr></thead>
+          <tbody>
+            <tr><td>רשות מקומית</td><td class="num">2.5–4 ₪ לתושב לשנה</td></tr>
+            <tr><td>יישוב / מועצה אזורית</td><td class="num">45–120 אלף ₪ לשנה</td></tr>
+            <tr><td>מוסד גדול · קניון, קמפוס</td><td class="num">30–90 אלף ₪ לאתר</td></tr>
+            <tr><td>משרד ממשלתי / משטרה</td><td>התקשרות ארצית רב־שנתית</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tiles" style="margin-top:22px">
+        <div class="tile"><div class="n">2.6<small>מ׳ תושבים</small></div><div class="k">נקודת איזון תפעולית במודל הרשות המקומית</div></div>
+        <div class="tile good"><div class="n">&lt;90<small>שנ׳</small></div><div class="k">יעד חציוני להגעת מגיב ראשון לזירה</div></div>
+        <div class="tile"><div class="n">&gt;70<small>%</small></div><div class="k">אירועים עם מגיב מאומת ברדיוס 500 מטר</div></div>
+        <div class="tile hot"><div class="n">&lt;2<small>%</small></div><div class="k">תקרת דיווחי שווא שהובילו לגיוס</div></div>
+      </div>
+    </div>
+    <div class="box blue" style="margin-top:26px">
+      <div class="bt">הצעד הבא</div>
+      <div class="bd">פיילוט של שמונה חודשים ברשות מקומית אחת, בליווי מוקד יישובי ורבש״ץ, עם יעד מדיד אחד: להוכיח מגיב מאומת בזירה תוך 90 שניות, באפס אירועי זיהוי שגוי.</div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var deck=document.getElementById('deck');
+  var slides=Array.prototype.slice.call(deck.querySelectorAll('.slide'));
+  var counter=document.getElementById('counter');
+  var dots=Array.prototype.slice.call(document.querySelectorAll('.rail a'));
+  function pad(n){return (n<10?'0':'')+n;}
+  function current(){
+    var top=deck.scrollTop, best=0, bd=Infinity;
+    slides.forEach(function(s,i){var d=Math.abs(s.offsetTop-top); if(d<bd){bd=d;best=i;}});
+    return best;
+  }
+  function sync(){
+    var i=current();
+    counter.textContent=pad(i+1)+' / '+pad(slides.length);
+    dots.forEach(function(a,j){
+      a.style.background = j===i ? '#2E7DFF' : '#2E3D4E';
+      a.style.height = j===i ? '26px' : '16px';
+    });
+  }
+  deck.addEventListener('scroll',function(){window.requestAnimationFrame(sync);},{passive:true});
+  function go(step){
+    var i=Math.max(0,Math.min(slides.length-1,current()+step));
+    slides[i].scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  window.addEventListener('keydown',function(e){
+    if(e.key==='ArrowDown'||e.key==='PageDown'||e.key===' '){e.preventDefault();go(1);}
+    else if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();go(-1);}
+    else if(e.key==='Home'){e.preventDefault();slides[0].scrollIntoView({behavior:'smooth'});}
+    else if(e.key==='End'){e.preventDefault();slides[slides.length-1].scrollIntoView({behavior:'smooth'});}
+  });
+  sync();
+})();
+</script>
+
+</body>
+</html>
