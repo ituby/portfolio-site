@@ -79,13 +79,10 @@ header.top p{color:var(--mute); max-width:62ch; font-size:16.5px; margin:16px 0 
 .lane-head h2{font-size:27px; font-weight:800}
 .lane p.sub{color:var(--mute); max-width:74ch; margin:8px 0 0; font-size:15.5px}
 .strip{
-  display:flex; gap:30px; overflow-x:auto; padding:34px 4px 20px;
-  scroll-snap-type:x proximity;
+  display:grid; grid-template-columns:repeat(auto-fill, var(--dev-w));
+  gap:42px 30px; padding:34px 0 8px; justify-content:start; align-items:start;
 }
-.strip::-webkit-scrollbar{height:9px}
-.strip::-webkit-scrollbar-track{background:var(--surf); border-radius:9px}
-.strip::-webkit-scrollbar-thumb{background:var(--line2); border-radius:9px}
-figure.frame{margin:0; flex:none; width:var(--dev-w); scroll-snap-align:start}
+figure.frame{margin:0; width:var(--dev-w)}
 figure.frame figcaption{margin-bottom:14px; min-height:74px}
 figcaption .idx{font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--dim); letter-spacing:.1em}
 figcaption b{display:block; color:#fff; font-size:16px; font-weight:700; line-height:1.35; margin-top:1px}
@@ -219,9 +216,6 @@ hr.sep{border:none; border-top:1px solid var(--line); margin:12px 0}
 .tool.sel{background:var(--blue-d); border-color:var(--blue); color:#fff}
 .tool .sw{width:15px; height:15px; border-radius:50%; display:block; border:2px solid rgba(255,255,255,.75)}
 
-.swipe{display:none; align-items:center; gap:7px; margin-top:12px; font-size:12.5px; color:var(--dim)}
-.swipe svg{flex:none}
-
 /* ---------- portrait phones ---------- */
 @media (max-width:520px){
   .page{padding:0 14px 84px}
@@ -229,15 +223,15 @@ hr.sep{border:none; border-top:1px solid var(--line); margin:12px 0}
   header.top p{font-size:15.5px}
   .lane{padding-top:44px}
   .lane-head h2{font-size:23px}
-  .strip{gap:18px; padding:26px 2px 16px; scroll-snap-type:x mandatory}
+  .strip{grid-template-columns:1fr; gap:30px; padding:24px 0 4px; justify-items:center}
   figure.frame figcaption{min-height:0}
-  .swipe{display:flex}
   .con-grid{grid-template-columns:1fr}
   .con-col{border-inline-start:none; border-top:1px solid var(--line)}
   .con-col:first-child{border-top:none}
   .con-map{min-height:330px; order:-1}
 }
 @media (max-width:400px){
+  .strip{grid-template-columns:calc(var(--dev-w) * .86)}
   figure.frame{width:calc(var(--dev-w) * .86)}
   .dev{zoom:.86}
 }
@@ -295,7 +289,6 @@ footer{margin-top:88px; padding-top:26px; border-top:1px solid var(--line); colo
     <h2>אזרח מדווח</h2>
   </div>
   <p class="sub">שישה מסכים, שמונה שניות. שום שדה טקסט חופשי לא נמצא במסלול הקריטי — הכול הקשות, כי היד רועדת ולפעמים גם רצה.</p>
-  <div class="swipe" aria-hidden="true"><svg width="15" height="10" viewBox="0 0 15 10" fill="none"><path d="M14 5H1M1 5l3.5-3.5M1 5l3.5 3.5" stroke="#5A6A7E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>החליקו הצידה בין המסכים</div>
 
   <div class="strip">
 
@@ -544,7 +537,6 @@ footer{margin-top:88px; padding-top:26px; border-top:1px solid var(--line); colo
     <h2>בעל רישיון נשק</h2>
   </div>
   <p class="sub">מסך ההתרעה נקרא בריצה, ביד אחת ובשמש. שישה מסכים מרגע הצלצול ועד ההזדהות מול הכוח שמגיע — כולל שכבות מניעת הזיהוי השגוי.</p>
-  <div class="swipe" aria-hidden="true"><svg width="15" height="10" viewBox="0 0 15 10" fill="none"><path d="M14 5H1M1 5l3.5-3.5M1 5l3.5 3.5" stroke="#5A6A7E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>החליקו הצידה בין המסכים</div>
 
   <div class="strip">
 
@@ -868,7 +860,6 @@ footer{margin-top:88px; padding-top:26px; border-top:1px solid var(--line); colo
     <h2>שוטר בזירה ומוקד 100</h2>
   </div>
   <p class="sub">השוטר מקבל את מצבת האזרחים החמושים עם תמונה ומרחק — לפני שהוא יוצא מהניידת. המוקד מקבל את אותו אירוע במקביל, עם סמכות הכרזה, מיזוג ותקרת גיוס.</p>
-  <div class="swipe" aria-hidden="true"><svg width="15" height="10" viewBox="0 0 15 10" fill="none"><path d="M14 5H1M1 5l3.5-3.5M1 5l3.5 3.5" stroke="#5A6A7E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>החליקו הצידה בין המסכים</div>
 
   <div class="strip">
 
