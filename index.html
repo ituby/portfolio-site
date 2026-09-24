@@ -1,38 +1,40 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="dark" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Itamar Tuby - Product, UX/UI &amp; Full-stack</title>
-<meta name="description" content="Product person, UX/UI and full-stack. I define, design and build products end to end - web, native mobile, Hebrew and English.">
+<meta name="description" content="Product person, UX/UI and full-stack. I define, design and build products end to end - web, native mobile and 3D, in Hebrew and English.">
+<link rel="canonical" href="https://imtuby.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Itamar Tuby">
+<meta property="og:title" content="Itamar Tuby - Product, UX/UI &amp; Full-stack">
+<meta property="og:description" content="Product person, UX/UI and full-stack. I define, design and build products end to end - web, native mobile and 3D, in Hebrew and English.">
+<meta property="og:url" content="https://imtuby.com/">
+<meta property="og:image" content="https://imtuby.com/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0B">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('it-theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1786967288">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=1790259214">
 </head>
 <body>
 
-<div class="grain" aria-hidden="true"></div>
-
-<!-- ============ NAV ============ -->
 <header class="nav">
-  <a class="nav__mark" href="#top" aria-label="Home"><span class="nm-i">im</span><span class="nm-n">tuby</span><span class="nm-t">.com</span></a>
-  <nav class="nav__links">
+  <a class="nav__mark" href="#top" aria-label="Itamar Tuby - home"><span class="nm-i">im</span><span class="nm-n">tuby</span><span class="nm-t">.com</span></a>
+  <nav class="nav__links" aria-label="Primary">
     <a href="#work">Work</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
   <button class="themetoggle" id="themetoggle" aria-label="Toggle colour theme" title="Toggle theme">
-    <svg class="themetoggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-      <circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
-    </svg>
-    <svg class="themetoggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
-    </svg>
+    <svg class="themetoggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+    <svg class="themetoggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
   </button>
-  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
-    <span></span><span></span>
-  </button>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span></button>
 </header>
 
 <div class="scrim" id="scrim" hidden></div>
@@ -50,215 +52,158 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
-  <div class="hero__grid" aria-hidden="true"></div>
-
   <div class="hero__inner">
     <div class="hero__copy">
-      <p class="eyebrow reveal">Product · UX/UI · Frontend &amp; Backend</p>
+      <p class="eyebrow reveal">Itamar Tuby · Product · UX/UI · Full-stack</p>
 
       <h1 class="hero__title">
-        <span class="line"><span class="line__i">I scope it, <span class="lt">design it,</span></span></span>
+        <span class="line"><span class="line__i">I scope it,</span></span>
+        <span class="line"><span class="line__i lt">design it,</span></span>
         <span class="line"><span class="line__i"><em>then ship it.</em></span></span>
       </h1>
 
       <p class="hero__lede reveal">
-        I own the whole line - requirements, UX, interface, frontend and backend. Years in
-        UX/UI, three of them writing production code, building with AI agents and pipelines.
-        Five products shipped, in Hebrew and English, on web and native mobile.
+        I own the whole line - requirements, UX, interface, frontend and backend. Years in UX/UI,
+        three of them writing production code, building with AI agents and pipelines. Products
+        shipped in Hebrew and English, on the web, on native mobile and in 3D.
       </p>
 
       <div class="hero__cta reveal">
-        <a class="btn btn--primary magnetic" href="#work">
+        <a class="btn btn--primary" href="#work">
           <span>See the work</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a class="btn btn--ghost magnetic" href="#contact"><span>Get in touch</span></a>
+        <a class="btn btn--ghost" href="#contact"><span>Get in touch</span></a>
       </div>
 
       <dl class="hero__stats reveal">
-        <div><dt>5</dt><dd>products shipped</dd></div>
-        <div><dt>13</dt><dd>apps &amp; services</dd></div>
+        <div><dt>7</dt><dd>products, end to end</dd></div>
         <div><dt>200+</dt><dd>screens designed &amp; shipped</dd></div>
+        <div><dt>HE · EN</dt><dd>right-to-left and left-to-right</dd></div>
       </dl>
     </div>
 
-    <figure class="hero__portrait">
+    <figure class="hero__portrait reveal">
       <img class="hero__still" src="img/hero-still.png" alt="Portrait of Itamar Tuby" width="1000" height="1000">
+      <figcaption class="hero__caption">Generated &amp; cut out with OnZero</figcaption>
     </figure>
-  </div>
-
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <span>Product Definition</span><span>·</span><span>UX/UI</span><span>·</span><span>Design Systems</span><span>·</span><span>Next.js</span><span>·</span><span>React Native</span><span>·</span><span>TypeScript</span><span>·</span><span>NestJS</span><span>·</span><span>PostgreSQL</span><span>·</span><span>AI Agents</span><span>·</span><span>Pipelines</span><span>·</span><span>RTL / i18n</span><span>·</span>
-      <span>Product Definition</span><span>·</span><span>UX/UI</span><span>·</span><span>Design Systems</span><span>·</span><span>Next.js</span><span>·</span><span>React Native</span><span>·</span><span>TypeScript</span><span>·</span><span>NestJS</span><span>·</span><span>PostgreSQL</span><span>·</span><span>AI Agents</span><span>·</span><span>Pipelines</span><span>·</span><span>RTL / i18n</span><span>·</span>
-    </div>
   </div>
 </section>
 
 <!-- ============ WORK ============ -->
 <main id="work" class="work">
   <div class="sechead reveal">
-    <p class="eyebrow">Selected work</p>
-    <h2 class="sechead__h">Five products,<br>shipped end to end.</h2>
+    <div>
+      <p class="eyebrow">Selected work</p>
+      <h2 class="sechead__h">Seven products, <em>shipped</em><br>end to end.</h2>
+    </div>
+    <p class="sechead__aside">Defined, designed and built end to end - from the data model to the last pixel.</p>
   </div>
 
-  <!-- CYROOK -->
-  <article class="proj reveal" id="cyrook" style="--accent:#A855F7">
-    <div class="proj__meta">
-      <span class="proj__num">01</span>
-      <h3 class="proj__name"><a href="cyrook.html">CyRook</a></h3>
-      <p class="proj__kind">Security scanning platform · B2B SaaS</p>
-      <p class="proj__desc">
-        Continuous web and API security scanning for teams without an enterprise budget.
-        The hard part wasn't the scanner - it was making security findings something a
-        developer actually acts on. Every screen opens with a plain-language explainer, and
-        Auto&#8209;Fix closes the loop by opening a pull request with a stack-aware patch.
-      </p>
-      <ul class="proj__tags">
-        <li>Next.js 14</li><li>NestJS</li><li>Python FastAPI</li><li>PostgreSQL</li><li>Redis</li>
-      </ul>
-      <div class="proj__facts">
-        <div><b>30+</b><span>OWASP scan modules</span></div>
-        <div><b>3</b><span>services, one monorepo</span></div>
-        <div><b>4</b><span>pricing tiers</span></div>
-      </div>
-          <a class="proj__more" href="cyrook.html">
-        <span>Read the case study</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </div>
-    <div class="proj__shots">
-      <figure class="shot shot--lead"><img loading="lazy" src="img/shots/cyrook-home.jpg" alt="CyRook landing page"></figure>
-      <figure class="shot"><img loading="lazy" src="img/shots/cyrook-ci.jpg" alt="CyRook CI integration screen"></figure>
-      <figure class="shot"><img loading="lazy" src="img/shots/cyrook-compliance.jpg" alt="CyRook compliance dashboard"></figure>
-    </div>
-  </article>
+  <div class="work__grid">
 
-  <!-- AUTICKET -->
-  <article class="proj proj--flip reveal" id="auticket" style="--accent:#2E3192">
-    <div class="proj__meta">
-      <span class="proj__num">02</span>
-      <h3 class="proj__name"><a href="auticket.html">Auticket</a></h3>
-      <p class="proj__kind">Municipal enforcement system · GovTech</p>
-      <p class="proj__desc">
-        Parking enforcement in Israel runs on a broken chain: the officer writes a ticket, the
-        citizen gets paper, payment lives elsewhere and appeals disappear. Auticket puts the whole
-        chain in one system - four apps, one design language - and adds a vision layer that turns
-        cameras a city already owns into enforcement.
-      </p>
-      <ul class="proj__tags">
-        <li>Next.js</li><li>tRPC</li><li>Fastify</li><li>Prisma</li><li>YOLOv10</li><li>Hebrew RTL</li>
-      </ul>
-      <div class="proj__facts">
-        <div><b>5</b><span>apps in one monorepo</span></div>
-        <div><b>103ms</b><span>avg AI response</span></div>
-      </div>
-          <a class="proj__more" href="auticket.html">
-        <span>Read the case study</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <article class="card card--wide reveal" id="exoview" style="--accent:#F5C518">
+      <a class="card__media" href="exoview.html" aria-label="Exo-View case study">
+        <img src="img/shots/exoview-app.jpg" alt="Exo-View - the Earth as the interface" width="2000" height="1250">
+        <span class="card__cta">Case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-    </div>
-    <div class="proj__shots">
-      <figure class="shot shot--lead"><img loading="lazy" src="img/shots/auticket-landing-home.jpg" alt="Auticket landing page"></figure>
-      <figure class="shot"><img loading="lazy" src="img/shots/auticket-authority-analytics.jpg" alt="Auticket authority analytics"></figure>
-      <figure class="shot"><img loading="lazy" src="img/shots/auticket-officer-home.jpg" alt="Auticket officer dashboard"></figure>
-    </div>
-  </article>
+      <div class="card__body">
+        <div>
+          <div class="card__head"><h3 class="card__name"><a href="exoview.html">Exo-View</a></h3><a class="card__live" href="https://exo-view.com" target="_blank" rel="noopener">exo-view.com</a></div>
+          <p class="card__kind">Live 3D solar system &amp; world data · WebGL</p>
+        </div>
+        <p class="card__desc">The solar system, live - every planet and moon where it really is right now - and an Earth you can read: 217 countries coloured by 28 World Bank indicators, and a ranking you weight yourself. A real planet is the whole interface.</p>
+        <ul class="card__tags"><li>three.js</li><li>globe.gl</li><li>d3-geo</li><li>Data visualisation</li></ul>
+      </div>
+    </article>
 
-  <!-- RABBILIST -->
-  <article class="proj reveal" id="rabbilist" style="--accent:#FF972A">
-    <div class="proj__meta">
-      <span class="proj__num">03</span>
-      <h3 class="proj__name"><a href="rabbilist.html">RabbiList</a></h3>
-      <p class="proj__kind">Torah video platform · Community</p>
-      <p class="proj__desc">
-        A kosher video library joined to a live schedule of in&#8209;person classes, searchable
-        country&nbsp;›&nbsp;city&nbsp;›&nbsp;neighbourhood. The decision that shaped everything: the home
-        page is a location form, not a video feed - because the real need is physical. A physical
-        class is an event with a place, a time and a registration, so it got its own data model
-        rather than being squeezed into a video.
-      </p>
-      <ul class="proj__tags">
-        <li>Next.js App Router</li><li>Prisma</li><li>Server Actions</li><li>Hebrew + English</li>
-      </ul>
-      <div class="proj__facts">
-        <div><b>3</b><span>user roles, granular perms</span></div>
-        <div><b>2</b><span>full languages, RTL + LTR</span></div>
-        <div><b>4</b><span>content types</span></div>
-      </div>
-          <a class="proj__more" href="rabbilist.html">
-        <span>Read the case study</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <article class="card reveal" id="strata" style="--accent:#E0A21B">
+      <a class="card__media" href="strata.html" aria-label="Strata case study">
+        <img loading="lazy" src="img/shots/strata-3d-sunset.jpg" alt="Strata - a proposed building in 3D, at sunset" width="1600" height="816">
+        <span class="card__cta">Case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-    </div>
-    <div class="proj__shots">
-      <figure class="shot shot--lead"><img loading="lazy" src="img/shots/rabbilist-home.jpg" alt="RabbiList home page"></figure>
-      <figure class="shot"><img loading="lazy" src="img/shots/rabbilist-studio-overview.jpg" alt="RabbiList creator studio"></figure>
-      <figure class="shot"><img loading="lazy" src="img/shots/rabbilist-lessons.jpg" alt="RabbiList lessons search"></figure>
-    </div>
-  </article>
+      <div class="card__body">
+        <div class="card__head"><h3 class="card__name"><a href="strata.html">Strata</a></h3></div>
+        <span class="card__num">02</span>
+        <p class="card__kind">Urban-renewal feasibility · PropTech</p>
+        <p class="card__desc">From a plot and a list of flat owners to a feasibility report: rights by route, massing alternatives, owners' majorities, Standard 21 economics and the building in 3D in its street.</p>
+        <ul class="card__tags"><li>Planning engine</li><li>SVG drawings</li><li>three.js</li><li>Hebrew + English</li></ul>
+      </div>
+    </article>
 
-  <!-- ONZERO -->
-  <article class="proj proj--flip reveal" id="onzero" style="--accent:#12B981">
-    <div class="proj__meta">
-      <span class="proj__num">04</span>
-      <h3 class="proj__name"><a href="onzero.html">OnZero</a></h3>
-      <p class="proj__kind">AI character &amp; brand studio</p>
-      <p class="proj__desc">
-        A creation platform built on DNA&#8209;locked characters: define an identity once, and every
-        image and video after it keeps the same face. Around that sits a full production
-        pipeline - brand kits, background matting, multi&#8209;size adaptation, image&#8209;to&#8209;video.
-        The portrait at the top of this page was generated and cut out with it.
-      </p>
-      <ul class="proj__tags">
-        <li>Character DNA lock</li><li>Brand kits</li><li>Image → video</li><li>MCP tooling</li>
-      </ul>
-      <div class="proj__facts">
-        <div><b>15</b><span>generation models, one interface</span></div>
-        <div><b>4</b><span>modalities: image, video, voice, music</span></div>
-      </div>
-          <a class="proj__more" href="onzero.html">
-        <span>Read the case study</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <article class="card reveal" id="midrash" style="--accent:#3B4BC8">
+      <a class="card__media" href="midrash.html" aria-label="Midrash.live case study">
+        <img loading="lazy" src="img/shots/midrash-home.jpg" alt="Midrash.live - find a class and a minyan in your area" width="2000" height="1250">
+        <span class="card__cta">Case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-    </div>
-    <div class="proj__shots">
-      <figure class="shot shot--lead"><img loading="lazy" src="img/shots/onzero-home.jpg" alt="OnZero home"></figure>
-      <figure class="shot"><img loading="lazy" src="img/shots/onzero-discover.jpg" alt="OnZero community discover"></figure>
-      <figure class="shot"><img loading="lazy" src="img/shots/onzero-challenges.jpg" alt="OnZero challenges"></figure>
-    </div>
-  </article>
+      <div class="card__body">
+        <div class="card__head"><h3 class="card__name"><a href="midrash.html">Midrash.live</a></h3><a class="card__live" href="https://midrash.live" target="_blank" rel="noopener">midrash.live</a></div>
+        <span class="card__num">03</span>
+        <p class="card__kind">Torah learning platform · Community</p>
+        <p class="card__desc">Classes from leading rabbis, minyanim and prayer times, and a live map of in-person classes by country › city › neighbourhood. The home page is a location search, not a feed - because the real need is physical.</p>
+        <ul class="card__tags"><li>Next.js 15</li><li>Prisma</li><li>Hebcal</li><li>RTL + LTR</li></ul>
+      </div>
+    </article>
 
-  <!-- DOODI -->
-  <article class="proj reveal" id="doodi" style="--accent:#2F2FE0">
-    <div class="proj__meta">
-      <span class="proj__num">05</span>
-      <h3 class="proj__name"><a href="doodi.html">Doodi</a></h3>
-      <p class="proj__kind">Building management · iOS &amp; Android</p>
-      <p class="proj__desc">
-        A native app that gives a residential building one place to live: tenants, house committee
-        and service providers, each with their own dashboard and permissions. Payments, faults,
-        votes, documents, amenities and a maintenance schedule - with join&#8209;codes and committee
-        setup as first&#8209;run flows.
-      </p>
-      <ul class="proj__tags">
-        <li>React Native</li><li>Expo</li><li>Supabase</li><li>118 screens</li>
-      </ul>
-      <div class="proj__facts">
-        <div><b>3</b><span>user types</span></div>
-        <div><b>118</b><span>screens</span></div>
-      </div>
-          <a class="proj__more" href="doodi.html">
-        <span>Read the case study</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <article class="card reveal" id="cyrook" style="--accent:#A855F7">
+      <a class="card__media" href="cyrook.html" aria-label="CyRook case study">
+        <img loading="lazy" src="img/shots/cyrook-home.jpg" alt="CyRook landing page" width="1600" height="1000">
+        <span class="card__cta">Case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-    </div>
-    <div class="proj__shots proj__shots--phones">
-      <figure class="shot"><img loading="lazy" src="img/shots/doodi-tenant.jpg" alt="Doodi resident dashboard"></figure>
-      <figure class="shot"><img loading="lazy" src="img/shots/doodi-board.jpg" alt="Doodi committee dashboard"></figure>
-      <figure class="shot"><img loading="lazy" src="img/shots/doodi-vendor.jpg" alt="Doodi service provider dashboard"></figure>
-    </div>
-  </article>
+      <div class="card__body">
+        <div class="card__head"><h3 class="card__name"><a href="cyrook.html">CyRook</a></h3></div>
+        <span class="card__num">04</span>
+        <p class="card__kind">Security scanning platform · B2B SaaS</p>
+        <p class="card__desc">Continuous web and API scanning for teams without an enterprise budget. Every screen opens with a plain-language explainer, and Auto&#8209;Fix closes the loop by opening a pull request with a stack-aware patch.</p>
+        <ul class="card__tags"><li>Next.js</li><li>NestJS</li><li>FastAPI</li><li>PostgreSQL</li></ul>
+      </div>
+    </article>
+
+    <article class="card reveal" id="auticket" style="--accent:#2E3192">
+      <a class="card__media" href="auticket.html" aria-label="Auticket case study">
+        <img loading="lazy" src="img/shots/auticket-landing-home.jpg" alt="Auticket landing page" width="1600" height="1000">
+        <span class="card__cta">Case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <div class="card__body">
+        <div class="card__head"><h3 class="card__name"><a href="auticket.html">Auticket</a></h3></div>
+        <span class="card__num">05</span>
+        <p class="card__kind">Municipal enforcement system · GovTech</p>
+        <p class="card__desc">The whole parking-enforcement chain in one system - officer, citizen, payment and appeal - four apps in one design language, plus a vision layer that turns cameras a city already owns into enforcement.</p>
+        <ul class="card__tags"><li>Next.js</li><li>tRPC</li><li>Prisma</li><li>YOLOv10</li></ul>
+      </div>
+    </article>
+
+    <article class="card reveal" id="onzero" style="--accent:#12B981">
+      <a class="card__media" href="onzero.html" aria-label="OnZero case study">
+        <img loading="lazy" src="img/shots/onzero-home.jpg" alt="OnZero home" width="1600" height="1000">
+        <span class="card__cta">Case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <div class="card__body">
+        <div class="card__head"><h3 class="card__name"><a href="onzero.html">OnZero</a></h3></div>
+        <span class="card__num">06</span>
+        <p class="card__kind">AI character &amp; brand studio</p>
+        <p class="card__desc">A creation platform built on DNA&#8209;locked characters: define an identity once and every image and video after it keeps the same face - with brand kits, matting, multi-size adaptation and image&#8209;to&#8209;video around it.</p>
+        <ul class="card__tags"><li>Character lock</li><li>Brand kits</li><li>Image → video</li><li>MCP</li></ul>
+      </div>
+    </article>
+
+    <article class="card reveal" id="doodi" style="--accent:#2F2FE0">
+      <a class="card__media card__media--phones" href="doodi.html" aria-label="Doodi case study">
+        <img loading="lazy" src="img/shots/doodi-tenant.jpg" alt="Doodi resident dashboard" width="460" height="1000">
+        <img loading="lazy" src="img/shots/doodi-board.jpg" alt="Doodi committee dashboard" width="460" height="1000">
+        <img loading="lazy" src="img/shots/doodi-vendor.jpg" alt="Doodi service provider dashboard" width="460" height="1000">
+        <span class="card__cta">Case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <div class="card__body">
+        <div class="card__head"><h3 class="card__name"><a href="doodi.html">Doodi</a></h3></div>
+        <span class="card__num">07</span>
+        <p class="card__kind">Building management · iOS &amp; Android</p>
+        <p class="card__desc">One place for a residential building to live: tenants, house committee and service providers, each with their own dashboard - payments, faults, votes, documents and maintenance, across 118 native screens.</p>
+        <ul class="card__tags"><li>React Native</li><li>Expo</li><li>Supabase</li></ul>
+      </div>
+    </article>
+
+  </div>
 </main>
 
 <!-- ============ ABOUT ============ -->
@@ -266,7 +211,7 @@
   <div class="about__inner">
     <div class="sechead reveal">
       <p class="eyebrow">About</p>
-      <h2 class="sechead__h">Design and code<br>are the same job.</h2>
+      <h2 class="sechead__h">Design and code<br>are <em>the same job.</em></h2>
     </div>
     <div class="about__body reveal">
       <p class="about__lead">
@@ -276,19 +221,19 @@
       </p>
       <p>
         That shows up in small places. In Auticket the appeal button sits beside the pay button
-        instead of buried three screens deep, because a citizen who can't find it calls the
-        municipality. In RabbiList a physical class is a separate entity from a video, because
-        forcing it into the video model would have broken search. In CyRook every screen opens by
-        explaining itself, because the audience is developers, not security engineers.
+        instead of three screens deep, because a citizen who can't find it calls the municipality.
+        In Midrash.live a physical class is its own entity, not a video, because forcing it into the
+        video model would have broken search. In Strata the owners' signatures are a bar with the
+        legal threshold drawn on it, because “are we there yet?” is the only question anyone asks.
       </p>
       <p>
-        I work in Hebrew and English, right&#8209;to&#8209;left and left&#8209;to&#8209;right, on the web
-        and on native mobile.
+        I work in Hebrew and English, right&#8209;to&#8209;left and left&#8209;to&#8209;right, on the web,
+        on native mobile and in WebGL.
       </p>
       <ul class="about__cols">
         <li><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg>Product</b><span>Requirements · user flows · scoping · prioritisation · roadmap</span></li>
         <li><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 19 9l-5.5 12L8 9z"/><path d="M8 9h11"/><path d="M12 12.5v8.5"/></svg>Design</b><span>UX/UI · design systems · UX writing · RTL typography · prototyping</span></li>
-        <li><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 7.5 3.5 12l5 4.5"/><path d="M15.5 7.5 20.5 12l-5 4.5"/><path d="M13.5 4.5l-3 15"/></svg>Build</b><span>TypeScript · Next.js · React Native · NestJS · Prisma · PostgreSQL · Python</span></li>
+        <li><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 7.5 3.5 12l5 4.5"/><path d="M15.5 7.5 20.5 12l-5 4.5"/><path d="M13.5 4.5l-3 15"/></svg>Build</b><span>TypeScript · Next.js · React Native · NestJS · Prisma · PostgreSQL · three.js · Python</span></li>
         <li><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="5" cy="7" r="2.2"/><circle cx="5" cy="17" r="2.2"/><circle cx="18" cy="12" r="2.6"/><path d="M7.1 8.1 15.6 11M7.1 15.9 15.6 13"/></svg>AI</b><span>Agent workflows · pipelines · MCP tooling · LLM integration</span></li>
       </ul>
     </div>
@@ -299,22 +244,24 @@
 <section class="contact" id="contact">
   <div class="contact__inner reveal">
     <p class="eyebrow">Contact</p>
-    <h2 class="contact__h">Let's build<br>something good.</h2>
-    <a class="mailto magnetic" href="mailto:ituby@icloud.com">
-      <span>ituby@icloud.com</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-    </a>
-    <div class="contact__links">
-      <a href="https://www.linkedin.com/in/tubyitamar/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="tel:+972525830613">+972 52 583 0613</a>
+    <h2 class="contact__h">Let's build something <em>good.</em></h2>
+    <div class="contact__row">
+      <a class="mailto" href="mailto:ituby@icloud.com">
+        <span>ituby@icloud.com</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <div class="contact__links">
+        <a class="ulink" href="https://www.linkedin.com/in/tubyitamar/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="ulink" href="tel:+972525830613">+972 52 583 0613</a>
+      </div>
     </div>
   </div>
   <footer class="foot">
     <span>© 2026 Itamar Tuby</span>
-    <span>Designed &amp; built by me</span>
+    <span><a href="mailto:ituby@icloud.com">ituby@icloud.com</a> · <a href="https://www.linkedin.com/in/tubyitamar/" target="_blank" rel="noopener">LinkedIn</a></span>
   </footer>
 </section>
 
-<script src="script.js?v=1786964700"></script>
+<script src="script.js?v=1790259214"></script>
 </body>
 </html>

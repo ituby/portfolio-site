@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" data-theme="dark" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strata - Urban-renewal feasibility platform - Itamar Tuby</title>
+<meta name="description" content="From a plot and a list of flat owners to a feasibility report: rights by route, massing alternatives, owners' majorities, Standard 21 economics and 3D.">
+<link rel="canonical" href="https://imtuby.com/strata.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Itamar Tuby">
+<meta property="og:title" content="Strata - Urban-renewal feasibility platform - Itamar Tuby">
+<meta property="og:description" content="From a plot and a list of flat owners to a feasibility report: rights by route, massing alternatives, owners' majorities, Standard 21 economics and 3D.">
+<meta property="og:url" content="https://imtuby.com/strata.html">
+<meta property="og:image" content="https://imtuby.com/img/shots/strata-design-3d.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0B">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('it-theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=1790259214">
+</head>
+<body style="--accent:#E0A21B">
+
+<header class="nav">
+  <a class="nav__mark" href="index.html#top" aria-label="Itamar Tuby - home"><span class="nm-i">im</span><span class="nm-n">tuby</span><span class="nm-t">.com</span></a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="index.html#work" aria-current="page">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <button class="themetoggle" id="themetoggle" aria-label="Toggle colour theme" title="Toggle theme">
+    <svg class="themetoggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+    <svg class="themetoggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+  </button>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span></button>
+</header>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true" inert>
+  <nav class="drawer__links">
+    <a href="index.html#work"><span>01</span>Work</a>
+    <a href="index.html#about"><span>02</span>About</a>
+    <a href="index.html#contact"><span>03</span>Contact</a>
+  </nav>
+  <div class="drawer__foot">
+    <a href="mailto:ituby@icloud.com">ituby@icloud.com</a>
+    <a href="https://www.linkedin.com/in/tubyitamar/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</aside>
+
+<section class="phero pnav">
+  <a class="backlink reveal" href="index.html#work">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+    All work
+  </a>
+
+  <div class="phero__top reveal">
+    <h1 class="phero__name">Strata</h1>
+    <span class="phero__kind">Urban-renewal feasibility platform</span>
+  </div>
+  <p class="phero__lede reveal">From a plot and a list of flat owners to a feasibility report: building rights by route, massing alternatives, owners' majorities, Standard 21 economics and a 3D model of the building in its street - one engine, eleven steps.</p>
+
+  <dl class="phero__meta reveal">
+    <div><dt>Role</dt><dd>Product · UX/UI · Engine &amp; full-stack</dd></div>
+    <div><dt>Domain</dt><dd>TAMA 38 · Shaked alternative · Pinui-binui</dd></div>
+    <div><dt>Stack</dt><dd>JS engine · SVG · three.js · React · Fastify · PostgreSQL</dd></div>
+    <div><dt>Languages</dt><dd>Hebrew RTL · English LTR</dd></div>
+  </dl>
+</section>
+
+<div class="pcover reveal"><figure><img src="img/shots/strata-design-3d.jpg" alt="Strata - the design step, with the chosen alternative in 3D inside its street" width="2000" height="1250"></figure></div>
+
+<section class="psec reveal">
+  <h2 class="psec__h">What it is</h2>
+  <p class="psec__p">Before anyone draws a line, an urban-renewal project has to answer one question: <b>does this building work?</b> Today the answer is assembled by hand across a planner, an appraiser, a lawyer and a spreadsheet - each planning route with its own multipliers, each owners' vote with its own statutory majority - and it takes weeks to learn that a building was never viable.</p>
+  <p class="psec__p">Strata turns that into a guided flow. Enter the plot and what stands on it; the engine works out <b>the rights for the route</b>, generates massing alternatives inside the envelope, rejects the ones that break a rule, ranks the rest, and carries the chosen one through areas, owners' replacement flats, schedule and economics - to documents you can hand to the owners.</p>
+  <div class="pcols">
+    <div class="pcard">
+      <h4>The problem</h4>
+      <ul>
+        <li><b>Four routes, four rulebooks</b> - Vacant land, strengthen-and-add, demolish-and-rebuild, pinui-binui</li>
+        <li><b>Numbers that don't talk</b> - Rights, areas and profit live in separate files</li>
+        <li><b>Majorities by hand</b> - Who signed, and whether the law's threshold is met</li>
+        <li><b>Nothing to show owners</b> - A spreadsheet isn't an offer</li>
+      </ul>
+    </div>
+    <div class="pcard">
+      <h4>The solution</h4>
+      <ul>
+        <li><b>One engine</b> - Every step reads the same project, so a change anywhere updates everything</li>
+        <li><b>Alternatives, not a guess</b> - Generate, reject, adjust and rank inside the envelope</li>
+        <li><b>Drawings from the numbers</b> - Site, floors, flats, elevations, section and 3D</li>
+        <li><b>Documents out</b> - Feasibility report, offer to the owners, tables</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="psec reveal">
+  <h2 class="psec__h">How it's built</h2>
+  <div class="pstack">
+    <div class="plyr"><div class="t">Engine</div><div class="n">@strata/engine</div><div class="d">Rights, massing, areas, economics<br>shared by browser and server</div></div>
+    <div class="plyr"><div class="t">Drawings</div><div class="n">SVG library</div><div class="d">Site, typical floor, flats, ground,<br>basement, elevations, section</div></div>
+    <div class="plyr"><div class="t">3D studio</div><div class="n">three.js</div><div class="d">Surroundings, cladding library,<br>light from dawn to night</div></div>
+    <div class="plyr"><div class="t">Platform</div><div class="n">React · Fastify</div><div class="d">Prisma · PostgreSQL<br>orgs, roles, versions, AI reading</div></div>
+  </div>
+  <div class="pnums">
+    <div class="pnum"><b>11</b><span>steps from plot to documents</span></div>
+    <div class="pnum"><b>4</b><span>planning routes, each with its own rules</span></div>
+    <div class="pnum"><b>8</b><span>drawing views, generated from the numbers</span></div>
+    <div class="pnum"><b>200</b><span>versions kept per project, any one restorable</span></div>
+  </div>
+</section>
+
+<section class="psec">
+  <h2 class="psec__h reveal">The screens</h2>
+
+  <div class="pshot reveal">
+    <div class="pshot__note"><h4>The dashboard</h4><p>A project opens on its verdict. The five numbers that decide it - units, rights used, developer profit, revenue, signatures - sit in a strip at the top of <b>every</b> screen, and the dashboard adds the next step with a single “continue”. The rail on the right is the whole method, eleven steps with a tick as each one is done.</p></div>
+    <figure><img loading="lazy" src="img/shots/strata-overview.jpg" alt="Strata - project dashboard"></figure>
+  </div>
+
+  <div class="pshot pshot--pair reveal">
+    <div class="pshot__note"><h4>Design and mix</h4><p>The engine proposes alternatives inside the plan envelope, reports what it rejected and why, and ranks the rest. Each drawing is generated from the same numbers, so <b>changing the mix redraws the elevations</b> - there is no separate model to keep in sync.</p></div>
+    <figure><img loading="lazy" src="img/shots/strata-design.jpg" alt="Strata - design step with site plan and alternatives table"></figure>
+    <figure><img loading="lazy" src="img/shots/strata-elevations.jpg" alt="Strata - generated elevations"></figure>
+  </div>
+
+  <div class="pshot pshot--trio reveal">
+    <div class="pshot__note"><h4>The building, in its street</h4><p>A developer sells a building before it exists, so the 3D studio puts it among its neighbours with real cladding and light from dawn to night. It answers the question owners actually ask: <b>“what will it look like from my balcony?”</b></p></div>
+    <figure><img loading="lazy" src="img/shots/strata-3d-noon.jpg" alt="Strata 3D - noon"></figure>
+    <figure><img loading="lazy" src="img/shots/strata-3d-sunset.jpg" alt="Strata 3D - sunset"></figure>
+    <figure><img loading="lazy" src="img/shots/strata-3d-night.jpg" alt="Strata 3D - night"></figure>
+  </div>
+
+  <div class="pshot pshot--pair reveal">
+    <div class="pshot__note"><h4>Rights and owners</h4><p>Rights are computed per route, with the rules behind the figure listed beside it. On the owners' side, signatures are drawn as a bar <b>with the legal threshold marked on it</b>, because “are we there yet?” is the only question anyone asks of that number.</p></div>
+    <figure><img loading="lazy" src="img/shots/strata-rights.jpg" alt="Strata - building rights"></figure>
+    <figure><img loading="lazy" src="img/shots/strata-tenants.jpg" alt="Strata - flat owners and signatures"></figure>
+  </div>
+
+  <div class="pshot pshot--pair reveal">
+    <div class="pshot__note"><h4>Economics and time</h4><p>A Standard 21 zero-report: revenue, every cost line and the developer's profit checked against the required margin for the district. Every figure that rests on an assumption carries a <b>small “assumption” tag</b>, so nobody mistakes an estimate for a quote.</p></div>
+    <figure><img loading="lazy" src="img/shots/strata-econ.jpg" alt="Strata - economic feasibility"></figure>
+    <figure><img loading="lazy" src="img/shots/strata-schedule.jpg" alt="Strata - project schedule"></figure>
+  </div>
+
+  <div class="pshot pshot--pair reveal">
+    <div class="pshot__note"><h4>Projects and documents</h4><p>A worked example for every route sits beside your own projects, so the first thing a new user sees is a finished one. At the end of the flow the same numbers become <b>a feasibility report and an offer to the owners</b>, in Hebrew or English.</p></div>
+    <figure><img loading="lazy" src="img/shots/strata-projects.jpg" alt="Strata - projects and examples library"></figure>
+    <figure><img loading="lazy" src="img/shots/strata-docs.jpg" alt="Strata - documents"></figure>
+  </div>
+</section>
+
+<section class="psec reveal">
+  <h2 class="psec__h">Design decisions</h2>
+  <div class="pcols">
+    <div class="pcard"><h4>01</h4><ul><li><b>The method is the navigation</b> - The rail isn't a menu of features, it's the order the work happens in. Being lost means being on the wrong step, and the rail shows which.</li></ul></div>
+    <div class="pcard"><h4>02</h4><ul><li><b>The verdict never scrolls away</b> - Units, rights, profit, revenue and signatures stay pinned, so the effect of any change is visible on the screen where you made it.</li></ul></div>
+    <div class="pcard"><h4>03</h4><ul><li><b>One engine, two places</b> - The browser recalculates instantly with the same engine the server uses for the authoritative figures. Parity tests hold both to byte-for-byte identical results.</li></ul></div>
+    <div class="pcard"><h4>04</h4><ul><li><b>Assumptions are labelled</b> - Estimated costs and default prices are tagged where they appear, not in a footnote, and each can be overridden in place.</li></ul></div>
+    <div class="pcard"><h4>05</h4><ul><li><b>Read the documents for me</b> - Uploaded plans and permits are read by an AI model into proposed field values, each shown with the evidence it came from, for a person to accept or correct.</li></ul></div>
+    <div class="pcard"><h4>06</h4><ul><li><b>Say what it isn't</b> - Every screen ends with the same line: a feasibility check, not a substitute for legal advice or a planning approval.</li></ul></div>
+  </div>
+</section>
+
+<section class="pnext reveal">
+  <div class="pnext__inner">
+    <a href="midrash.html">
+      <div class="pnext__lbl">Next project</div>
+      <div class="pnext__name">Midrash.live →</div>
+    </a>
+    <a class="btn btn--ghost" href="index.html#contact"><span>Get in touch</span></a>
+  </div>
+</section>
+
+<div class="pfoot">
+  <footer class="foot">
+    <span>© 2026 Itamar Tuby</span>
+    <span><a href="mailto:ituby@icloud.com">ituby@icloud.com</a> · <a href="https://www.linkedin.com/in/tubyitamar/" target="_blank" rel="noopener">LinkedIn</a></span>
+  </footer>
+</div>
+
+<script src="script.js?v=1790259214"></script>
+</body>
+</html>
