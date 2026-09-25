@@ -151,7 +151,34 @@ a { color: inherit; text-decoration: none; }
   font-size: clamp(44px, 7vw, 96px);
   line-height: .98; font-weight: 600; letter-spacing: -.048em;
 }
-.hero__title .lt { color: var(--fg-3); }
+/* "design it," - a liquid, two-tone gradient: soft blobs that drift and merge inside the letters */
+@property --lx1 { syntax: "<percentage>"; inherits: false; initial-value: 12%; }
+@property --ly1 { syntax: "<percentage>"; inherits: false; initial-value: 30%; }
+@property --lx2 { syntax: "<percentage>"; inherits: false; initial-value: 55%; }
+@property --ly2 { syntax: "<percentage>"; inherits: false; initial-value: 80%; }
+@property --lx3 { syntax: "<percentage>"; inherits: false; initial-value: 92%; }
+@property --ly3 { syntax: "<percentage>"; inherits: false; initial-value: 20%; }
+
+.hero__title .line__i.lt {
+  --liq-a: #6C4DFF; --liq-b: #2FD6F2; --liq-hi: #C7B8FF;
+  color: transparent;
+  background:
+    radial-gradient(30% 95% at var(--lx1) var(--ly1), var(--liq-hi) 0%, transparent 70%),
+    radial-gradient(36% 120% at var(--lx2) var(--ly2), var(--liq-b) 0%, transparent 75%),
+    radial-gradient(30% 110% at var(--lx3) var(--ly3), var(--liq-b) 0%, transparent 72%),
+    var(--liq-a);
+  -webkit-background-clip: text; background-clip: text;
+  animation: riseIn 1s var(--ease-out) .07s forwards, liquid 7s ease-in-out infinite alternate;
+  padding-right: .06em; margin-right: -.06em;
+  display: inline-block;
+}
+[data-theme="light"] .hero__title .line__i.lt { --liq-a: #5230F0; --liq-b: #06A6CF; --liq-hi: #9C86FF; }
+@keyframes liquid {
+  0%   { --lx1: 12%; --ly1: 30%; --lx2: 55%; --ly2: 80%; --lx3: 92%; --ly3: 20%; }
+  33%  { --lx1: 38%; --ly1: 85%; --lx2: 20%; --ly2: 15%; --lx3: 70%; --ly3: 90%; }
+  66%  { --lx1: 75%; --ly1: 20%; --lx2: 88%; --ly2: 70%; --lx3: 30%; --ly3: 40%; }
+  100% { --lx1: 95%; --ly1: 70%; --lx2: 45%; --ly2: 25%; --lx3: 8%;  --ly3: 80%; }
+}
 .hero__title .line { display: block; overflow: hidden; padding-bottom: .12em; margin-bottom: -.12em; }
 .hero__title .line__i { display: block; white-space: nowrap; transform: translateY(110%); animation: riseIn 1s var(--ease-out) forwards; }
 .hero__title .line:nth-child(2) .line__i { animation-delay: .07s; }
@@ -375,6 +402,7 @@ a { color: inherit; text-decoration: none; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
   .hero__title .line__i { transform: none; }
+  .hero__title .line__i.lt { animation: none; transform: none; }
   .reveal { opacity: 1; transform: none; }
 }
 
