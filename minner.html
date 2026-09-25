@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en" data-theme="dark" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minner - Proprietary BTC trading system - Daniel &amp; Itamar Tuby</title>
+<meta name="description" content="A live BTC trading dashboard built on a proprietary method developed by Daniel and Itamar Tuby - with backtest and forward test, every cost included.">
+<link rel="canonical" href="https://imtuby.com/minner.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Daniel &amp; Itamar Tuby">
+<meta property="og:title" content="Minner - Proprietary BTC trading system - Daniel &amp; Itamar Tuby">
+<meta property="og:description" content="A live BTC trading dashboard built on a proprietary method developed by Daniel and Itamar Tuby - with backtest and forward test, every cost included.">
+<meta property="og:url" content="https://imtuby.com/minner.html">
+<meta property="og:image" content="https://imtuby.com/img/covers/minner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0B">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('it-theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=1790339685">
+</head>
+<body style="--accent:#F7931A">
+
+<header class="nav">
+  <a class="nav__mark" href="index.html#top" aria-label="Daniel &amp; Itamar Tuby - home"><span class="nm-i">im</span><span class="nm-n">tuby</span><span class="nm-t">.com</span></a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="index.html#work" aria-current="page">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <button class="themetoggle" id="themetoggle" aria-label="Toggle colour theme" title="Toggle theme">
+    <svg class="themetoggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+    <svg class="themetoggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+  </button>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span></button>
+</header>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true" inert>
+  <nav class="drawer__links">
+    <a href="index.html#work"><span>01</span>Work</a>
+    <a href="index.html#about"><span>02</span>About</a>
+    <a href="index.html#contact"><span>03</span>Contact</a>
+  </nav>
+  <div class="drawer__foot">
+    <a href="mailto:ituby@icloud.com">ituby@icloud.com</a>
+    <a href="https://www.linkedin.com/in/tubyitamar/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</aside>
+
+<section class="phero pnav">
+  <a class="backlink reveal" href="index.html#work">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+    All work
+  </a>
+
+  <div class="phero__top reveal">
+    <h1 class="phero__name">Minner</h1>
+    <span class="phero__kind">Proprietary BTC trading system</span>
+  </div>
+  <p class="phero__lede reveal">A live trading dashboard for BTC perpetual futures, built on a method we developed ourselves - one that doesn't exist anywhere else. Watch it read the market, replay it on six years of history, and paper-trade it forward on the live market.</p>
+
+  <dl class="phero__meta reveal">
+    <div><dt>Role</dt><dd>Method · Product · Design · Engineering</dd></div>
+    <div><dt>Type</dt><dd>FinTech · Trading · Data visualisation</dd></div>
+    <div><dt>Stack</dt><dd>Node.js · vanilla JS · TradingView charts</dd></div>
+    <div><dt>Market</dt><dd>BTCUSDT perpetual · Binance</dd></div>
+  </dl>
+</section>
+
+<div class="pcover reveal"><figure><img src="img/shots/minner-live.jpg" alt="Minner - the live dashboard" width="2000" height="1250"></figure></div>
+
+<section class="psec reveal">
+  <h2 class="psec__h">What it is</h2>
+  <p class="psec__p">Minner is a system built around <b>a proprietary trading method developed by the two of us</b>. The method is our own work from the ground up - it isn't a published strategy, an indicator pack or a variation on something you can find elsewhere, and it runs only here.</p>
+  <p class="psec__p">Around it we built the product that makes a method trustworthy: a live view of what it's watching right now, a backtest that replays it on the market since 2020 with every real cost deducted, and a forward test that paper-trades it on the live market from the moment you press start.</p>
+  <div class="pcols">
+    <div class="pcard">
+      <h4>The problem</h4>
+      <ul>
+        <li><b>Black boxes</b> - Most trading tools show a signal, never the reasoning or the record behind it</li>
+        <li><b>Flattering backtests</b> - Results that leave out fees, slippage and funding</li>
+        <li><b>Tuned on the answer</b> - Rules fitted to the same history they're then judged on</li>
+        <li><b>No live proof</b> - Nothing that shows how it behaves after the backtest ends</li>
+      </ul>
+    </div>
+    <div class="pcard">
+      <h4>What Minner does</h4>
+      <ul>
+        <li><b>Live</b> - What the method is waiting for right now, on the chart and in plain words</li>
+        <li><b>Backtest</b> - Replay it on history, with your own risk, every cost included</li>
+        <li><b>Forward test</b> - Paper-trade it on the live market until a date you choose</li>
+        <li><b>Explained</b> - Every number, layer and rule has a tooltip; a guided tour on first visit</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="psec reveal">
+  <h2 class="psec__h">How it's built</h2>
+  <div class="pstack">
+    <div class="plyr"><div class="t">Method</div><div class="n">Proprietary</div><div class="d">Developed in-house<br>runs only in Minner</div></div>
+    <div class="plyr"><div class="t">Server</div><div class="n">Node.js</div><div class="d">Zero dependencies<br>keeps the forward test running</div></div>
+    <div class="plyr"><div class="t">Data</div><div class="n">Binance public API</div><div class="d">Candles, funding and flow<br>no API keys, cached locally</div></div>
+    <div class="plyr"><div class="t">Interface</div><div class="n">Vanilla JS</div><div class="d">Lightweight Charts<br>layered, toggleable overlays</div></div>
+  </div>
+  <div class="pnums">
+    <div class="pnum"><b>2020</b><span>history the backtest replays, to today</span></div>
+    <div class="pnum"><b>3</b><span>views - live, backtest, forward</span></div>
+    <div class="pnum"><b>2</b><span>modes - max profit or high win-rate</span></div>
+    <div class="pnum"><b>0</b><span>API keys or dependencies</span></div>
+  </div>
+</section>
+
+<section class="psec">
+  <h2 class="psec__h reveal">The screens</h2>
+
+  <div class="pshot reveal">
+    <div class="pshot__note"><h4>Live</h4><p>The chart shows what the method sees and the side panel says it in words: <b>what it needs before the next trade</b>, how far away that is, and what it did with every recent opportunity - including why it passed on the ones it skipped. Each layer on the chart can be switched on or off.</p></div>
+    <figure><img loading="lazy" src="img/shots/minner-live.jpg" alt="Minner - live view"></figure>
+  </div>
+
+  <div class="pshot pshot--pair reveal">
+    <div class="pshot__note"><h4>Backtest and forward test</h4><p>The backtest replays the method with the risk you choose and <b>deducts Binance fees, slippage and real historical funding from every trade</b>. The forward test runs the same rules on the live market in the local server, so it keeps going with the page closed, and logs every event with the time it was detected.</p></div>
+    <figure><img loading="lazy" src="img/shots/minner-bt.jpg" alt="Minner - backtest"></figure>
+    <figure><img loading="lazy" src="img/shots/minner-fwd.jpg" alt="Minner - forward test"></figure>
+  </div>
+</section>
+
+<section class="psec reveal">
+  <h2 class="psec__h">Design decisions</h2>
+  <div class="pcols">
+    <div class="pcard"><h4>01</h4><ul><li><b>Our method, our IP</b> - The method was developed by us and exists nowhere else. The product explains what it's doing at every moment without handing out the recipe.</li></ul></div>
+    <div class="pcard"><h4>02</h4><ul><li><b>The honest test</b> - Every rule was chosen on one period of history and judged on a later period it never saw - and the interface says which is which.</li></ul></div>
+    <div class="pcard"><h4>03</h4><ul><li><b>Costs are part of the result</b> - Fees, slippage and funding are deducted trade by trade, so the number on screen is the number you'd have kept.</li></ul></div>
+    <div class="pcard"><h4>04</h4><ul><li><b>Every number explains itself</b> - Hover anything for what it means. Line icons only, a glossary, and a short tour on the first visit.</li></ul></div>
+  </div>
+</section>
+
+<section class="pnext reveal">
+  <div class="pnext__inner">
+    <a href="cyrook.html">
+      <div class="pnext__lbl">Next project</div>
+      <div class="pnext__name">CyRook →</div>
+    </a>
+    <a class="btn btn--ghost" href="index.html#contact"><span>Get in touch</span></a>
+  </div>
+</section>
+
+<div class="pfoot">
+  <footer class="foot">
+    <span>© 2026 Daniel &amp; Itamar Tuby · Design &amp; software studio</span>
+    <span><a href="mailto:ituby@icloud.com">ituby@icloud.com</a> · <a href="https://www.linkedin.com/in/tubyitamar/" target="_blank" rel="noopener">LinkedIn</a></span>
+  </footer>
+</div>
+
+<script src="script.js?v=1790339685"></script>
+</body>
+</html>

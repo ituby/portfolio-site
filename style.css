@@ -189,7 +189,7 @@ a { color: inherit; text-decoration: none; }
   box-shadow: var(--shadow);
   isolation: isolate;
 }
-.card--wide .card__media { aspect-ratio: 16 / 8; }
+.card--wide .card__media { aspect-ratio: 16 / 9; }
 .card__demo, .card__cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .card__demo { object-position: top center; transform: scale(1.06); transition: transform 1.1s var(--ease-out); }
 .card__cover { object-position: center; transition: opacity .55s var(--ease), transform 1.1s var(--ease-out); }
