@@ -160,7 +160,7 @@ a { color: inherit; text-decoration: none; }
 @property --ly3 { syntax: "<percentage>"; inherits: false; initial-value: 20%; }
 
 .hero__title .line__i.lt {
-  --liq-a: #6C4DFF; --liq-b: #2FD6F2; --liq-hi: #C7B8FF;
+  --pa: #7B5CFF; --pb: #2ED3F2; --liq-a: var(--pa); --liq-b: var(--pb); --liq-hi: color-mix(in oklab, var(--pa) 45%, white);
   color: transparent;
   background:
     radial-gradient(30% 95% at var(--lx1) var(--ly1), var(--liq-hi) 0%, transparent 70%),
@@ -168,18 +168,12 @@ a { color: inherit; text-decoration: none; }
     radial-gradient(30% 110% at var(--lx3) var(--ly3), var(--liq-b) 0%, transparent 72%),
     var(--liq-a);
   -webkit-background-clip: text; background-clip: text;
-  animation: riseIn 1s var(--ease-out) .07s forwards, liquid 7s ease-in-out infinite alternate;
-  padding-right: .06em; margin-right: -.06em;
+  animation: riseIn 1s var(--ease-out) .07s forwards;
+  padding: .02em .06em .22em 0; margin: -.02em -.06em -.22em 0;
   display: inline-block;
 }
-[data-theme="light"] .hero__title .line__i.lt { --liq-a: #5230F0; --liq-b: #06A6CF; --liq-hi: #9C86FF; }
-@keyframes liquid {
-  0%   { --lx1: 12%; --ly1: 30%; --lx2: 55%; --ly2: 80%; --lx3: 92%; --ly3: 20%; }
-  33%  { --lx1: 38%; --ly1: 85%; --lx2: 20%; --ly2: 15%; --lx3: 70%; --ly3: 90%; }
-  66%  { --lx1: 75%; --ly1: 20%; --lx2: 88%; --ly2: 70%; --lx3: 30%; --ly3: 40%; }
-  100% { --lx1: 95%; --ly1: 70%; --lx2: 45%; --ly2: 25%; --lx3: 8%;  --ly3: 80%; }
-}
-.hero__title .line { display: block; overflow: hidden; padding-bottom: .12em; margin-bottom: -.12em; }
+[data-theme="light"] .hero__title .line__i.lt { --liq-a: color-mix(in oklab, var(--pa) 82%, black); --liq-b: color-mix(in oklab, var(--pb) 80%, black); --liq-hi: color-mix(in oklab, var(--pa) 70%, white); }
+.hero__title .line { display: block; overflow: hidden; padding-bottom: .24em; margin-bottom: -.24em; }
 .hero__title .line__i { display: block; white-space: nowrap; transform: translateY(110%); animation: riseIn 1s var(--ease-out) forwards; }
 .hero__title .line:nth-child(2) .line__i { animation-delay: .07s; }
 .hero__title .line:nth-child(3) .line__i { animation-delay: .14s; }
